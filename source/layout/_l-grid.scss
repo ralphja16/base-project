@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$container-width: 		100em;	// Base size * $container-width
+$flex-enabled:			'true'; // True => Makes grid__items equal width
+$gutter-enabled:		'true'; // True => Add gutter between grid__items
+$gutter:				2em;	// Gutter between grid__items
+$grid__item--padding:	1em;	// Padding inside grid__item
+
+
+// Breakpoints for media queries
+$breakpoint: (
+	null: 0px,
+	xs: 320px,
+	xs: 375px,
+	xs: 480px,
+	xs: 568px,
+	xs: 640px,
+	xs: 768px,
+	xs: 800px,
+	xs: 992px,
+	xs: 1024px,
+	large: 1200px,
+	xs: 1280px,
+	xs: 1440px,
+	xl: 1600px,
+	xxl: 2000px
+);
+
+
+/* =============================================================================
+  Containers
+============================================================================= */
+
+.l-container {
+	max-width: $container-width;
+	width: 100%;
+	margin: 0 auto;
+	display: table;
+}
+
+
+/* =============================================================================
+  COLUMNS
+============================================================================= */
+
+.col-1 {
+	width: 8.33333333%;
+}
+
+.col-2 {
+	width: 16.66666667%;
+}
+
+.col-3 {
+	width: 25%;
+}
+
+.col-4 {
+	width: 33.33333333%;
+}
+
+.col-5 {
+	width: 41.66666667%;
+}
+
+.col-6 {
+	width: 50%;
+}
+
+.col-7 {
+	width: 58.33333333%;
+}
+
+.col-8 {
+	width: 66.66666667%;
+}
+
+.col-9 {
+	width: 75%;
+}
+
+.col-10 {
+	width: 83.33333333%;
+}
+
+.col-11 {
+	width: 91.66666667%;
+}
+
+.col-12 {
+	width: 100%;
+}
+
+
+/* =============================================================================
+FLEXBOX GRID
+============================================================================= */
+
+.l-grid {
+
+
+	&__row {
+		display: flex;
+		flex-direction: column;
+
+		@if $gutter-enabled == 'true' {
+			margin-left: -$gutter / 2;
+			margin-right: -$gutter / 2;
+		}
+
+		&--sm {
+
+			@media all and ( min-width: 480px ) {
+				flex-direction: row;
+			}
+		}
+
+		&--md {
+
+			@media all and ( min-width: 720px ) {
+				flex-direction: row;
+			}
+		}
+
+		&--lg {
+
+			@media all and ( min-width: 960px ) {
+				flex-direction: row;
+			}
+		}
+	}
+
+
+	&__item {
+		position: relative;
+		min-height: 1px;
+		padding: $grid__item--padding;
+		background: rgba(0,0,0,0.1); 	// TODO: For testing purpose
+		border: 1px solid #333;			// TODO: For testing purpose
+
+		@if $flex-enabled == 'true' {
+			flex: 1;
+		}
+
+		@if $gutter-enabled == 'true' {
+			margin-left: $gutter / 2;
+			margin-right: $gutter / 2;
+		}
+	}
+}
