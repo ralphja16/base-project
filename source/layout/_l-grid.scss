@@ -1,144 +1,189 @@
 @charset "UTF-8";
 
 /* =============================================================================
-  CONFIG
+CONFIG
 ============================================================================= */
 
 $container-width: 		100em;	// Base size * $container-width
-$flex-enabled:			'true'; // True => Makes grid__items equal width
-$gutter-enabled:		'true'; // True => Add gutter between grid__items
+$flex-enabled:			'false'; // True => Makes grid__items equal width
+$gutter-enabled:		'false'; // True => Add gutter between grid__items
 $gutter:				2em;	// Gutter between grid__items
-$grid__item--padding:	1em;	// Padding inside grid__item
+$column--padding:		1em;	// Padding inside grid__item
 
 
-// Breakpoints for media queries
-$breakpoint: (
-	null: 0px,
-	xs: 320px,
-	xs: 375px,
+/* =============================================================================
+BREAKPOINTS FOR MIN-WIDTH MEDIA QUERIES
+============================================================================= */
+
+$breakpoints-min: (
+	xxs: 320px,
+	// xs: 375px,
 	xs: 480px,
-	xs: 568px,
-	xs: 640px,
-	xs: 768px,
-	xs: 800px,
-	xs: 992px,
-	xs: 1024px,
-	large: 1200px,
-	xs: 1280px,
-	xs: 1440px,
-	xl: 1600px,
-	xxl: 2000px
+	// xs: 568px,
+	// xs: 640px,
+	sm: 768px,
+	ms: 800px,
+	md: 992px,
+	mlg: 1024px,
+	lg: 1200px,
+	xlg: 1440px,
+	2xlg: 1600px,
+	3xlg: 2000px
 );
 
 
 /* =============================================================================
-  Containers
+BREAKPOINTS FOR MAX-WIDTH MEDIA QUERIES
+============================================================================= */
+
+$breakpoints-max: (
+	xxs: 319px,
+	// xs: 374px,
+	xs: 479px,
+	// xs: 567px,
+	// xs: 639px,
+	sm: 767px,
+	ms: 799px,
+	md: 991px,
+	mlg: 1023px,
+	lg: 1199px,
+	xl: 1439px,
+	2xl: 1599px,
+	3xl: 1999px
+);
+
+/* =============================================================================
+MIXIN: RESPOND-TO-MIN
+USEAGE: @include respond-to-min(small) { ... }
+============================================================================= */
+
+@mixin respond-to-min($breakpoint) {
+	@if map-has-key($breakpoints-min, $breakpoint) {
+		@media screen and (min-width: #{map-get($breakpoints-min, $breakpoint)}) {
+			@content;
+		}
+	}
+
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+		+ "Please make sure it is defined in `$breakpoints` map.";
+	}
+}
+
+
+/* =============================================================================
+MIXIN: RESPOND-TO-MAX
+USEAGE: @include respond-to-max(small) { ... }
+============================================================================= */
+
+@mixin respond-to-max($breakpoint) {
+	@if map-has-key($breakpoints-max, $breakpoint) {
+		@media screen and (max-width: #{map-get($breakpoints-max, $breakpoint)}) {
+			@content;
+		}
+	}
+
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+		+ "Please make sure it is defined in `$breakpoints` map.";
+	}
+}
+
+
+/* =============================================================================
+Containers
 ============================================================================= */
 
 .l-container {
-	max-width: $container-width;
+	max-width: $container-width + $gutter;
 	width: 100%;
 	margin: 0 auto;
 	display: table;
+	padding-left: $gutter / 2;
+	padding-right: $gutter / 2;
 }
 
-
-/* =============================================================================
-  COLUMNS
-============================================================================= */
-
-.col-1 {
-	width: 8.33333333%;
-}
-
-.col-2 {
-	width: 16.66666667%;
-}
-
-.col-3 {
-	width: 25%;
-}
-
-.col-4 {
-	width: 33.33333333%;
-}
-
-.col-5 {
-	width: 41.66666667%;
-}
-
-.col-6 {
-	width: 50%;
-}
-
-.col-7 {
-	width: 58.33333333%;
-}
-
-.col-8 {
-	width: 66.66666667%;
-}
-
-.col-9 {
-	width: 75%;
-}
-
-.col-10 {
-	width: 83.33333333%;
-}
-
-.col-11 {
-	width: 91.66666667%;
-}
-
-.col-12 {
+.l-container--fluid {
 	width: 100%;
+	padding-left: $gutter / 2;
+	padding-right: $gutter / 2;
+}
+
+/* =============================================================================
+COLUMNS
+============================================================================= */
+
+@each $key, $value in $breakpoints-min {
+
+	@include respond-to-min($key) {
+
+		.col-#{$key}-1 { width: 8.33333333%; }
+		.col-#{$key}-2 { width: 16.66666667%; }
+		.col-#{$key}-3 { width: 25%; }
+		.col-#{$key}-4 { width: 33.33333333%; }
+		.col-#{$key}-5 { width: 41.66666667%; }
+		.col-#{$key}-6 { width: 50%; }
+		.col-#{$key}-7 { width: 58.33333333%; }
+		.col-#{$key}-8 { width: 66.66666667%; }
+		.col-#{$key}-9 { width: 75%; }
+		.col-#{$key}-10 { width: 83.33333333%; }
+		.col-#{$key}-11 { width: 91.66666667%; }
+		.col-#{$key}-12 { width: 100%; }
+	}
 }
 
 
 /* =============================================================================
-FLEXBOX GRID
+RESPONSIVE UTILITIES
 ============================================================================= */
+
+@each $key, $value in $breakpoints-min {
+
+	@include respond-to-min($key) {
+
+		.hidden-#{$key} {
+			display: none;
+		}
+
+	}
+}
+
+/* =============================================================================
+GRID
+============================================================================= */
+
+.row {
+	margin-left: -$gutter / 2;
+	margin-right: -$gutter / 2;
+}
+
+[class*='col-'] {
+	min-height: 1px;
+	position: relative;
+	padding: $column--padding;
+}
 
 .l-grid {
 
 
 	&__row {
+		display: flexbox; // Fallback IE10
+		display: box; // Fallback Chrome 20-, Safari 3.1+, Firefox 2-21, Android 2.1+, iOS 3.2+
 		display: flex;
-		flex-direction: column;
+		flex-wrap: wrap;
 
-		@if $gutter-enabled == 'true' {
-			margin-left: -$gutter / 2;
-			margin-right: -$gutter / 2;
+		@if $flex-enabled == 'true' {
+			flex-direction: column;
 		}
 
-		&--sm {
-
-			@media all and ( min-width: 480px ) {
-				flex-direction: row;
-			}
+		@include respond-to-min(xs) {
+			flex-direction: row;
 		}
 
-		&--md {
-
-			@media all and ( min-width: 720px ) {
-				flex-direction: row;
-			}
-		}
-
-		&--lg {
-
-			@media all and ( min-width: 960px ) {
-				flex-direction: row;
-			}
-		}
 	}
 
 
 	&__item {
-		position: relative;
-		min-height: 1px;
-		padding: $grid__item--padding;
 		background: rgba(0,0,0,0.1); 	// TODO: For testing purpose
 		border: 1px solid #333;			// TODO: For testing purpose
 
