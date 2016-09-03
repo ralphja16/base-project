@@ -20,7 +20,7 @@ var gulp 			= require('gulp'),
 	cssnano			= require('gulp-cssnano');
 
 var runTimestamp 	= Math.round(Date.now()/1000);
-var fontName 		= 'zuyderland-icons';
+var fontName 		= 'xxx-icons';
 
 
 //PATHS TO WATCH
@@ -37,7 +37,7 @@ var paths = {
 		'./source/objects/**/js/*.js'
 	],
 	vendors: [
-		'./public/library/js/vendor/bootstrap.min.js',
+		// './public/library/js/vendor/bootstrap.min.js',
 	],
 	images: [
 		'./public/library/img/*'
@@ -51,7 +51,7 @@ var paths = {
 //SASS BUILD
 gulp.task('sass', function() {
 	var processors = [
-		autoprefixer({browsers: ['last 2 version', '> 5%', 'ie 8', 'ie 9', 'ios 6', 'android 4']}),
+		autoprefixer({browsers: ['last 2 version', '> 5%', 'ie 9', 'ios 7', 'android 4']}),
 	];
 
 	gulp.src('./source/main.scss')
@@ -61,7 +61,7 @@ gulp.task('sass', function() {
 		// Initialize sourcemaps
 		.pipe(sourcemaps.init())
 		.pipe(plumber())
-        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(sass({outputStyle: 'uncompressed'}))
         // Write sourcemaps to /library/css/maps
         .pipe(sourcemaps.write('./maps'))
         // CSS destination
