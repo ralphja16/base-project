@@ -12,27 +12,80 @@ $font-family--primary:			$open-sans;
 ============================================================================= */
 
 p {
-	@include font-size(16);
 	line-height: 1.2em;
-	margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
+	margin: 1em 0;
+	@include font-size(16);
 }
 
+.h1,
 h1 {
 	font-family: $font-family--primary;
 	font-weight: bold;
-	@include font-size(32);
 	line-height: 1.2em;
 	word-wrap: break-word;
+	@include font-size(36);
 }
 
-
+.h2,
 h2 {
 	font-family: $font-family--primary;
 	font-weight: bold;
-	@include font-size(28);
 	line-height: 1.2em;
 	word-wrap: break-word;
+	@include font-size(32);
+}
+
+.h3,
+h3 {
+	font-family: $font-family--primary;
+	font-weight: bold;
+	line-height: 1.2em;
+	word-wrap: break-word;
+	@include font-size(28);
+}
+
+.h4,
+h4 {
+	font-family: $font-family--primary;
+	font-weight: bold;
+	line-height: 1.2em;
+	word-wrap: break-word;
+	@include font-size(21);
+}
+
+.h5,
+h5 {
+	font-family: $font-family--primary;
+	font-weight: bold;
+	line-height: 1.2em;
+	word-wrap: break-word;
+	@include font-size(16);
+}
+
+.h6,
+h6 {
+	font-family: $font-family--primary;
+	font-weight: bold;
+	line-height: 1.2em;
+	word-wrap: break-word;
+	@include font-size(12);
+}
+
+.small,
+small {
+	font-family: $font-family--primary;
+	line-height: 1;
+	font-weight: 400;
+}
+
+.lead {
+	font-weight: 300;
+	line-height: 1.4;
+	@include font-size(21);
+}
+
+.mark,
+mark {
+	padding: .2em;
+	background-color: #fcf899;
 }

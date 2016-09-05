@@ -58,13 +58,16 @@ USEAGE: @include respond-to-min(small) { ... }
 ============================================================================= */
 
 @mixin respond-to-min($breakpoint) {
+
 	@if map-has-key($breakpoints-min, $breakpoint) {
+
 		@media screen and (min-width: #{map-get($breakpoints-min, $breakpoint)}) {
 			@content;
 		}
 	}
 
 	@else {
+
 		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
 		+ "Please make sure it is defined in `$breakpoints` map.";
 	}
@@ -77,13 +80,16 @@ USEAGE: @include respond-to-max(small) { ... }
 ============================================================================= */
 
 @mixin respond-to-max($breakpoint) {
+
 	@if map-has-key($breakpoints-max, $breakpoint) {
+
 		@media screen and (max-width: #{map-get($breakpoints-max, $breakpoint)}) {
 			@content;
 		}
 	}
 
 	@else {
+
 		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
 		+ "Please make sure it is defined in `$breakpoints` map.";
 	}
@@ -117,18 +123,53 @@ COLUMNS
 
 	@include respond-to-min($key) {
 
-		.col-#{$key}-1 { width: 8.33333333%; }
-		.col-#{$key}-2 { width: 16.66666667%; }
-		.col-#{$key}-3 { width: 25%; }
-		.col-#{$key}-4 { width: 33.33333333%; }
-		.col-#{$key}-5 { width: 41.66666667%; }
-		.col-#{$key}-6 { width: 50%; }
-		.col-#{$key}-7 { width: 58.33333333%; }
-		.col-#{$key}-8 { width: 66.66666667%; }
-		.col-#{$key}-9 { width: 75%; }
-		.col-#{$key}-10 { width: 83.33333333%; }
-		.col-#{$key}-11 { width: 91.66666667%; }
-		.col-#{$key}-12 { width: 100%; }
+		.col-#{$key}-1 {
+			width: 8.33333333%;
+		}
+
+		.col-#{$key}-2 {
+			width: 16.66666667%;
+		}
+
+		.col-#{$key}-3 {
+			width: 25%;
+		}
+
+		.col-#{$key}-4 {
+			width: 33.33333333%;
+		}
+
+		.col-#{$key}-5 {
+			width: 41.66666667%;
+		}
+
+		.col-#{$key}-6 {
+			width: 50%;
+		}
+
+		.col-#{$key}-7 {
+			width: 58.33333333%;
+		}
+
+		.col-#{$key}-8 {
+			width: 66.66666667%;
+		}
+
+		.col-#{$key}-9 {
+			width: 75%;
+		}
+
+		.col-#{$key}-10 {
+			width: 83.33333333%;
+		}
+
+		.col-#{$key}-11 {
+			width: 91.66666667%;
+		}
+
+		.col-#{$key}-12 {
+			width: 100%;
+		}
 	}
 }
 
@@ -144,7 +185,6 @@ RESPONSIVE UTILITIES
 		.hidden-#{$key} {
 			display: none;
 		}
-
 	}
 }
 
@@ -165,10 +205,8 @@ GRID
 
 .l-grid {
 
-
 	&__row {
 		display: flexbox; // Fallback IE10
-		display: box; // Fallback Chrome 20-, Safari 3.1+, Firefox 2-21, Android 2.1+, iOS 3.2+
 		display: flex;
 		flex-wrap: wrap;
 
@@ -179,9 +217,7 @@ GRID
 		@include respond-to-min(xs) {
 			flex-direction: row;
 		}
-
 	}
-
 
 	&__item {
 		background: rgba(0,0,0,0.1); 	// TODO: For testing purpose
