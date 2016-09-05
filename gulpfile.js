@@ -16,7 +16,9 @@ var gulp 			= require('gulp'),
 	minifyCss		= require('gulp-minify-css'),
 	postcss 		= require('gulp-postcss'),
 	autoprefixer	= require('autoprefixer'),
+	reporter 		= require('postcss-reporter'),
 	cssgrace 		= require('cssgrace'),
+	stylelint 		= require('stylelint'),
 	cssnano			= require('gulp-cssnano');
 
 var runTimestamp 	= Math.round(Date.now()/1000);
@@ -52,6 +54,9 @@ var paths = {
 gulp.task('sass', function() {
 	var processors = [
 		autoprefixer({browsers: ['last 2 version', '> 5%', 'ie 9', 'ios 7', 'android 4']}),
+		// stylelint(),
+		reporter(),
+
 	];
 
 	gulp.src('./source/main.scss')
