@@ -8,6 +8,8 @@ $input-field-radius:					3px;
 $input-field-background:				$white;
 $input-field-border-color:				$white;
 $input-field-color:						$black;
+$input-field-border-color:				#ccc;
+$input-field-border-width:				1px;
 
 /* =============================================================================
   BASE
@@ -22,8 +24,8 @@ $input-field-color:						$black;
     color: $input-field-color;
     background-color: $input-field-background;
     background-image: none;
-    border: 1px solid #ccc;
+    border: $input-field-border-width solid $input-field-border-color;
 	@include font-size(14);
     @include border-radius($input-field-radius);
-    @include transition: (border-color .15s ease-in-out);
+    @include transition(border-color, .15s, ease-in-out);
 }

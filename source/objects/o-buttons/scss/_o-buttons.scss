@@ -32,6 +32,7 @@ $button-radius:					3px;
     -ms-user-select: none;
     user-select: none;
     background-image: none;
+	outline: 0;
     border: 1px solid transparent;
     @include border-radius($button-radius);
 	@include transition(all, 200ms, ease-in-out);
