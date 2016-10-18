@@ -106,12 +106,34 @@ $breakpoints-max: (
 	display: table;
 	padding-left: $gutter / 2;
 	padding-right: $gutter / 2;
+
+	&:before {
+		display: table;
+		content: " ";
+	}
+
+	&:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
 }
 
 .l-container--fluid {
 	width: 100%;
 	padding-left: $gutter / 2;
 	padding-right: $gutter / 2;
+
+	&:before {
+		display: table;
+		content: " ";
+	}
+
+	&:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
 }
 
 /* =============================================================================
@@ -265,6 +287,17 @@ $breakpoints-max: (
 .row {
 	margin-left: -$gutter / 2;
 	margin-right: -$gutter / 2;
+
+	&:before {
+		display: table;
+		content: " ";
+	}
+
+	&:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
 }
 
 [class*='col-'] {
@@ -280,7 +313,7 @@ $breakpoints-max: (
 
 	&__row {
 		margin-bottom: 10px;
-		
+
 		&:before {
 			display: table;
 			content: " ";
