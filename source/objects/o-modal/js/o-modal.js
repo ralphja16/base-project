@@ -70,14 +70,11 @@ jQuery.extend({
     }
 });
 
-var onReady = function(){
-   testVar = true;
-}
 
-$(function()
-{
-  $(document).ready(function(onReady){
+
+// $(function()
+// {
+//   $(document).ready(function(onReady){
         var oModal = new $.oModal($('.btn[data-toggle="modal"]'));
-    });
-});
-console.log(oModal);
+//     });
+// });
