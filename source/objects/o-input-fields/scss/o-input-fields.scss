@@ -8,24 +8,41 @@ $input-field-radius:					3px;
 $input-field-background:				$white;
 $input-field-border-color:				$white;
 $input-field-color:						$black;
-$input-field-border-color:				#ccc;
-$input-field-border-width:				1px;
+$input-field-border-color:				$grayC;
+$input-field-border-width:				2px;
+
+$input-field-label-color:				$black;
+
 
 /* =============================================================================
   BASE
 ============================================================================= */
 
 .input-field {
-	display: block;
-    width: 100%;
+	outline: 0;
+    width:  100%;
     height: 36px;
-    padding: 0.5em 0.75em;
+	display: block;
     line-height: 1.4;
-    color: $input-field-color;
-    background-color: $input-field-background;
+	padding: 0.5em 0.75em;
     background-image: none;
+	color: $input-field-color;
+	background-color: $input-field-background;
     border: $input-field-border-width solid $input-field-border-color;
 	@include font-size(14);
     @include border-radius($input-field-radius);
     @include transition(border-color, .15s, ease-in-out);
+
+	&__label {
+		font-weight: 600;
+		display: inline-block;
+		padding-bottom: $padding-xsmall;
+		color: $input-field-label-color;
+		@include font-size(16);
+	}
+
+	// Input container
+	&__container {
+
+	}
 }
