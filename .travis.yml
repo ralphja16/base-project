@@ -4,5 +4,5 @@ node_js:
 before_script:
   - npm install -g gulp
   - npm install -g mocha
-  - npm install
-script: npm test
+  - npm install -g phantomjs mocha-phantomjs
+script: mocha-phantomjs test/testrunner.html
