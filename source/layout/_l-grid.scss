@@ -279,12 +279,21 @@ $breakpoints-max: (
 	width: 100%;
 
 	&__row {
+		margin-bottom: 10px;
+		
+		&:before {
+			display: table;
+			content: " ";
+		}
 
+		&:after {
+			display: table;
+			content: " ";
+			clear: both;
+		}
 	}
 
 	&__item {
-		background: rgba(0,0,0,0.1); 	// TODO: For testing purpose
-		border: 1px solid #333;			// TODO: For testing purpose
 
 		@if $gutter-enabled == 'true' {
 			margin-left: $gutter / 2;
