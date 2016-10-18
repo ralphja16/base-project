@@ -168,3 +168,9 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+public/library/js/main.min.js
+
+public/library/css/main.css
+
+public/library/js/maps/main.min.js.map
