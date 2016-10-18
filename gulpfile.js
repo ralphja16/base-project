@@ -19,7 +19,8 @@ var gulp 			= require('gulp'),
 	reporter 		= require('postcss-reporter'),
 	cssgrace 		= require('cssgrace'),
 	stylelint 		= require('stylelint'),
-	cssnano			= require('gulp-cssnano');
+	cssnano			= require('gulp-cssnano')
+	mochaPhantomJS  = require('gulp-mocha-phantomjs');
 
 var runTimestamp 	= Math.round(Date.now()/1000);
 var fontName 		= 'xxx-icons';
@@ -189,15 +190,28 @@ gulp.task('browser-sync', function() {
     gulp.watch("*.html").on('change', browserSync.reload);
 });
 
+// JS MOCHA-PHANTOMJS UNIT TESTING DEVELOPMENT
+gulp.task('unittest', function () {
+    return gulp
+    .src('./test/testrunner.html')
+    .pipe(mochaPhantomJS({
+		reporter: 'spec',
+        phantomjs: {
+            useColors:true
+        }
+	}));
+});
+
+
 
 //GULP WATCH TASK
 gulp.task('watch', ['browser-sync'], function(){
 	gulp.watch(paths.sass, ['sass']);
-	gulp.watch(paths.js, ['js']);
+	gulp.watch(paths.js, ['js', 'unittest']);
 });
 
 //GULP SETUP TASK
-gulp.task('setup', ['sass', 'js', 'vendors', 'images']);
+gulp.task('setup', ['sass', 'js', 'unittest', 'vendors', 'images']);
 
 //GULP BUILD TASK
 gulp.task('build', ['watch', 'browser-sync']);
