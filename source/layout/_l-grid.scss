@@ -1,18 +1,17 @@
 @charset "UTF-8";
 
 /* =============================================================================
-CONFIG
+	CONFIG
 ============================================================================= */
 
 $container-width: 		100em;	// Base size * $container-width
-$flex-enabled:			'false'; // True => Makes grid__items equal width
 $gutter-enabled:		'false'; // True => Add gutter between grid__items
 $gutter:				2em;	// Gutter between grid__items
 $column--padding:		1em;	// Padding inside grid__item
 
 
 /* =============================================================================
-BREAKPOINTS FOR MIN-WIDTH MEDIA QUERIES
+	BREAKPOINTS FOR MIN-WIDTH MEDIA QUERIES
 ============================================================================= */
 
 $breakpoints-min: (
@@ -33,7 +32,7 @@ $breakpoints-min: (
 
 
 /* =============================================================================
-BREAKPOINTS FOR MAX-WIDTH MEDIA QUERIES
+	BREAKPOINTS FOR MAX-WIDTH MEDIA QUERIES
 ============================================================================= */
 
 $breakpoints-max: (
@@ -53,8 +52,8 @@ $breakpoints-max: (
 );
 
 /* =============================================================================
-MIXIN: RESPOND-TO-MIN
-USEAGE: @include respond-to-min(small) { ... }
+	MIXIN: RESPOND-TO-MIN
+	USEAGE: @include respond-to-min(sm) { ... }
 ============================================================================= */
 
 @mixin respond-to-min($breakpoint) {
@@ -75,8 +74,8 @@ USEAGE: @include respond-to-min(small) { ... }
 
 
 /* =============================================================================
-MIXIN: RESPOND-TO-MAX
-USEAGE: @include respond-to-max(small) { ... }
+	MIXIN: RESPOND-TO-MAX
+	USEAGE: @include respond-to-max(small) { ... }
 ============================================================================= */
 
 @mixin respond-to-max($breakpoint) {
@@ -97,7 +96,7 @@ USEAGE: @include respond-to-max(small) { ... }
 
 
 /* =============================================================================
-Containers
+	Containers
 ============================================================================= */
 
 .l-container {
@@ -116,7 +115,7 @@ Containers
 }
 
 /* =============================================================================
-COLUMNS
+	COLUMNS DEFAULT GRID
 ============================================================================= */
 
 @each $key, $value in $breakpoints-min {
@@ -175,7 +174,78 @@ COLUMNS
 
 
 /* =============================================================================
-RESPONSIVE UTILITIES
+	COLUMNS FLEXBOX GRID
+============================================================================= */
+
+@each $key, $value in $breakpoints-min {
+
+	@include respond-to-min($key) {
+
+		.fl-col-#{$key}-1 {
+			flex-basis: 8.33333333%;
+			max-width: 8.33333333%;
+		}
+
+		.fl-col-#{$key}-2 {
+			flex-basis: 16.66666667%;
+			max-width: 16.66666667%;
+		}
+
+		.fl-col-#{$key}-3 {
+			flex-basis: 25%;
+			max-width: 25%;
+		}
+
+		.fl-col-#{$key}-4 {
+			flex-basis: 33.33333333%;
+			max-width: 33.33333333%;
+		}
+
+		.fl-col-#{$key}-5 {
+			flex-basis: 41.66666667%;
+			max-width: 41.66666667%;
+		}
+
+		.fl-col-#{$key}-6 {
+			flex-basis: 505;
+			max-width: 50%;
+		}
+
+		.fl-col-#{$key}-7 {
+			flex-basis: 58.33333333%;
+			max-width: 58.33333333%;
+		}
+
+		.fl-col-#{$key}-8 {
+			flex-basis: 66.66666667%;
+			max-width: 66.66666667%;
+		}
+
+		.fl-col-#{$key}-9 {
+			flex-basis: 75%;
+			max-width: 75%;
+		}
+
+		.fl-col-#{$key}-10 {
+			flex-basis: 83.33333333%;
+			max-width: 83.33333333%;
+		}
+
+		.fl-col-#{$key}-11 {
+			flex-basis: 91.66666667%;
+			max-width: 91.66666667%;
+		}
+
+		.fl-col-#{$key}-12 {
+			flex-basis: 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+
+/* =============================================================================
+	RESPONSIVE UTILITIES
 ============================================================================= */
 
 @each $key, $value in $breakpoints-min {
@@ -189,7 +259,7 @@ RESPONSIVE UTILITIES
 }
 
 /* =============================================================================
-GRID
+	GRID
 ============================================================================= */
 
 .row {
@@ -198,34 +268,23 @@ GRID
 }
 
 [class*='col-'] {
+	float: left;
 	min-height: 1px;
 	position: relative;
 	padding: $column--padding;
 }
 
 .l-grid {
+	display: inline-block;
+	width: 100%;
 
 	&__row {
-		display: flexbox; // Fallback IE10
-		display: flex;
-		flex-wrap: wrap;
 
-		@if $flex-enabled == 'true' {
-			flex-direction: column;
-		}
-
-		@include respond-to-min(xs) {
-			flex-direction: row;
-		}
 	}
 
 	&__item {
 		background: rgba(0,0,0,0.1); 	// TODO: For testing purpose
 		border: 1px solid #333;			// TODO: For testing purpose
-
-		@if $flex-enabled == 'true' {
-			flex: 1;
-		}
 
 		@if $gutter-enabled == 'true' {
 			margin-left: $gutter / 2;
@@ -233,3 +292,8 @@ GRID
 		}
 	}
 }
+
+
+/* =============================================================================
+	FLEXBOX GRID:: COMING SOON
+============================================================================= */
