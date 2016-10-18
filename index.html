@@ -5,6 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="./public/library/css/main.css">
+	<link rel="stylesheet" href="./source/stylesheet/stylesheet.css">
+	<link href="./source/stylesheet/prism.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
 
@@ -25,6 +28,18 @@
 					<h5>Heading 5</h5>
 					<h6>Heading 6</h6>
 
+					<figure class="highlight">
+						<pre data-src="stylesheet.html" class="language-markup">
+							<code class="language-markup">
+								&lt;h1>Heading 1&lt;/h1>
+								&lt;h2>Heading 2&lt;/h2>
+								&lt;h3>Heading 3&lt;/h3>
+								&lt;h4>Heading 4&lt;/h4>
+								&lt;h5>Heading 5&lt;/h5>
+								&lt;h6>Heading 6&lt;/h6>
+							</code>
+						</pre>
+					</figure>
 
 					<p>Paragraph</p>
 					<small>Small text</small>
@@ -45,11 +60,46 @@
 
 					<p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</strong></p>
 
+					<figure class="highlight">
+						<pre data-src="stylesheet.html" class="language-markup">
+							<code class="language-markup">
+								&lt;p>Paragraph&lt;/p>
+								&lt;small>Small text&lt;/small>
+
+								&lt;p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p>
+
+								&lt;p>Lorem ipsum dolor sit amet, consectetur &lt;mark>adipisicing&lt;/mark> elit.&lt;/p>
+
+								&lt;p>&lt;del>Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/del>&lt;/p>
+
+								&lt;p>&lt;s>Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/s>&lt;/p>
+
+								&lt;p>&lt;ins>Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/ins>&lt;/p>
+
+								&lt;p>&lt;u>Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/u>&lt;/p>
+
+								&lt;p>&lt;em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/em>&lt;/p>
+
+								&lt;p>&lt;strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/strong>&lt;/p>
+							</code>
+						</pre>
+					</figure>
 				</section>
 
 				<section>
 					<button type="button" class="o-btn o-btn--primary">Primary</button>
 					<button type="button" class="o-btn o-btn--secondary">Secundary</button>
+
+					<figure class="highlight">
+						<pre data-src="stylesheet.html" class="language-markup">
+							<code class="language-markup">
+								&lt;!-- Primary button -->
+								&lt;button type="button" class="o-btn o-btn--primary">Primary&lt;/button>
+								&lt;!-- Secundary button -->
+								&lt;button type="button" class="o-btn o-btn--secondary">Secundary&lt;/button>
+							</code>
+						</pre>
+					</figure>
 				</section>
 
 				<section>
@@ -103,6 +153,36 @@
 						</div>
 
 					</div>
+
+					<figure class="highlight">
+						<pre data-src="stylesheet.html" class="language-markup">
+							<code class="language-markup">
+								&lt;div class="l-grid">
+									&lt;div class="l-grid__row">
+										&lt;div class="l-grid__item col-xxs-12">col-xxs-12&lt;/div>
+									&lt;/div>
+
+									&lt;div class="l-grid__row">
+										&lt;div class="l-grid__item col-xxs-6">col-xxs-6&lt;/div>
+										&lt;div class="l-grid__item col-xxs-6">col-xxs-6&lt;/div>
+									&lt;/div>
+
+									&lt;div class="l-grid__row">
+										&lt;div class="l-grid__item col-xxs-4">col-xxs-4&lt;/div>
+										&lt;div class="l-grid__item col-xxs-4">col-xxs-4&lt;/div>
+										&lt;div class="l-grid__item col-xxs-4">col-xxs-4&lt;/div>
+									&lt;/div>
+
+									&lt;div class="l-grid__row">
+										&lt;div class="l-grid__item col-xxs-3">col-xxs-3&lt;/div>
+										&lt;div class="l-grid__item col-xxs-3">col-xxs-3&lt;/div>
+										&lt;div class="l-grid__item col-xxs-3">col-xxs-3&lt;/div>
+										&lt;div class="l-grid__item col-xxs-3">col-xxs-3&lt;/div>
+									&lt;/div>
+								&lt;/div>
+							</code>
+						</pre>
+					</figure>
 				</section>
 
 				<section>
@@ -139,15 +219,63 @@
 							<div class="l-grid__item col-xxs-6">col 6</div>
 						</div>
 					</div>
+
+					<figure class="highlight">
+						<pre data-src="stylesheet.html" class="language-markup">
+							<code class="language-markup">
+								&lt;div class="l-grid">
+									&lt;div class="l-grid__row">
+										&lt;div class="l-grid__item col-xxs-6">
+											&lt;div class="l-container">
+												&lt;div class="l-grid__row">
+													&lt;div class="l-grid__item col-xxs-6">Nested 1&lt;/div>
+													&lt;div class="l-grid__item col-xxs-6">Nested 2&lt;/div>
+												&lt;/div>
+											&lt;/div>
+										&lt;/div>
+										&lt;div class="l-grid__item col-xxs-6">
+											&lt;div class="l-container">
+												&lt;div class="l-grid__row">
+													&lt;div class="l-grid__item col-xxs-4">Nested 1&lt;/div>
+												&lt;/div>
+											&lt;/div>
+										&lt;/div>
+									&lt;/div>
+									&lt;div class="l-grid__row">
+										&lt;div class="l-grid__item col-xxs-3">1&lt;/div>
+										&lt;div class="l-grid__item col-xxs-8">2&lt;/div>
+										&lt;div class="l-grid__item col-xxs-1">3&lt;/div>
+									&lt;/div>
+									&lt;div class="l-grid__row">
+										&lt;div class="l-grid__item col-xxs-2">col 2&lt;/div>
+										&lt;div class="l-grid__item col-xxs-4">col 4&lt;/div>
+										&lt;div class="l-grid__item col-xxs-6">col 6&lt;/div>
+									&lt;/div>
+								&lt;/div>
+							</code>
+						</pre>
+					</figure>
 				</section>
 
 				<section>
-
+					<h2>Modals</h2>
 					<button type="button" class="o-btn o-btn--primary" data-toggle="modal" data-target="#myModal">Launch</button>
-					<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-
+					<div class="o-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						<div class="o-modal__dialog" role="document">
+							<div class="o-modal__content">modal content</div>
+						</div>
 					</div>
 
+				</section>
+
+
+				<section>
+					<h2>Input fields</h2>
+
+					<div class="input-field__container">
+						<label for="uniqueID" class="input-field__label">Input label</label>
+						<input type="text" class="input-field" id="uniqueID">
+					</div>
 				</section>
 			</div>
 		</main>
@@ -157,6 +285,7 @@
 		</footer>
 
 	</div>
-
+	<!-- <script src="./public/library/js/main.min.js"></script> -->
+	<script src="./source/stylesheet/prism.js"></script>
 </body>
 </html>
