@@ -75,6 +75,6 @@ jQuery.extend({
 // $(function()
 // {
 //   $(document).ready(function(onReady){
-        var oModal = new $.oModal($('.btn[data-toggle="modal"]'));
+        var oModal = new $.oModal($('.o-btn[data-toggle="modal"]'));
 //     });
 // });
