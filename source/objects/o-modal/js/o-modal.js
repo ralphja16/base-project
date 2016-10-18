@@ -1,11 +1,28 @@
-var modal = function() {
+var oModal = (function () {
+    'use strict';
 
-	isEven = function(num) {
-		if (num%2 !== 0) return false;
-		return true;
-	}
-	return {
-		isEven: isEven
-	}
-}
- var modal = new modal();
+    var _this       = this;
+
+    var _private = {
+
+        holder              : _this,
+        body                : document.getElementsByTagName('body'),
+        modal               : document.querySelectorAll(".o-modal"),
+
+    }
+
+    setup = function () {
+
+
+    };
+
+    return {
+
+
+    };
+
+}());
+
+module.exports = function () {
+    return Object.create(oModal);
+};

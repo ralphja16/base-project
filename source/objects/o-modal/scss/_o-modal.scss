@@ -4,7 +4,15 @@
   CONFIG
 ============================================================================= */
 
-$modal-zindex:							1050;
+$o-modal-zindex:							1050;
+$o-modal-zindex-backdrop:					1040;
+$o-modal-dialog-width:						600px;
+$o-modal-content-bg:						$white;
+$o-modal-content-border:					1px solid $gray9;
+$o-modal-content-shadow:					rgba(0,0,0,.5);
+$o-modal-backdrop-bg:						rgba(0,0,0,0.3);
+$o-modal-backdrop-opacity: 					.5;
+
 
 
 /* =============================================================================
@@ -17,9 +25,95 @@ $modal-zindex:							1050;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: $modal-zindex;
+	z-index: $o-modal-zindex;
 	display: none;
 	overflow: hidden;
 	-webkit-overflow-scrolling: touch;
 	outline: 0;
+
+	// When fading in the modal, animate it to slide down
+	&.fade .o-modal__dialog {
+	    -webkit-transform: translate(0,-25%);
+	    -ms-transform: translate(0,-25%);
+	    -o-transform: translate(0,-25%);
+	    transform: translate(0,-25%);
+		@include transition(transform, .3s, ease-out);
+	}
+
+	&.in .modal-dialog {
+	    -webkit-transform: translate(0,0);
+	    -ms-transform: translate(0,0);
+	    -o-transform: translate(0,0);
+	    transform: translate(0,0);
+	}
+
+	// Class added on the body
+	&--open {
+		overflow: hidden;
+
+		.o-modal {
+			overflow-x: hidden;
+		    overflow-y: auto;
+		}
+	}
+
+	// Shell div to position the modal with bottom padding
+	&__dialog {
+		position: relative;
+		width: auto;
+		margin: $margin-small;
+
+		@include respond-to-min(sm) {
+			width: $o-modal-dialog-width;
+			margin: $margin-large auto;
+		}
+	}
+
+
+	// Actual modal
+	&__content {
+		position: relative;
+	    background-color: $o-modal-content-bg;
+	    -webkit-background-clip: padding-box;
+	    background-clip: padding-box;
+	    border: $o-modal-content-border;
+	    border-radius: 6px;
+	    outline: 0;
+	    -webkit-box-shadow: 0 3px 9px $o-modal-content-shadow;
+	    box-shadow: 0 3px 9px $o-modal-content-shadow;
+
+		@include respond-to-min(sm) {
+		    -webkit-box-shadow: 0 5px 15px $o-modal-content-shadow;
+		    box-shadow: 0 5px 15px $o-modal-content-shadow;
+		}
+	}
+
+	// Modal background
+	&__backdrop {
+		position: fixed;
+	  	top:    0;
+	  	right:  0;
+		bottom: 0;
+		left:   0;
+		z-index: $o-modal-zindex-backdrop;
+		background-color: $o-modal-backdrop-bg;
+
+	  // Fade for backdrop
+	  &.fade { @include opacity(0); }
+	  &.in { @include opacity($o-modal-backdrop-opacity); }
+	}
+}
+
+
+/* =============================================================================
+  STATES
+============================================================================= */
+
+.fade {
+	opacity: 0;
+	@include transition(opacity, .15s, linear);
+}
+
+.fade.in {
+    opacity: 1;
 }
