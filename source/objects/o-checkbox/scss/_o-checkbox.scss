@@ -4,10 +4,10 @@
 CONFIG
 ============================================================================= */
 
-$checkbox-border-color: 			$grayC;
-$checkbox-border-width: 			1px;
-$checkbox-radius:					3px;
-$checkmark-color:                   $succes-green;
+$checkbox-bg-color: 			    #ddd;
+$checkbox-bg-color-disabled:        #eee;
+$checkmark-color-disabled:          $gray6;
+$checkmark-color:                   $white;
 $checkmark-bg-color:                $succes-green;
 
 /* =============================================================================
@@ -32,43 +32,44 @@ input[type="checkbox"] {
         margin-bottom: 15px;
         cursor: pointer;
         font-size: 18px;
+        @include transition(background, .3s, ease);
 
         &:hover input ~ .o-checkbox__indicator,
         input:focus ~ .o-checkbox__indicator {
-            background: #ccc;
+            background: darken($checkbox-bg-color, 10%);
         }
 
         input:checked ~ .o-checkbox__indicator {
-          background: #2aa1c0;
+            background: $checkmark-bg-color;
         }
 
         &:hover input:not([disabled]):checked ~ .o-checkbox__indicator,
         input:checked:focus ~ .o-checkbox__indicator {
-          background: #0e647d;
+            background: darken($checkmark-bg-color, 10%);
         }
 
         input:disabled ~ .o-checkbox__indicator {
-          background: #e6e6e6;
-          opacity: 0.6;
-          pointer-events: none;
+            background: $checkbox-bg-color-disabled;
+            opacity: 0.6;
+            pointer-events: none;
         }
 
         input:checked ~ .o-checkbox__indicator:after {
-          display: block;
+            display: block;
         }
 
         .o-checkbox__indicator:after {
-          left: 8px;
-          top: 4px;
-          width: 3px;
-          height: 8px;
-          border: solid #fff;
-          border-width: 0 2px 2px 0;
-          transform: rotate(45deg);
+            left: 7px;
+            top: 4px;
+            width: 6px;
+            height: 10px;
+            border: solid $checkmark-color;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
         }
 
         input:disabled ~ .o-checkbox__indicator:after {
-          border-color: #7b7b7b;
+            border-color: $checkmark-color-disabled;
         }
     }
 
@@ -84,12 +85,13 @@ input[type="checkbox"] {
         left: 0;
         height: 20px;
         width: 20px;
-        background: #e6e6e6;
+        background: $checkbox-bg-color;
+        @include transition(background, .3s, ease);
 
         &:after {
-          content: '';
-          position: absolute;
-          display: none;
+            content: '';
+            position: absolute;
+            display: none;
         }
     }
 
