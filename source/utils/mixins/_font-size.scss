@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+/* =============================================================================
+MIXIN: CALCULATE FONTSIZE (PX & REM) BASED ON BASESIZE
+USEAGE: @include font-size(32);
+============================================================================= */
+
+@mixin font-size ($fontsize: $baseSize) {
+	font-size: $fontsize + px;
+	font-size: $fontsize / $baseSize + rem;
+}
