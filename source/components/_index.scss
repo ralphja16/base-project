@@ -1,10 +1,7 @@
 @charset "UTF-8";
 
 /* =============================================================================
-  OBJECTS IMPORTS
+  COMPONENTS IMPORTS
 ============================================================================= */
 
-@import "./o-buttons/scss/o-buttons";
-@import "./o-checkbox/scss/o-checkbox";
-@import "./o-form/scss/o-form";
-@import "./o-input-fields/scss/o-input-fields";
+@import "c-header/scss/c-header";

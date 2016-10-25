@@ -1,6 +1,6 @@
 jQuery.extend({
 
-    oModal: function(holder){
+    mModal: function(holder){
         'use strict';
 
         // VERSION : 150702
@@ -13,8 +13,8 @@ jQuery.extend({
             // PRIVATE OBJECTS
             holder              : _this,
             body                : $('body'),
-            backdrop            : $('<div class="o-modal__backdrop fade"></div>'),
-            modal               : $('.o-modal'),
+            backdrop            : $('<div class="m-modal__backdrop fade"></div>'),
+            modal               : $('.m-modal'),
 
             // PRIVATE FUNCTIONS
             setup:function() {
@@ -25,7 +25,7 @@ jQuery.extend({
             },
 
             showModal:function() {
-                _private.body.addClass('o-modal--open');
+                _private.body.addClass('m-modal--open');
 
                 _private.body.append(_private.backdrop);
                 _private.backdrop.addClass('in');
@@ -35,13 +35,13 @@ jQuery.extend({
             },
 
             closeModal:function() {
-                $('.o-modal').mousedown(function(e) {
+                $('.m-modal').mousedown(function(e) {
                     var clicked = $(e.target);
 
-                    if (clicked.is('.o-modal__content') || clicked.parents().is('.o-modal__content')) {
+                    if (clicked.is('.m-modal__content') || clicked.parents().is('.m-modal__content')) {
                         return;
                     } else {
-                        $('.o-modal').hide();
+                        $('.m-modal').hide();
                     }
 
                     console.log(clicked);
@@ -75,6 +75,6 @@ jQuery.extend({
 // $(function()
 // {
 //   $(document).ready(function(onReady){
-        var oModal = new $.oModal($('.o-btn[data-toggle="modal"]'));
+        var mModal = new $.mModal($('.m-btn[data-toggle="modal"]'));
 //     });
 // });
