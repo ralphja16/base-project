@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 // Utils
-@import "utils/variables",
-		"utils/mixins";
+@import "utils/vars/index",
+		"utils/mixins/index";
 
 // Vendors
 // @import "vendors/";
@@ -23,6 +23,9 @@
 
 // Modules
 @import "modules/index";
+
+// Components
+@import "components/index";
 
 // States
 @import "states/print";

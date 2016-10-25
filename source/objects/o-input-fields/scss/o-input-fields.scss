@@ -1,13 +1,14 @@
 @charset "UTF-8";
 
 /* =============================================================================
-  CONFIG
+CONFIG
 ============================================================================= */
 
 $input-field-radius:					3px;
 $input-field-background:				$white;
 $input-field-border-color:				$white;
 $input-field-color:						$black;
+$input-placeholder-color:				$gray6;
 $input-field-border-color:				$grayC;
 $input-field-border-width:				2px;
 
@@ -15,23 +16,43 @@ $input-field-label-color:				$black;
 
 
 /* =============================================================================
-  BASE
+BASE
 ============================================================================= */
 
-.input-field {
+input[type="text"] {
 	outline: 0;
-    width:  100%;
-    height: 36px;
-	display: block;
-    line-height: 1.4;
 	padding: 0.5em 0.75em;
-    background-image: none;
+	background-color: $white;
+	border: $input-field-border-width solid $input-field-border-color;
+	@include font-size(14);
+	@include border-radius($input-field-radius);
+	@include placeholder($input-placeholder-color);
+	@include transition(border-color, .15s, ease-in-out);
+
+	&:focus {
+		border-color: $blue;
+	}
+}
+
+/* =============================================================================
+CUSTOM INPUT FIELD
+============================================================================= */
+
+.o-input-field {
+	outline: 0; // DUBLICATE
+	width:  100%;
+	height: 36px;
+	display: block;
+	line-height: 1.4;
+	padding: 0.5em 0.75em; // DUBLICATE
+	background-image: none;
 	color: $input-field-color;
 	background-color: $input-field-background;
-    border: $input-field-border-width solid $input-field-border-color;
-	@include font-size(14);
-    @include border-radius($input-field-radius);
-    @include transition(border-color, .15s, ease-in-out);
+	border: $input-field-border-width solid $input-field-border-color; // DUBLICATE
+	@include placeholder($input-placeholder-color); // DUBLICATE
+	@include font-size(14); // DUBLICATE
+	@include border-radius($input-field-radius); // DUBLICATE
+	@include transition(border-color, .15s, ease-in-out); // DUBLICATE
 
 	&__label {
 		font-weight: 600;
