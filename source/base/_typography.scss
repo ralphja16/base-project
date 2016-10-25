@@ -5,6 +5,7 @@
 ============================================================================= */
 
 $font-family--primary:			$open-sans;
+$marked-bg-color:				#fcf899;
 
 
 /* =============================================================================
@@ -87,5 +88,5 @@ small {
 .mark,
 mark {
 	padding: .2em;
-	background-color: #fcf899;
+	background-color: $marked-bg-color;
 }
