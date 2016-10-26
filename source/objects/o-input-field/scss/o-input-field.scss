@@ -4,15 +4,21 @@
 CONFIG
 ============================================================================= */
 
-$input-field-radius:					3px;
-$input-field-background:				$white;
+$input-field-background:				#ddd;
 $input-field-border-color:				$white;
+$input-field--focus-border-color:		$blue;
 $input-field-color:						$black;
 $input-placeholder-color:				$gray6;
 $input-field-border-color:				$grayC;
-$input-field-border-width:				2px;
+$input-field-bg-color-disabled:        	#eee;
+
+$input-field-border-width:				2px; // This need the set because it's the same width for :focus
+$input-field-radius:					3px;
 
 $input-field-label-color:				$black;
+
+$input-border:							"false";
+$input-border-radius:					"false";
 
 
 /* =============================================================================
@@ -22,15 +28,27 @@ BASE
 input[type="text"] {
 	outline: 0;
 	padding: 0.5em 0.75em;
-	background-color: $white;
-	border: $input-field-border-width solid $input-field-border-color;
+	background-color: $input-field-background;
+	border: $input-field-border-width transparent solid;
+
+	@if $input-border == "true" {
+		border: $input-field-border-width solid $input-field-border-color;
+	}
+
+	@if $input-border-radius == "true" {
+		@include border-radius($input-field-radius);
+	}
+
 	@include font-size(14);
-	@include border-radius($input-field-radius);
 	@include placeholder($input-placeholder-color);
 	@include transition(border-color, .15s, ease-in-out);
 
 	&:focus {
-		border-color: $blue;
+		border-color: $input-field--focus-border-color;
+	}
+
+	&:disabled {
+		background: $input-field-bg-color-disabled;
 	}
 }
 
@@ -39,20 +57,11 @@ CUSTOM INPUT FIELD
 ============================================================================= */
 
 .o-input-field {
-	outline: 0; // DUBLICATE
 	width:  100%;
 	height: 36px;
 	display: block;
 	line-height: 1.4;
-	padding: 0.5em 0.75em; // DUBLICATE
 	background-image: none;
-	color: $input-field-color;
-	background-color: $input-field-background;
-	border: $input-field-border-width solid $input-field-border-color; // DUBLICATE
-	@include placeholder($input-placeholder-color); // DUBLICATE
-	@include font-size(14); // DUBLICATE
-	@include border-radius($input-field-radius); // DUBLICATE
-	@include transition(border-color, .15s, ease-in-out); // DUBLICATE
 
 	&__label {
 		font-weight: 600;

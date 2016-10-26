@@ -8,14 +8,14 @@ $radiobutton-bg-color:                 #ddd;
 $radiobutton-bg-color-disabled:        #eee;
 $checkmark-color-disabled:             $gray6;
 $checkmark-color:                      $white;
-$checked-color:                   $succes-green;
+$checked-color:                        $succes-green;
 
 /* =============================================================================
 BASE
 ============================================================================= */
 
 input[type="radio"] {
-    -webkit-appearance: radiobutton;
+    -webkit-appearance: radio;
     box-sizing: border-box;
 }
 

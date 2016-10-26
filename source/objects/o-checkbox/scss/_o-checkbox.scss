@@ -10,6 +10,9 @@ $checkmark-color-disabled:          $gray6;
 $checkmark-color:                   $white;
 $checkmark-bg-color:                $succes-green;
 
+$checkbox-border-radius:            3px;
+$checkbox-border-radius-enabled:    "true";
+
 /* =============================================================================
 BASE
 ============================================================================= */
@@ -87,6 +90,11 @@ input[type="checkbox"] {
         height: 20px;
         width: 20px;
         background: $checkbox-bg-color;
+
+        @if $checkbox-border-radius-enabled == "true" {
+            @include border-radius($checkbox-border-radius);
+        }
+
         @include transition(background, .3s, ease);
 
         &:after {

@@ -4,11 +4,9 @@
 CONFIG
 ============================================================================= */
 
-$radiobutton-bg-color:                 #ddd;
-$radiobutton-bg-color-disabled:        #eee;
-$checkmark-color-disabled:             $gray6;
-$checkmark-color:                      $white;
-$checked-color:                        $succes-green;
+$select-bg-color:                 #ddd;
+$select-color:                    $gray6;
+
 
 /* =============================================================================
 BASE
@@ -28,8 +26,8 @@ BASE
         outline: 0;
         border: 0;
         border-radius: 0;
-        background: #e6e6e6;
-        color: #7b7b7b;
+        background: $select-bg-color;
+        color: $select-color;
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -37,7 +35,7 @@ BASE
         &:hover,
         &:focus {
             color: $black;
-            background: $grayC;
+            background: darken($select-bg-color, 10%);
         }
     }
 
@@ -59,7 +57,7 @@ BASE
         pointer-events: none;
         border-style: solid;
         border-width: 8px 5px 0 5px;
-        border-color: #7b7b7b transparent transparent transparent;
+        border-color: $select-color transparent transparent transparent;
     }
 
     select:hover ~ .select__arrow,

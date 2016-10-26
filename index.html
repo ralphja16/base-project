@@ -266,6 +266,22 @@
 						</div>
 					</div>
 
+					<figure class="highlight">
+						<pre data-src="stylesheet.html" class="language-markup">
+							<code class="language-markup">
+								&lt;!-- Modal trigger button -->
+								&lt;button type="button" class="o-btn o-btn--primary" data-toggle="modal" data-target="#myModal">Launch&lt;/button>
+								<br>
+								&lt;!-- Modal window -->
+								&lt;div class="m-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+									&lt;div class="m-modal__dialog" role="document">
+										&lt;div class="m-modal__content">modal content&lt;/div>
+									&lt;/div>
+								&lt;/div>
+							</code>
+						</pre>
+					</figure>
+
 				</section>
 
 
@@ -274,8 +290,30 @@
 
 					<fieldset class="o-input-field__container">
 						<label for="uniqueID" class="o-input-field__label">Input label</label>
-						<input type="text" class="o-input-field" id="uniqueID">
+						<input type="text" class="o-input-field" id="uniqueID" placeholder="This is a placeholder">
 					</fieldset>
+
+					<fieldset class="o-input-field__container">
+						<label for="uniqueID" class="o-input-field__label">Input label</label>
+						<input type="text" class="o-input-field" id="uniqueID" placeholder="This is a placeholder" disabled="disabled">
+					</fieldset>
+
+					<figure class="highlight">
+						<pre data-src="stylesheet.html" class="language-markup">
+							<code class="language-markup">
+								&lt;fieldset class="o-input-field__container">
+									&lt;label for="uniqueID" class="o-input-field__label">Input label&lt;/label>
+									&lt;input type="text" class="o-input-field" id="uniqueID" placeholder="This is a placeholder">
+								&lt;/fieldset>
+								<br>
+								&lt;!-- Disabled input field -->
+								&lt;fieldset class="o-input-field__container">
+									&lt;label for="uniqueID" class="o-input-field__label">Input label&lt;/label>
+									&lt;input type="text" class="o-input-field" id="uniqueID" placeholder="This is a placeholder" disabled="disabled">
+								&lt;/fieldset>
+							</code>
+						</pre>
+					</figure>
 
 					<h2>Checkboxes</h2>
 
@@ -307,6 +345,44 @@
 						</label>
 					</fieldset>
 
+					<figure class="highlight">
+						<pre data-src="stylesheet.html" class="language-markup">
+							<code class="language-markup">
+								&lt;!-- Checkbox checked -->
+								&lt;fieldset class="o-checkbox__container">
+									&lt;label class="o-checkbox__label">First checkbox
+										&lt;input class="o-checkbox__input" type="checkbox" checked="checked"/>
+										&lt;div class="o-checkbox__indicator">&lt;/div>
+									&lt;/label>
+								&lt;/fieldset>
+								<br>
+								&lt;!-- Checkbox -->
+								&lt;fieldset class="o-checkbox__container">
+									&lt;label class="o-checkbox__label">Second checkbox
+										&lt;input class="o-checkbox__input" type="checkbox"/>
+										&lt;div class="o-checkbox__indicator">&lt;/div>
+									&lt;/label>
+								&lt;/fieldset>
+								<br>
+								&lt;!-- Checkbox disabled -->
+								&lt;fieldset class="o-checkbox__container">
+									&lt;label class="o-checkbox__label">Disabled
+										&lt;input class="o-checkbox__input" type="checkbox" disabled="disabled"/>
+										&lt;div class="o-checkbox__indicator">&lt;/div>
+									&lt;/label>
+								&lt;/fieldset>
+								<br>
+								&lt;!-- Checkbox disabled checked -->
+								&lt;fieldset class="o-checkbox__container">
+									&lt;label class="o-checkbox__label">Disabled &amp; checked
+										&lt;input class="o-checkbox__input" type="checkbox" disabled="disabled" checked="checked"/>
+										&lt;div class="o-checkbox__indicator">&lt;/div>
+									&lt;/label>
+								&lt;/fieldset>
+							</code>
+						</pre>
+					</figure>
+
 					<h2>Radiobuttons</h2>
 
 					<fieldset class="o-radiobutton__container">
@@ -334,6 +410,46 @@
 						</label>
 					</fieldset>
 
+					<figure class="highlight">
+						<pre data-src="stylesheet.html" class="language-markup">
+							<code class="language-markup">
+
+								&lt;!-- Radiobutton checked -->
+								&lt;fieldset class="o-radiobutton__container">
+									&lt;label class="o-radiobutton__label">First radio
+										&lt;input class="o-radiobutton__input" type="radio" name="radio" checked="checked"/>
+										&lt;div class="o-radiobutton__indicator">&lt;/div>
+									&lt;/label>
+								&lt;/fieldset>
+								<br>
+								&lt;!-- Radiobutton -->
+								&lt;fieldset class="o-radiobutton__container">
+									&lt;label class="o-radiobutton__label">Second radio
+										&lt;input class="o-radiobutton__input" type="radio" name="radio"/>
+										&lt;div class="o-radiobutton__indicator">&lt;/div>
+									&lt;/label>
+								&lt;/fieldset>
+								<br>
+								&lt;!-- Radiobutton disabled -->
+								&lt;fieldset class="o-radiobutton__container">
+									&lt;label class="o-radiobutton__label">Disabled
+										&lt;input class="o-radiobutton__input" type="radio" name="radio2" disabled="disabled"/>
+										&lt;div class="o-radiobutton__indicator">&lt;/div>
+									&lt;/label>
+								&lt;/fieldset>
+								<br>
+								&lt;!-- Radiobutton disabled checked -->
+								&lt;fieldset class="o-radiobutton__container">
+									&lt;label class="o-radiobutton__label">Disabled &amp; checked
+										&lt;input class="o-radiobutton__input" type="radio" name="radio2" disabled="disabled" checked="checked"/>
+										&lt;div class="o-radiobutton__indicator">&lt;/div>
+									&lt;/label>
+								&lt;/fieldset>
+								&lt;/fieldset>
+							</code>
+						</pre>
+					</figure>
+
 					<h2>Select boxes</h2>
 
 					<div class="o-select">
@@ -346,22 +462,6 @@
 					</div>
 
 					<div class="o-select">
-						<select>
-							<option>First select</option>
-							<option>Option</option>
-							<option>Option</option>
-						</select>
-						<div class="o-select__arrow"></div>
-					</div>
-					<div class="o-select">
-						<select>
-							<option>Second select</option>
-							<option>Option</option>
-							<option>Option</option>
-						</select>
-						<div class="o-select__arrow"></div>
-					</div>
-					<div class="o-select">
 						<select disabled="disabled">
 							<option>Disabled</option>
 							<option>Option</option>
@@ -369,6 +469,40 @@
 						</select>
 						<div class="o-select__arrow"></div>
 					</div>
+
+
+					<figure class="highlight">
+						<pre data-src="stylesheet.html" class="language-markup">
+							<code class="language-markup">
+								&lt;!-- Selectbox -->
+								&lt;div class="o-select">
+									&lt;select>
+										&lt;option>First select&lt;/option>
+										&lt;option>Option&lt;/option>
+										&lt;option>Option&lt;/option>
+									&lt;/select>
+									&lt;div class="o-select__arrow">&lt;/div>
+								&lt;/div>
+
+								<br>
+								&lt;!-- Selectbox disabled -->
+								&lt;div class="o-select">
+									&lt;select disabled="disabled">
+										&lt;option>Disabled&lt;/option>
+										&lt;option>Option&lt;/option>
+										&lt;option>Option&lt;/option>
+									&lt;/select>
+									&lt;div class="o-select__arrow">&lt;/div>
+								&lt;/div>
+							</code>
+						</pre>
+					</figure>
+				</section>
+
+				<section>
+
+					<h1>Images</h1>
+					<!-- <img sizes="(min-width: 40em) 80vw, 100vw” srcset="http://placehold.it/400x175 400w, http://placehold.it/800x350 800w, http://placehold.it/1200x625 1200w" alt="Obama”> -->
 				</section>
 			</div>
 		</main>

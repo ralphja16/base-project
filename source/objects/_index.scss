@@ -4,9 +4,13 @@
   OBJECTS IMPORTS
 ============================================================================= */
 
-@import "./o-buttons/scss/o-buttons";
+@import "./o-button/scss/o-button";
 @import "./o-checkbox/scss/o-checkbox";
 @import "./o-form/scss/o-form";
-@import "./o-input-fields/scss/o-input-fields";
-@import "./o-radiobuttons/scss/o-radiobuttons";
+@import "./o-image/scss/o-image";
+@import "./o-input-field/scss/o-input-field";
+@import "./o-pagination/scss/o-pagination";
+@import "./o-radiobutton/scss/o-radiobutton";
 @import "./o-select/scss/o-select";
+@import "./o-table/scss/o-table";
+@import "./o-tooltip/scss/o-tooltip";
