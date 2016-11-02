@@ -39,7 +39,7 @@ input[type="text"] {
 		@include border-radius($input-field-radius);
 	}
 
-	@include font-size(14);
+	@include rem(14);
 	@include placeholder($input-placeholder-color);
 	@include transition(border-color, .15s, ease-in-out);
 
@@ -68,7 +68,7 @@ CUSTOM INPUT FIELD
 		display: inline-block;
 		padding-bottom: $padding-xsmall;
 		color: $input-field-label-color;
-		@include font-size(16);
+		@include rem(16);
 	}
 
 	// Input container

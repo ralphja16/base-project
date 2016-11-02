@@ -36,7 +36,7 @@ $button-radius:					3px;
     border: 1px solid transparent;
     @include border-radius($button-radius);
 	@include transition(all, 200ms, ease-in-out);
-	@include font-size(14);
+	@include rem(14);
 }
 
 .o-btn--primary {
