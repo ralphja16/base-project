@@ -59,9 +59,7 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start karma.conf.js --single-run",
-    "twatch": "./node_modules/karma/bin/karma start karma.conf.js",
-    "codecov": "cat ./coverage/*/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js"
+    "test": "karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
