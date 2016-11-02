@@ -2,10 +2,10 @@
 
 /* =============================================================================
 MIXIN: CALCULATE FONTSIZE (PX & REM) BASED ON BASESIZE
-USEAGE: @include font-size(32);
+USEAGE: @include rem(32);
 ============================================================================= */
 
-@mixin font-size ($fontsize: $baseSize) {
+@mixin rem ($fontsize: $baseSize) {
 	font-size: $fontsize + px;
 	font-size: $fontsize / $baseSize + rem;
 }
