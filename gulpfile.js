@@ -4,6 +4,7 @@ var gulp 			= require('gulp'),
 	sass			= require('gulp-sass'),
 	concat			= require('gulp-concat'),
 	jshint			= require('gulp-jshint'),
+	eslint 			= require('gulp-eslint');
 	uglify			= require('gulp-uglify'),
 	rename			= require('gulp-rename'),
 	stylish			= require('jshint-stylish'),
@@ -19,7 +20,8 @@ var gulp 			= require('gulp'),
 	reporter 		= require('postcss-reporter'),
 	cssgrace 		= require('cssgrace'),
 	stylelint 		= require('stylelint'),
-	cssnano			= require('gulp-cssnano')
+	babel 			= require('gulp-babel'),
+	cssnano			= require('gulp-cssnano'),
 	mochaPhantomJS  = require('gulp-mocha-phantomjs');
 
 var runTimestamp 	= Math.round(Date.now()/1000);
@@ -96,11 +98,24 @@ gulp.task('js', function(){
 	gulp.src(paths.js)
 		// Initialize Sourcemaps
 		.pipe(sourcemaps.init())
+		// Babel compiling
+		.pipe(babel({
+            presets: ['es2015']
+        }))
 		// Check for errors
 		.pipe(plumber())
-		// Check on syntax errors
-		.pipe(jshint())
-		.pipe(jshint.reporter(stylish))
+		// // Check on syntax errors
+		// .pipe(jshint())
+		// .pipe(jshint.reporter(stylish))
+		// eslint() attaches the lint output to the "eslint" property
+	   // of the file object so it can be used by other modules.
+	   .pipe(eslint())
+	   // eslint.format() outputs the lint results to the console.
+	   // Alternatively use eslint.formatEach() (see Docs).
+	   .pipe(eslint.format())
+	   // To have the process exit with an error code (1) on
+	   // lint error, return the stream and pipe to failAfterError last.
+	//    .pipe(eslint.failAfterError())
 		// Concatenate all JS files into one
 		.pipe(concat('main.min.js'))
 		//Stop plumber errors
@@ -116,6 +131,10 @@ gulp.task('js_deploy', function(){
 	gulp.src(paths.js)
 		// Initialize Sourcemaps
 		.pipe(sourcemaps.init())
+		// Babel compiling
+		.pipe(babel({
+            presets: ['es2015']
+        }))
 		// Check for errors
 		.pipe(plumber())
 		// Check on syntax errors

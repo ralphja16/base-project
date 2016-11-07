@@ -1,8 +1,10 @@
+const oDropdown = require('../../source/objects/o-dropdown/js/o-dropdown.js');
+
 describe('object Dropdown', function() {
 
     // inject the HTML fixture for the tests
     beforeEach(function() {
-        var fixture = '<div class="o-dropdown">' +
+        var fixture = '<div id="fixture" class="o-dropdown">' +
             '<button class="o-btn o-dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
                 'Dropdown' +
                 '<span class="caret"></span>' +
@@ -23,9 +25,7 @@ describe('object Dropdown', function() {
 
     // remove the html fixture from the DOM
     afterEach(function() {
-        var child = document.querySelectorAll('o-dropdown');
-        // child.remove();
-        document.body.removeChild(child);
+        document.body.removeChild(document.getElementById('fixture'));
     });
 
     // call the init function of calculator to register DOM elements
@@ -34,8 +34,31 @@ describe('object Dropdown', function() {
     });
 
 
-    it('Function o-dropdown should exist', function() {
+    // before(function(){
+    //     fixture.setBase('test/fixtures')
+    //   });
+    //
+    //   beforeEach(function(){
+    //     this.result = fixture.load('o-dropdown.fixture.html');
+    //   });
+    //
+    //   afterEach(function(){
+    //     fixture.cleanup()
+    //   });
+
+    var holder          = document.querySelector('.o-dropdown');
+    var dropdownButton  = document.querySelector('.o-dropdown-toggle');
+
+
+    it('should exist', function() {
         expect(oDropdown).not.to.be.undefined;
     });
+
+    it('should addClass .is--open after clicking', function() {
+        document.querySelector('.o-dropdown-toggle').click();
+        expect(document.querySelector('.o-dropdown')).to.have.class('is--open');
+    });
+
+
 
 });
