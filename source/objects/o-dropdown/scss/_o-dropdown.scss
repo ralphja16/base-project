@@ -20,6 +20,13 @@ BASE
 .o-dropdown {
     position: relative;
 
+    // Caret
+    .caret {
+        display: inline-block;
+        @include rem(12);
+        @include transition(all, .3s, ease);
+    }
+
     &__menu {
         position: absolute;
         top: 100%;
@@ -72,8 +79,12 @@ BASE
     //  open state
     &.is--open {
 
-        >.o-dropdown-menu {
+        >.o-dropdown__menu {
             display: block;
+        }
+
+        .caret {
+            transform: rotate(180deg);
         }
     }
 }

@@ -1,38 +1,22 @@
+'use strict';
+
 var oDropdown = (function () {
-    'use strict';
 
+    let     holder          = document.querySelector('.o-dropdown'),
+            dropdownButton  = document.querySelector('.o-dropdown-toggle');
 
-    var _private = {
-        holder          : document.getElementsByClassName('o-dropdown'),
-        dropdownButton  : document.getElementsByClassName('o-dropdown-toggle'),
-        dropdownMenu    : document.getElementsByClassName('o-dropdown__menu'),
-    },
-
-    swallow = function () {
-        console.log("swallow");
-    },
-
-    eat = function () {
-
-
-
+    let triggerClickListener = () => {
+        dropdownButton.onclick = () => {
+            holder.classList.toggle('is--open');
+        };
     };
 
     return {
 
-        _private: _private,
-
-        eat: eat,
-
-        swallow: swallow
+        triggerClickListener: triggerClickListener
 
     };
 
 }());
-// console.log(oDropdown)
 
-// oDropdown.eat();
-//
-// oDropdown.chew();
-//
-// oDropdown.swallow();
+oDropdown.triggerClickListener();
