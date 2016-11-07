@@ -58,7 +58,6 @@ CUSTOM INPUT FIELD
 
 .o-input-field {
 	width:  100%;
-	height: 36px;
 	display: block;
 	line-height: 1.4;
 	background-image: none;
@@ -74,5 +73,12 @@ CUSTOM INPUT FIELD
 	// Input container
 	&__container {
 
+	}
+
+	// Small input field
+	&.o-input-field--sm {
+		min-height: 26px;
+		padding: 0.25em 0.5em;
+		@include rem(12);
 	}
 }

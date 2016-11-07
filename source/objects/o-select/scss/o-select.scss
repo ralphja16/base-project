@@ -68,4 +68,18 @@ BASE
     select:disabled ~ .select__arrow {
         border-top-color: $grayC;
     }
+
+    // Small selectbox field
+	&.o-select--sm {
+
+		select {
+            min-height: 26px;
+    		padding: 0.25em 0.5em;
+    		@include rem(12);
+        }
+
+        .o-select__arrow {
+            top: 8px;
+        }
+	}
 }

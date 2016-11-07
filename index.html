@@ -88,6 +88,7 @@
 
 				<section>
 					<button type="button" class="o-btn o-btn--primary">Primary</button>
+					<a href="#" role="button" class="o-btn o-btn--primary">Anchor button</a>
 					<button type="button" class="o-btn o-btn--secondary">Secundary</button>
 
 					<figure class="highlight">
@@ -95,6 +96,8 @@
 							<code class="language-markup">
 								&lt;!-- Primary button -->
 								&lt;button type="button" class="o-btn o-btn--primary">Primary&lt;/button>
+								&lt;!-- Anchor button -->
+								&lt;a href="#" role="button" class="o-btn o-btn--primary">Primary anchor&lt;/a>
 								&lt;!-- Secundary button -->
 								&lt;button type="button" class="o-btn o-btn--secondary">Secundary&lt;/button>
 							</code>
@@ -259,10 +262,16 @@
 
 				<section>
 					<h2>Modals</h2>
-					<button type="button" class="o-btn o-btn--primary" data-toggle="modal" data-target="#myModal">Launch</button>
-					<div class="m-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<button type="button" class="o-btn o-btn--primary m-modal__trigger" data-modal="#myModal">Launch</button>
+					<div class="m-modal m-modal__bg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="m-modal__dialog" role="document">
-							<div class="m-modal__content">modal content</div>
+							<div class="m-modal__content">
+								<h1>Modal title</h1>
+								<p>modal content</p>
+								<a href="" class="modal__close">
+									<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+								</a>
+							</div>
 						</div>
 					</div>
 
@@ -293,8 +302,13 @@
 					</fieldset>
 
 					<fieldset class="o-input-field__container">
-						<label for="uniqueID" class="o-input-field__label">Input label</label>
-						<input type="text" class="o-input-field" id="uniqueID" placeholder="This is a placeholder" disabled="disabled">
+						<label for="uniqueID2" class="o-input-field__label">Input label disabled</label>
+						<input type="text" class="o-input-field" id="uniqueID2" placeholder="This is a placeholder" disabled="disabled">
+					</fieldset>
+
+					<fieldset class="o-input-field__container">
+						<label for="uniqueID3" class="o-input-field__label">Small input label</label>
+						<input type="text" class="o-input-field o-input-field--sm" id="uniqueID3" placeholder="This is a placeholder">
 					</fieldset>
 
 					<figure class="highlight">
@@ -307,8 +321,14 @@
 								<br>
 								&lt;!-- Disabled input field -->
 								&lt;fieldset class="o-input-field__container">
-								&lt;label for="uniqueID" class="o-input-field__label">Input label&lt;/label>
-								&lt;input type="text" class="o-input-field" id="uniqueID" placeholder="This is a placeholder" disabled="disabled">
+								&lt;label for="uniqueID2" class="o-input-field__label">Input label disabled&lt;/label>
+								&lt;input type="text" class="o-input-field" id="uniqueID2" placeholder="This is a placeholder" disabled="disabled">
+								&lt;/fieldset>
+								<br>
+								&lt;!-- Small input field -->
+								&lt;fieldset class="o-input-field__container">
+								&lt;label for="uniqueID3" class="o-input-field__label">Small input label&lt;/label>
+								&lt;input type="text" class="o-input-field o-inpit-field--sm" id="uniqueID3" placeholder="This is a placeholder">
 								&lt;/fieldset>
 							</code>
 						</pre>
@@ -468,6 +488,15 @@
 						<div class="o-select__arrow"></div>
 					</div>
 
+					<div class="o-select o-select--sm">
+						<select>
+							<option>First select small</option>
+							<option>Option</option>
+							<option>Option</option>
+						</select>
+						<div class="o-select__arrow"></div>
+					</div>
+
 
 					<figure class="highlight">
 						<pre data-src="stylesheet.html" class="language-markup">
@@ -509,7 +538,7 @@
 					<div class="o-dropdown">
 						<button class="o-btn o-dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Dropdown
-							<span class="caret"></span>
+							<span class="caret">&#9660;</span>
 						</button>
 						<ul class="o-dropdown__menu" aria-labelledby="dropdownMenu1">
 							<li><a href="#">Action</a></li>
