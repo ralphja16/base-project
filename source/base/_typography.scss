@@ -6,6 +6,8 @@
 
 $font-family--primary:			$open-sans;
 $marked-bg-color:				#fcf899;
+$blockquote-border:				$gray9;
+$blockquote-text-color:			$gray3;
 
 
 /* =============================================================================
@@ -89,4 +91,11 @@ small {
 mark {
 	padding: .2em;
 	background-color: $marked-bg-color;
+}
+
+blockquote {
+	margin: 0;
+	padding: 0 $padding-medium;
+	color: $blockquote-text-color;
+	border-left: 4px solid $blockquote-border;
 }
