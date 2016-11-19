@@ -4,6 +4,7 @@
   CONFIG
 ============================================================================= */
 
+$module-name: 								'modal';
 $m-modal-zindex:							1050;
 $m-modal-zindex-backdrop:					1040;
 $m-modal-dialog-width:						600px;
@@ -19,7 +20,7 @@ $m-modal-backdrop-opacity: 					.5;
   BASE
 ============================================================================= */
 
-.m-modal {
+.m-#{$module-name} {
 	position: fixed;
 	top: 0;
 	right: 0;
