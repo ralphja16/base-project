@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$module-name: 						        'tabs';
+$m-tabs-border-width:                       1px;
+$m-tabs-border-color:                       $grayC;
+
+
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+.m-#{$module-name} {
+    margin-bottom: -1px;
+
+    &-nav {
+        margin-top: 0;
+        margin-bottom: $margin-medium;
+        border-bottom: $m-tabs-border-width solid $m-tabs-border-color;
+    }
+
+    &__item {
+        color: $gray6;
+        line-height: 20px;
+        border-bottom: 0;
+        padding: 0.5em 0.75em;
+        display: inline-block;
+        text-decoration: none;
+        background-color: transparent;
+        border: $m-tabs-border-width solid transparent;
+
+        &--selected {
+            color: $gray3;
+            background-color: $grayC;
+            border-color: #ddd;
+            border-radius: 3px 3px 0 0;
+        }
+    }
+}
