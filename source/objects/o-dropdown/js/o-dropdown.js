@@ -11,12 +11,14 @@ var oDropdown = (function () {
         };
     };
 
+    var init = () => {
+        triggerClickListener();
+    };
+
     return {
-
-        triggerClickListener: triggerClickListener
-
+        init: init,
     };
 
 }());
 
-oDropdown.triggerClickListener();
+oDropdown.init();

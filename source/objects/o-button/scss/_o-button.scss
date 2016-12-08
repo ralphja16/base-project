@@ -1,9 +1,11 @@
 @charset "UTF-8";
 
+
 /* =============================================================================
   CONFIG
 ============================================================================= */
 
+$object-name: 					'btn';
 $button-fontcolor: 				$white;
 $button-background--primary:	$blue;
 $button-background--secondary:	$succes-green;
@@ -14,7 +16,7 @@ $button-radius:					3px;
   BASE
 ============================================================================= */
 
-.o-btn {
+.o-#{$object-name} {
 	color: $black;
 	display: inline-block;
     padding: 0.5em 0.75em;
@@ -39,7 +41,7 @@ $button-radius:					3px;
 	@include rem(14);
 }
 
-.o-btn--primary {
+.o-#{$object-name}--primary {
 	color: $button-fontcolor;
 	background: $button-background--primary;
 
@@ -48,7 +50,7 @@ $button-radius:					3px;
 	}
 }
 
-.o-btn--secondary {
+.o-#{$object-name}--secondary {
 	color: $button-fontcolor;
 	background: $button-background--secondary;
 

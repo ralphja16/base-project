@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* =============================================================================
-  CONFIG
+CONFIG
 ============================================================================= */
 
 $module-name: 								'modal';
@@ -17,7 +17,7 @@ $m-modal-backdrop-opacity: 					.5;
 
 
 /* =============================================================================
-  BASE
+BASE
 ============================================================================= */
 
 .m-#{$module-name} {
@@ -32,11 +32,13 @@ $m-modal-backdrop-opacity: 					.5;
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-  	transform: translate(0, -800px);
-  	transition: .5s ease-in-out;
+	visibility: hidden;
+	transform: translate(0, -800px);
+	transition: .5s ease-in-out;
 
 	&.is__open{
-	  transform: translate(0, 0);
+		transform: translate(0, 0);
+		visibility: visible; 
 	}
 
 	// Class added on the body
@@ -45,7 +47,7 @@ $m-modal-backdrop-opacity: 					.5;
 
 		.m-modal {
 			overflow-x: hidden;
-		    overflow-y: auto;
+			overflow-y: auto;
 		}
 	}
 
@@ -65,40 +67,40 @@ $m-modal-backdrop-opacity: 					.5;
 	// Actual modal
 	&__content {
 		position: relative;
-	    background-color: $m-modal-content-bg;
-	    -webkit-background-clip: padding-box;
-	    background-clip: padding-box;
-	    border: $m-modal-content-border;
-	    border-radius: 6px;
-	    outline: 0;
-	    -webkit-box-shadow: 0 3px 9px $m-modal-content-shadow;
-	    box-shadow: 0 3px 9px $m-modal-content-shadow;
+		background-color: $m-modal-content-bg;
+		-webkit-background-clip: padding-box;
+		background-clip: padding-box;
+		border: $m-modal-content-border;
+		border-radius: 6px;
+		outline: 0;
+		-webkit-box-shadow: 0 3px 9px $m-modal-content-shadow;
+		box-shadow: 0 3px 9px $m-modal-content-shadow;
 
 		@include respond-to-min(sm) {
-		    -webkit-box-shadow: 0 5px 15px $m-modal-content-shadow;
-		    box-shadow: 0 5px 15px $m-modal-content-shadow;
+			-webkit-box-shadow: 0 5px 15px $m-modal-content-shadow;
+			box-shadow: 0 5px 15px $m-modal-content-shadow;
 		}
 	}
 
 	// Modal background
 	&__backdrop {
 		position: fixed;
-	  	top:    0;
-	  	right:  0;
+		top:    0;
+		right:  0;
 		bottom: 0;
 		left:   0;
 		z-index: $m-modal-zindex-backdrop;
 		background-color: $m-modal-backdrop-bg;
 
-	  // Fade for backdrop
-	  &.fade { @include opacity(0); }
-	  &.in { @include opacity($m-modal-backdrop-opacity); }
+		// Fade for backdrop
+		&.fade { @include opacity(0); }
+		&.in { @include opacity($m-modal-backdrop-opacity); }
 	}
 }
 
 
 /* =============================================================================
-  STATES
+STATES
 ============================================================================= */
 
 .fade {
@@ -107,5 +109,5 @@ $m-modal-backdrop-opacity: 					.5;
 }
 
 .fade.in {
-    opacity: 1;
+	opacity: 1;
 }

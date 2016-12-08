@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Stylesheet for project</title>
 	<link rel="stylesheet" href="./public/library/css/main.css">
 	<link rel="stylesheet" href="./source/stylesheet/stylesheet.css">
 	<link href="./source/stylesheet/prism.css" rel="stylesheet" />
@@ -22,17 +22,31 @@
 		<main id="l-content">
 			<div class="l-container">
 				<div class="col-xxs-4">
-					<nav>
-						<ul>
-							<li>Scaffolding</li>
-							<li>Scaffolding</li>
-							<li>Scaffolding</li>
-							<li>Scaffolding</li>
-						</ul>
+					<h3>Contents</h3>
+					<nav id="docs-menu">
+						<a class="menu-item" href="#headings">Headings</a>
+						<a class="menu-item" href="#typography">Typography</a>
+						<a class="menu-item" href="#blockquote">Blockquote</a>
+						<a class="menu-item" href="#lists">Lists</a>
+						<a class="menu-item" href="#buttons">Buttons</a>
+						<a class="menu-item" href="#grid">Grid</a>
+						<a class="menu-item" href="#nestedgrid">Nested Grid</a>
+						<a class="menu-item" href="#tables">Tables</a>
+						<a class="menu-item" href="#modals">Modals</a>
+						<a class="menu-item" href="#inputfields">Input Fields</a>
+						<a class="menu-item" href="#checkboxes">Checkboxes</a>
+						<a class="menu-item" href="#radiobuttons">Radiobuttons</a>
+						<a class="menu-item" href="#selectboxes">Select boxes</a>
+						<a class="menu-item" href="#images">Images</a>
+						<a class="menu-item" href="#dropdowns">Dropdowns</a>
+						<a class="menu-item" href="#pagination">Pagination</a>
+						<a class="menu-item" href="#tabs">Tabs</a>
 					</nav>
 				</div>
 				<div class="col-xxs-8">
-					<section>
+					<section id="headings clearfix">
+						<h2 class="section__title">Headings</h2>
+
 						<h1>Heading 1</h1>
 						<h2>Heading 2</h2>
 						<h3>Heading 3</h3>
@@ -52,6 +66,9 @@
 								</code>
 							</pre>
 						</figure>
+					</section>
+					<section id="typography">
+						<h2 class="section__title">Typography</h2>
 
 						<p>Paragraph</p>
 						<small>Small text</small>
@@ -98,7 +115,155 @@
 						</figure>
 					</section>
 
-					<section>
+					<section id="blockquote">
+						<h2 class="section__title">Blockquote</h2>
+						<blockquote>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+						</blockquote>
+
+
+						<figure class="highlight">
+							<pre data-src="stylesheet.html" class="language-markup">
+								<code class="language-markup">
+
+									&lt;blockquote>
+									&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p>
+									&lt;/blockquote>
+								</code>
+							</pre>
+						</figure>
+					</section>
+
+					<section id="lists">
+						<h2 class="section__title">Unorderd list</h2>
+						<ul>
+							<li>Lorem ipsum dolor sit amet</li>
+							<li>Nulla volutpat aliquam velit
+								<ul>
+									<li>Phasellus iaculis neque</li>
+									<li>Purus sodales ultricies</li>
+									<li>Vestibulum laoreet porttitor sem</li>
+									<li>Ac tristique libero volutpat at</li>
+								</ul>
+							</li>
+							<li>Faucibus porta lacus fringilla vel</li>
+							<li>Aenean sit amet erat nunc</li>
+							<li>Eget porttitor lorem</li>
+						</ul>
+
+
+						<figure class="highlight">
+							<pre data-src="stylesheet.html" class="language-markup">
+								<code class="language-markup">
+									&lt;ul>
+									&lt;li>Lorem ipsum dolor sit amet&lt;/li>
+									&lt;li>Nulla volutpat aliquam velit
+									&lt;ul>
+									&lt;li>Phasellus iaculis neque&lt;/li>
+									&lt;li>Purus sodales ultricies&lt;/li>
+									&lt;li>Vestibulum laoreet porttitor sem&lt;/li>
+									&lt;li>Ac tristique libero volutpat at&lt;/li>
+									&lt;/ul>
+									&lt;/li>
+									&lt;li>Faucibus porta lacus fringilla vel&lt;/li>
+									&lt;li>Aenean sit amet erat nunc&lt;/li>
+									&lt;li>Eget porttitor lorem&lt;/li>
+									&lt;/ul>
+								</code>
+							</pre>
+						</figure>
+
+						<h2 class="section__title">Orderd list</h2>
+						<ol>
+							<li>Lorem ipsum dolor sit amet</li>
+							<li>Nulla volutpat aliquam velit
+								<ol>
+									<li>Phasellus iaculis neque</li>
+									<li>Purus sodales ultricies</li>
+									<li>Vestibulum laoreet porttitor sem</li>
+									<li>Ac tristique libero volutpat at</li>
+								</ol>
+							</li>
+							<li>Faucibus porta lacus fringilla vel</li>
+							<li>Aenean sit amet erat nunc</li>
+							<li>Eget porttitor lorem</li>
+						</ol>
+
+
+						<figure class="highlight">
+							<pre data-src="stylesheet.html" class="language-markup">
+								<code class="language-markup">
+									&lt;ol>
+									&lt;li>Lorem ipsum dolor sit amet&lt;/li>
+									&lt;li>Nulla volutpat aliquam velit
+									&lt;ol>
+									&lt;li>Phasellus iaculis neque&lt;/li>
+									&lt;li>Purus sodales ultricies&lt;/li>
+									&lt;li>Vestibulum laoreet porttitor sem&lt;/li>
+									&lt;li>Ac tristique libero volutpat at&lt;/li>
+									&lt;/ol>
+									&lt;/li>
+									&lt;li>Faucibus porta lacus fringilla vel&lt;/li>
+									&lt;li>Aenean sit amet erat nunc&lt;/li>
+									&lt;li>Eget porttitor lorem&lt;/li>
+									&lt;/ol>
+								</code>
+							</pre>
+						</figure>
+
+
+						<h2 class="section__title">Inline list</h2>
+						<ul class="o-list--inline">
+							<li>Lorem ipsum dolor sit amet</li>
+							<li>Aenean sit amet erat nunc</li>
+							<li>Eget porttitor lorem</li>
+						</ul>
+
+
+						<figure class="highlight">
+							<pre data-src="stylesheet.html" class="language-markup">
+								<code class="language-markup">
+
+								</code>
+							</pre>
+						</figure>
+
+						<h2 class="section__title">Description list</h2>
+						<dl>
+							<dt>Description lists</dt>
+							<dd>A description list is perfect for defining terms.</dd>
+							<dt>Euismod</dt>
+							<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+							<dd>Donec id elit non mi porta gravida at eget metus.</dd>
+							<dt>Malesuada porta</dt>
+							<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+						</dl>
+
+
+						<figure class="highlight">
+							<pre data-src="stylesheet.html" class="language-markup">
+								<code class="language-markup">
+
+								</code>
+							</pre>
+						</figure>
+
+						<h2 class="section__title">Horizontal descriptionlist</h2>
+						<dl class="o-dl--horizontal">
+							<dt>Description lists</dt>
+							<dd>A description list is perfect for defining terms.</dd>
+							<dt>Euismod</dt>
+							<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+							<dd>Donec id elit non mi porta gravida at eget metus.</dd>
+							<dt>Malesuada porta</dt>
+							<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+							<dt>Felis euismod semper eget lacinia</dt>
+							<dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+						</dl>
+					</section>
+
+					<section id="buttons">
+						<h2 class="section__title">Buttons</h2>
 						<button type="button" class="o-btn o-btn--primary">Primary</button>
 						<a href="#" role="button" class="o-btn o-btn--primary">Anchor button</a>
 						<button type="button" class="o-btn o-btn--secondary">Secundary</button>
@@ -117,8 +282,8 @@
 						</figure>
 					</section>
 
-					<section>
-						<h2>Grid With No modifiers</h2>
+					<section id="grid">
+						<h2 class="section__title">Grid With No modifiers</h2>
 
 						<div class="l-grid">
 							<div class="l-grid__row">
@@ -200,8 +365,8 @@
 						</figure>
 					</section>
 
-					<section>
-						<h2>Grid With Nested Grid</h2>
+					<section id="nestedgrid">
+						<h2 class="section__title">Grid With Nested Grid</h2>
 
 						<div class="l-grid">
 							<div class="l-grid__row">
@@ -272,14 +437,62 @@
 						</figure>
 					</section>
 
-					<section>
-						<h2>Modals</h2>
+					<section id="tables">
+						<h2 class="section__title">Tables</h2>
+						<table class="o-table">
+							<caption>Optional table caption.</caption>
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>First Name</th>
+									<th>Last Name</th>
+									<th>Username</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Mark</td>
+									<td>Otto</td>
+									<td>@mdo</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Jacob</td>
+									<td>Thornton</td>
+									<td>@fat</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>Larry</td>
+									<td>the Bird</td>
+									<td>@twitter</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section id="modals">
+						<h2 class="section__title">Modals</h2>
 						<button type="button" class="o-btn o-btn--primary js--m-modal__trigger" data-modal="#myModal1">Launch 1</button>
 						<div class="m-modal m-modal__bg" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 							<div class="m-modal__dialog" role="document">
 								<div class="m-modal__content">
 									<h1>Modal title 1</h1>
 									<p>modal content1</p>
+									<a href="javascript:void(0)" class="m-modal__close">
+										<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<button type="button" class="o-btn o-btn--primary js--m-modal__trigger" data-modal="#myModal2">Launch 2</button>
+						<div class="m-modal m-modal__bg" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="m-modal__dialog" role="document">
+								<div class="m-modal__content">
+									<h1>Modal title 2</h1>
+									<p>modal content2</p>
 									<a href="javascript:void(0)" class="m-modal__close">
 										<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
 									</a>
@@ -305,8 +518,8 @@
 
 					</section>
 
-					<section>
-						<h2>Input fields</h2>
+					<section id="inputfields">
+						<h2 class="section__title">Input fields</h2>
 
 						<fieldset class="o-input-field__container">
 							<label for="uniqueID" class="o-input-field__label">Input label</label>
@@ -345,8 +558,9 @@
 								</code>
 							</pre>
 						</figure>
-
-						<h2>Checkboxes</h2>
+					</section>
+					<section id="checkboxes">
+						<h2 class="section__title">Checkboxes</h2>
 
 						<fieldset class="o-checkbox__container">
 							<label class="o-checkbox__label">First checkbox
@@ -413,8 +627,10 @@
 								</code>
 							</pre>
 						</figure>
+					</section>
+					<section id="radiobuttons">
 
-						<h2>Radiobuttons</h2>
+						<h2 class="section__title">Radiobuttons</h2>
 
 						<fieldset class="o-radiobutton__container">
 							<label class="o-radiobutton__label">First radio
@@ -479,8 +695,10 @@
 								</code>
 							</pre>
 						</figure>
+					</section>
+					<section id="selectboxes">
 
-						<h2>Select boxes</h2>
+						<h2 class="section__title">Select boxes</h2>
 
 						<div class="o-select">
 							<select>
@@ -538,14 +756,14 @@
 						</figure>
 					</section>
 
-					<section>
+					<section id="images">
+						<h2 class="section__title">Images</h2>
 
-						<h1>Images</h1>
 						<!-- <img sizes="(min-width: 40em) 80vw, 100vw” srcset="http://placehold.it/400x175 400w, http://placehold.it/800x350 800w, http://placehold.it/1200x625 1200w" alt="Obama”> -->
 					</section>
 
-					<section>
-						<h1>Dropdowns</h1>
+					<section id="dropdowns">
+						<h2 class="section__title">Dropdowns</h2>
 
 						<div class="o-dropdown">
 							<button class="o-btn o-dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -562,8 +780,8 @@
 						</div>
 					</section>
 
-					<section>
-						<h1>Pagination</h1>
+					<section id="pagination">
+						<h2 class="section__title">Pagination</h2>
 
 						<nav aria-label="Page navigation">
 							<ul class="o-pagination">
@@ -584,6 +802,17 @@
 								</li>
 							</ul>
 						</nav>
+					</section>
+					<section id="tabs">
+						<h2 class="section__title">Tabs</h2>
+
+						<div class="m-tabs">
+							<nav class="m-tabs-nav">
+								<a href="#" class="m-tabs__item m-tabs__item--selected">Foo tab</a>
+								<a href="#" class="m-tabs__item">Bar tab</a>
+							</nav>
+						</div>
+
 					</section>
 				</div>
 			</div>
