@@ -5,11 +5,7 @@ cache:
   directories:
     - node_modules
 before_script:
-  - npm install -g gulp mocha phantomjs mocha-phantomjs
-# script: mocha-phantomjs test/testrunner.html
-after_script:
-  - npm run codecov
+  - npm install -g gulp mocha phantomjs casperjs
+script: mocha ./test/unit-tests/**/*.test.js --require babel-polyfill --compilers js:babel-register
 notifications:
   email: false
-after_success:
-  - bash <(curl -s https://codecov.io/bash)

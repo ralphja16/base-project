@@ -3,24 +3,20 @@
   "version": "1.0.0",
   "description": "A base bootstrap for web projects",
   "main": "gulpfile.js",
-  "directories": {
-    "test": "test-o-modal"
-  },
   "dependencies": {
     "bower": "^1.7.9",
     "jquery": "^3.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
     "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
+    "babel-preset-es2015-native-modules": "^6.9.4",
     "babel-preset-es2016": "^6.16.0",
-    "babelify": "^7.3.0",
     "browser-sync": "^2.17.2",
-    "browserify": "^13.1.0",
-    "browserify-istanbul": "^2.0.0",
     "chai": "^3.5.0",
-    "codecov.io": "^0.1.6",
     "cssgrace": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
@@ -33,39 +29,24 @@
     "gulp-jshint": "^2.0.1",
     "gulp-minify-css": "^1.2.4",
     "gulp-mocha-phantomjs": "^0.12.0",
+    "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.0.0",
     "gulp-uglify": "^2.0.0",
-    "istanbul": "^0.4.5",
     "jshint": "^2.9.3",
     "jshint-stylish": "^2.2.1",
-    "karma": "^1.3.0",
-    "karma-browserify": "^5.1.0",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-coverage": "^1.1.1",
-    "karma-firefox-launcher": "^1.0.0",
-    "karma-fixture": "^0.2.6",
-    "karma-html2js-preprocessor": "^1.1.0",
-    "karma-json-fixtures-preprocessor": "0.0.6",
-    "karma-mocha": "^1.2.0",
-    "karma-mocha-reporter": "^2.2.0",
-    "karma-phantomjs-launcher": "^1.0.2",
-    "karma-safari-launcher": "^1.0.0",
-    "karma-sinon-chai": "^1.2.4",
-    "lolex": "^1.5.1",
     "mocha": "^3.1.2",
-    "phantomjs-prebuilt": "^2.1.13",
+    "mocha-phantomjs": "^4.1.0",
     "postcss-reporter": "^1.4.1",
-    "sinon": "^1.17.6",
-    "sinon-chai": "^2.8.0",
-    "stylelint": "^7.4.2",
-    "watchify": "^3.7.0"
+    "require-dir": "^0.3.1",
+    "stylelint": "^7.4.2"
   },
   "scripts": {
-    "test": "karma start karma.conf.js"
+    "test": "mocha ./test/unit-tests/**/*.test.js --require babel-polyfill --compilers js:babel-register --watch",
+    "e2e-test": "casperjs test ./test/e2e-tests/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -75,7 +56,10 @@
     "Bootstrap",
     "Modulair",
     "Flexible",
-    "Components"
+    "Components",
+    "ES6",
+    "Gulp",
+    "Unittesting"
   ],
   "author": {
     "name": "Ralph Janssen",
