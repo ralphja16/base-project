@@ -7,7 +7,7 @@ module.exports = {
     		'./source/main.scss',
     		'./source/**/*.scss'
     	],
-    	js: [
+    	scripts: [
     		'./source/components/**/js/*.js',
     		'./source/modules/**/js/*.js',
     		'./source/objects/**/js/*.js'
