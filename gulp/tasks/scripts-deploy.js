@@ -6,7 +6,7 @@ var gulp            = require('gulp'),
     concat          = require('gulp-concat'),
     eslint          = require('gulp-eslint');
 
-gulp.task('js_deploy', function(){
+gulp.task('scripts_deploy', function(){
 	gulp.src(config.paths.js)
 		// Initialize Sourcemaps
 		.pipe(sourcemaps.init())

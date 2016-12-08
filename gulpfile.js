@@ -1,8 +1,6 @@
 var gulp            = require('gulp'),
-    config          = require('./gulp/config.js');
-
-// Module to require whole directories
-var requireDir = require('require-dir');
+    config          = require('./gulp/config.js'),
+    requireDir      = require('require-dir');
 
 // Pulling in all tasks from the tasks folder
 requireDir('./gulp/tasks', { recurse: true });
@@ -12,11 +10,11 @@ requireDir('./gulp/tasks', { recurse: true });
 gulp.task('watch', ['browser-sync'], function(){
 	gulp.watch(config.paths.sass, ['sass']);
 	gulp.watch(config.paths.tests, ['mocha']);
-	gulp.watch(config.paths.js, ['scripts', 'mocha']);
+	gulp.watch(config.paths.scripts, ['scripts']);
 });
 
 //GULP SETUP TASK
-gulp.task('setup', ['sass', 'scripts', 'mocha', 'vendors', 'images']);
+gulp.task('setup', ['sass', 'scripts', 'vendors', 'images']);
 
 //GULP BUILD TASK
 gulp.task('build', ['watch', 'browser-sync']);

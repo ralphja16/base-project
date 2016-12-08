@@ -4,8 +4,9 @@ var gulp            = require('gulp'),
     autoprefixer    = require('autoprefixer'),
     sourcemaps      = require('gulp-sourcemaps'),
     plumber         = require('gulp-plumber'),
-    postcss         = require('gulp-postcss')
-    reporter        = require('postcss-reporter');
+    postcss         = require('gulp-postcss'),
+    reporter        = require('postcss-reporter'),
+    notify          = require('gulp-notify');
 
 gulp.task('sass', function() {
     var processors = [
@@ -15,12 +16,18 @@ gulp.task('sass', function() {
     ];
 
     gulp.src('./source/main.scss')
+    .pipe(plumber({ errorHandler: function() {
+        notify.onError({
+            title: "Gulp error in " + err.plugin,
+            message:  err.toString()
+        })(err);
+    }}))
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
     // .pipe(cssnano())
     // Initialize sourcemaps
     .pipe(sourcemaps.init())
-    .pipe(plumber())
+
     .pipe(sass({outputStyle: 'uncompressed'}))
     // Write sourcemaps to /library/css/maps
     .pipe(sourcemaps.write('./maps'))

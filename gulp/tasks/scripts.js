@@ -4,18 +4,23 @@ var gulp            = require('gulp'),
     babel           = require('gulp-babel'),
     plumber         = require('gulp-plumber'),
     concat          = require('gulp-concat'),
-    eslint          = require('gulp-eslint');
+    eslint          = require('gulp-eslint'),
+    notify          = require('gulp-notify');
 
 gulp.task('scripts', function(){
-    gulp.src(config.paths.js)
+    gulp.src(config.paths.scripts)
+    .pipe(plumber({ errorHandler: function() {
+        notify.onError({
+            title: "Gulp error in " + err.plugin,
+            message:  err.toString()
+        })(err);
+    }}))
     // Initialize Sourcemaps
     .pipe(sourcemaps.init())
     // Babel compiling
     .pipe(babel({
         presets: ['es2015']
     }))
-    // Check for errors
-    .pipe(plumber())
     // // Check on syntax errors
     // .pipe(jshint())
     // .pipe(jshint.reporter(stylish))
