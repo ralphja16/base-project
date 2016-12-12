@@ -9,7 +9,7 @@ var gulp            = require('gulp'),
 
 gulp.task('scripts', function(){
     gulp.src(config.paths.scripts)
-    .pipe(plumber({ errorHandler: function() {
+    .pipe(plumber({ errorHandler: function(err) {
         notify.onError({
             title: "Gulp error in " + err.plugin,
             message:  err.toString()
