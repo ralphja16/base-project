@@ -8,6 +8,7 @@ $module-name: 						        'tabs';
 $m-tabs-border-width:                       1px;
 $m-tabs-border-color:                       $grayC;
 
+// Selectbox tabs https://codepen.io/brianjwong/pen/dpfne 
 
 
 /* =============================================================================
@@ -17,17 +18,24 @@ $m-tabs-border-color:                       $grayC;
 .m-#{$module-name} {
     margin-bottom: -1px;
 
-    &-nav {
+    // Navigation container
+    &__nav {
         margin-top: 0;
         margin-bottom: $margin-medium;
         border-bottom: $m-tabs-border-width solid $m-tabs-border-color;
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
     }
 
     &__item {
         color: $gray6;
         line-height: 20px;
-        border-bottom: 0;
+        border-bottom: transparent;
         padding: 0.5em 0.75em;
+        margin-bottom: -1px;
         display: inline-block;
         text-decoration: none;
         background-color: transparent;
@@ -38,6 +46,19 @@ $m-tabs-border-color:                       $grayC;
             background-color: $grayC;
             border-color: #ddd;
             border-radius: 3px 3px 0 0;
+        }
+    }
+
+    // Content container
+    &__content {
+
+    }
+
+    &__pane {
+        display: none;
+
+        &--active {
+            display: block;
         }
     }
 }
