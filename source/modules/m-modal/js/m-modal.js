@@ -1,6 +1,6 @@
 'use strict';
 
-let mModal = (function () {
+const mModal = (function () {
 
     let     body            = document.getElementsByTagName('body')[0],
             modalButton     = document.querySelectorAll('.js--m-modal__trigger'),
@@ -23,8 +23,7 @@ let mModal = (function () {
         body.classList.remove('m-modal--open');
     };
 
-    window.onclick = function(event) {
-
+    window.onclick = (event) => {
         if (event.target == document.querySelector('.is__open')) {
             document.querySelector('.is__open').classList.remove('is__open');
             body.classList.remove('m-modal--open');
@@ -32,12 +31,13 @@ let mModal = (function () {
     };
 
     var bindActions = () => {
-        for (var i = 0; i < len; i++) {
+        for (let i = 0; i < len; i++) {
             modalButton[i].addEventListener('click', openModal, false);
             span[i].addEventListener('click', closeModal, false);
         }
     };
-    var init = () => {
+
+    const init = () => {
         bindActions();
     };
 
@@ -47,4 +47,14 @@ let mModal = (function () {
 
 }());
 
-mModal.init();
+
+const callback = function(){
+    // Handler when the DOM is fully loaded
+    mModal.init();
+};
+
+if ( document.readyState === 'complete' || (document.readyState !== 'loading' && !document.documentElement.doScroll) ) {
+    callback();
+} else {
+    document.addEventListener('DOMContentLoaded', callback);
+}

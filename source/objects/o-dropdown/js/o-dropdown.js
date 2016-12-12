@@ -1,6 +1,6 @@
 'use strict';
 
-var oDropdown = (function () {
+const oDropdown = (function () {
 
     let     holder          = document.querySelector('.o-dropdown'),
             dropdownButton  = document.querySelector('.o-dropdown-toggle');
@@ -11,7 +11,7 @@ var oDropdown = (function () {
         };
     };
 
-    var init = () => {
+    const init = () => {
         triggerClickListener();
     };
 
@@ -21,4 +21,14 @@ var oDropdown = (function () {
 
 }());
 
-oDropdown.init();
+
+const callback = function(){
+    // Handler when the DOM is fully loaded
+    oDropdown.init();
+};
+
+if ( document.readyState === 'complete' || (document.readyState !== 'loading' && !document.documentElement.doScroll) ) {
+    callback();
+} else {
+    document.addEventListener('DOMContentLoaded', callback);
+}
