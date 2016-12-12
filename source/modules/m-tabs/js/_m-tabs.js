@@ -1,25 +1,36 @@
-// 'use strict';
-//
-// let mTabs = (function () {
-//
-//     let len             = len.length;
-//
-//
-//
-//     var bindActions = () => {
-//         for (var i = 0; i < len; i++) {
-//             // modalButton[i].addEventListener('click', openModal, false);
-//             // span[i].addEventListener('click', closeModal, false);
-//         }
-//     };
-//     var init = () => {
-//         bindActions();
-//     };
-//
-//     return {
-//         init: init,
-//     };
-//
-// }());
-//
-// mTabs.init();
+'use strict';
+
+const mTabs = (function () {
+
+    const holder          = document.querySelector('.m-tabs');
+    const tab             = holder.querySelector(`.m-tabs__item`);
+    const tabPane         = holder.querySelector(`.m-tabs__pane`);
+
+    let triggerClickListener = (e) => {
+        tab.onclick = (e) => {
+            // holder.classList.toggle('is--open');
+            console.log(this);
+        };
+    };
+
+    const init = () => {
+        triggerClickListener();
+    };
+
+    return {
+        init: init,
+    };
+
+}());
+
+
+const callback = function(){
+    // Handler when the DOM is fully loaded
+    mTabs.init();
+};
+
+if ( document.readyState === 'complete' || (document.readyState !== 'loading' && !document.documentElement.doScroll) ) {
+    callback();
+} else {
+    document.addEventListener('DOMContentLoaded', callback);
+}

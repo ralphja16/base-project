@@ -475,7 +475,7 @@
 					<section id="modals">
 						<h2 class="section__title">Modals</h2>
 						<button type="button" class="o-btn o-btn--primary js--m-modal__trigger" data-modal="#myModal1">Launch 1</button>
-						<div class="m-modal m-modal__bg" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="m-modal m-modal__bg" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 							<div class="m-modal__dialog" role="document">
 								<div class="m-modal__content">
 									<h1>Modal title 1</h1>
@@ -488,7 +488,7 @@
 						</div>
 
 						<button type="button" class="o-btn o-btn--primary js--m-modal__trigger" data-modal="#myModal2">Launch 2</button>
-						<div class="m-modal m-modal__bg" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="m-modal m-modal__bg" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 							<div class="m-modal__dialog" role="document">
 								<div class="m-modal__content">
 									<h1>Modal title 2</h1>
@@ -808,9 +808,19 @@
 
 						<div class="m-tabs">
 							<nav class="m-tabs-nav">
-								<a href="#" class="m-tabs__item m-tabs__item--selected">Foo tab</a>
-								<a href="#" class="m-tabs__item">Bar tab</a>
+								<ul>
+									<li class="m-tabs__item m-tabs__item--selected" role="presentation"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">Home</a></li>
+									<li class="m-tabs__item" role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+    								<li class="m-tabs__item" role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+    								<li class="m-tabs__item" role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+								</ul>
 							</nav>
+							<div class="m-tabs-content">
+								<div role="tabpanel" class="m-tabs__pane m-tabs__pane--active" id="home">...</div>
+								<div role="tabpanel" class="m-tabs__pane" id="profile">...</div>
+								<div role="tabpanel" class="m-tabs__pane" id="messages">...</div>
+								<div role="tabpanel" class="m-tabs__pane" id="settings">...</div>
+							</div>
 						</div>
 
 					</section>
