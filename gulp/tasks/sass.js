@@ -16,7 +16,7 @@ gulp.task('sass', function() {
     ];
 
     gulp.src('./source/main.scss')
-    .pipe(plumber({ errorHandler: function() {
+    .pipe(plumber({ errorHandler: function(err) {
         notify.onError({
             title: "Gulp error in " + err.plugin,
             message:  err.toString()
