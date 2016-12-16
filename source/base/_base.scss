@@ -64,8 +64,8 @@ LINKS
 ============================================================================= */
 
 a {
-	text-decoration: none;
 	outline: 0;
+	text-decoration: none;
 	@include transition(color, 200ms, ease);
 
 	&:hover {
@@ -97,4 +97,6 @@ EMBEDDED CONTENT
 img {
 	max-width: 100%;
 	height: auto;
+	border: none;
+	vertical-align: middle;
 }
