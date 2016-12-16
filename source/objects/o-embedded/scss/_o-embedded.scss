@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$object-name: 					'embedded';
+
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+.o-#{$object-name} {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+
+    // Iframe
+    &__content,
+    embed,
+    video,
+    object,
+    iframe {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    // Content with 16:9 ratio
+    &--16-by-9 {
+        padding-bottom: 56.25%;
+    }
+
+    // Content with 4:3 ratio
+    &--4-by-3 {
+        padding-bottom: 75%;
+    }
+}
