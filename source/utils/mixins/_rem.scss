@@ -7,5 +7,5 @@ USEAGE: @include rem(32);
 
 @mixin rem ($fontsize: $baseSize) {
 	font-size: $fontsize + px;
-	font-size: $fontsize / $baseSize + rem;
+	font-size: $fontsize / 10 + rem;
 }
