@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$container-width: 		75em;	// Base size * $container-width
+$gutter-enabled:		'false'; // True => Add gutter between grid__items
+$gutter:				2em;	// Gutter between grid__items
+$column--padding:		1em;	// Padding inside grid__item
+
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+.l-flex {
+	background-color: rgba(86,61,124,.15);
+	border: 1px solid rgba(86,61,124,.15);
+	display: flex !important;
+	
+	&__justify {
+		
+		&--start {
+			justify-content: flex-start !important;
+		}
+		
+		&--end {
+			justify-content: flex-end !important;
+		}
+		
+		&--center {
+			justify-content: center !important;
+		}
+		
+		&--between {
+			justify-content: space-between !important;
+		}
+		
+		&--around {
+			justify-content: space-around !important;
+		}
+	}
+	
+	&__item {
+		background-color: rgba(86,61,124,.15);
+		border: 1px solid rgba(86,61,124,.15);
+		padding: 0.5rem 0.5rem !important;
+		margin: 0 10px;
+		width: 100px;
+		text-align: center;
+	}
+}

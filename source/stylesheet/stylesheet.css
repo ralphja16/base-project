@@ -84,8 +84,21 @@ section+.highlight {
 
 
 /* GRID STYLE */
-
 .l-grid__item {
     background: rgba(0,0,0,0.1);
     border: 1px solid #333;
+}
+
+/* Flexbox grid */
+.l-flex {
+    margin-bottom: 10px;
+}
+
+.l-flex__item {
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid rgba(86,61,124,.15);
+    padding: 0.5rem 0.5rem !important;
+    margin: 0 10px;
+    width: 100px;
+    text-align: center;
 }

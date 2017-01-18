@@ -36,6 +36,7 @@
 						<a class="menu-item" href="#buttons">Buttons</a>
 						<a class="menu-item" href="#grid">Grid</a>
 						<a class="menu-item" href="#nestedgrid">Nested Grid</a>
+						<a class="menu-item" href="#flexboxgrid">Flexbox Grid</a>
 						<a class="menu-item" href="#tables">Tables</a>
 						<a class="menu-item" href="#modals">Modals</a>
 						<a class="menu-item" href="#inputfields">Input Fields</a>
@@ -444,6 +445,40 @@
 						</figure>
 					</section>
 
+					<section id="flexboxgrid">
+						<h2 class="section__title">Tables</h2>
+
+						<div class="l-flex l-flex__justify--start">
+							<div class="l-flex__item"> Item </div>
+							<div class="l-flex__item"> Item </div>
+							<div class="l-flex__item"> Item </div>
+						</div>
+						
+						<div class="l-flex l-flex__justify--end">
+							<div class="l-flex__item"> Item </div>
+							<div class="l-flex__item"> Item </div>
+							<div class="l-flex__item"> Item </div>
+						</div>
+						
+						<div class="l-flex l-flex__justify--center">
+							<div class="l-flex__item"> Item </div>
+							<div class="l-flex__item"> Item </div>
+							<div class="l-flex__item"> Item </div>
+						</div>
+						
+						<div class="l-flex l-flex__justify--between">
+							<div class="l-flex__item"> Item </div>
+							<div class="l-flex__item"> Item </div>
+							<div class="l-flex__item"> Item </div>
+						</div>
+						
+						<div class="l-flex l-flex__justify--around">
+							<div class="l-flex__item"> Item </div>
+							<div class="l-flex__item"> Item </div>
+							<div class="l-flex__item"> Item </div>
+						</div>
+					</section>
+
 					<section id="tables">
 						<h2 class="section__title">Tables</h2>
 						<table class="o-table">
@@ -669,34 +704,34 @@
 								<code class="language-markup">
 									&lt;!-- Radiobutton checked -->
 									&lt;fieldset class="o-radiobutton__container">
-										&lt;label class="o-radiobutton__label">First radio
-											&lt;input class="o-radiobutton__input" type="radio" name="radio" checked="checked"/>
-											&lt;div class="o-radiobutton__indicator">&lt;/div>
-										&lt;/label>
+									&lt;label class="o-radiobutton__label">First radio
+									&lt;input class="o-radiobutton__input" type="radio" name="radio" checked="checked"/>
+									&lt;div class="o-radiobutton__indicator">&lt;/div>
+									&lt;/label>
 									&lt;/fieldset>
 									<br>
 									&lt;!-- Radiobutton -->
 									&lt;fieldset class="o-radiobutton__container">
-										&lt;label class="o-radiobutton__label">Second radio
-											&lt;input class="o-radiobutton__input" type="radio" name="radio"/>
-											&lt;div class="o-radiobutton__indicator">&lt;/div>
-										&lt;/label>
+									&lt;label class="o-radiobutton__label">Second radio
+									&lt;input class="o-radiobutton__input" type="radio" name="radio"/>
+									&lt;div class="o-radiobutton__indicator">&lt;/div>
+									&lt;/label>
 									&lt;/fieldset>
 									<br>
 									&lt;!-- Radiobutton disabled -->
 									&lt;fieldset class="o-radiobutton__container">
-										&lt;label class="o-radiobutton__label">Disabled
-											&lt;input class="o-radiobutton__input" type="radio" name="radio2" disabled="disabled"/>
-											&lt;div class="o-radiobutton__indicator">&lt;/div>
-										&lt;/label>
+									&lt;label class="o-radiobutton__label">Disabled
+									&lt;input class="o-radiobutton__input" type="radio" name="radio2" disabled="disabled"/>
+									&lt;div class="o-radiobutton__indicator">&lt;/div>
+									&lt;/label>
 									&lt;/fieldset>
 									<br>
 									&lt;!-- Radiobutton disabled checked -->
 									&lt;fieldset class="o-radiobutton__container">
-										&lt;label class="o-radiobutton__label">Disabled &amp; checked
-											&lt;input class="o-radiobutton__input" type="radio" name="radio2" disabled="disabled" checked="checked"/>
-											&lt;div class="o-radiobutton__indicator">&lt;/div>
-										&lt;/label>
+									&lt;label class="o-radiobutton__label">Disabled &amp; checked
+									&lt;input class="o-radiobutton__input" type="radio" name="radio2" disabled="disabled" checked="checked"/>
+									&lt;div class="o-radiobutton__indicator">&lt;/div>
+									&lt;/label>
 									&lt;/fieldset>
 								</code>
 							</pre>
@@ -739,23 +774,23 @@
 								<code class="language-markup">
 									&lt;!-- Selectbox -->
 									&lt;div class="o-select">
-										&lt;select>
-											&lt;option>First select&lt;/option>
-											&lt;option>Option&lt;/option>
-											&lt;option>Option&lt;/option>
-										&lt;/select>
-										&lt;div class="o-select__arrow">&lt;/div>
+									&lt;select>
+									&lt;option>First select&lt;/option>
+									&lt;option>Option&lt;/option>
+									&lt;option>Option&lt;/option>
+									&lt;/select>
+									&lt;div class="o-select__arrow">&lt;/div>
 									&lt;/div>
 
 									<br>
 									&lt;!-- Selectbox disabled -->
 									&lt;div class="o-select">
-										&lt;select disabled="disabled">
-											&lt;option>Disabled&lt;/option>
-											&lt;option>Option&lt;/option>
-											&lt;option>Option&lt;/option>
-										&lt;/select>
-										&lt;div class="o-select__arrow">&lt;/div>
+									&lt;select disabled="disabled">
+									&lt;option>Disabled&lt;/option>
+									&lt;option>Option&lt;/option>
+									&lt;option>Option&lt;/option>
+									&lt;/select>
+									&lt;div class="o-select__arrow">&lt;/div>
 									&lt;/div>
 								</code>
 							</pre>
@@ -803,17 +838,17 @@
 							<pre data-src="stylesheet.html" class="language-markup">
 								<code class="language-markup">
 									&lt;div class="o-dropdown">
-										&lt;button class="o-btn o-dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											Dropdown
-											&lt;span class="caret">&#9660;&lt;/span>
-										&lt;/button>
-										&lt;ul class="o-dropdown__menu" aria-labelledby="dropdownMenu1">
-											&lt;li>&lt;a href="#">Action&lt;/a>&lt;/li>
-											&lt;li>&lt;a href="#">Another action&lt;/a>&lt;/li>
-											&lt;li>&lt;a href="#">Something else here&lt;/a>&lt;/li>
-											&lt;li role="separator" class="divider">&lt;/li>
-											&lt;li>&lt;a href="#">Separated link&lt;/a>&lt;/li>
-										&lt;/ul>
+									&lt;button class="o-btn o-dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Dropdown
+									&lt;span class="caret">&#9660;&lt;/span>
+									&lt;/button>
+									&lt;ul class="o-dropdown__menu" aria-labelledby="dropdownMenu1">
+									&lt;li>&lt;a href="#">Action&lt;/a>&lt;/li>
+									&lt;li>&lt;a href="#">Another action&lt;/a>&lt;/li>
+									&lt;li>&lt;a href="#">Something else here&lt;/a>&lt;/li>
+									&lt;li role="separator" class="divider">&lt;/li>
+									&lt;li>&lt;a href="#">Separated link&lt;/a>&lt;/li>
+									&lt;/ul>
 									&lt;/div>
 								</code>
 							</pre>
@@ -847,23 +882,23 @@
 							<pre data-src="stylesheet.html" class="language-markup">
 								<code class="language-markup">
 									&lt;nav class="o-pagination" aria-label="Page navigation">
-										&lt;ul class="o-pagination__wrapper">
-											&lt;li class="o-pagination__item">
-												&lt;a href="#" aria-label="Previous">
-													&lt;span aria-hidden="true">&laquo;&lt;/span>
-												&lt;/a>
-											&lt;/li>
-											&lt;li class="o-pagination__item">&lt;a href="#">1&lt;/a>&lt;/li>
-											&lt;li class="o-pagination__item">&lt;a href="#">2&lt;/a>&lt;/li>
-											&lt;li class="o-pagination__item">&lt;a href="#">3&lt;/a>&lt;/li>
-											&lt;li class="o-pagination__item">&lt;a href="#">4&lt;/a>&lt;/li>
-											&lt;li class="o-pagination__item">&lt;a href="#">5&lt;/a>&lt;/li>
-											&lt;li class="o-pagination__item">
-												&lt;a href="#" aria-label="Next">
-													&lt;span aria-hidden="true">&raquo;&lt;/span>
-												&lt;/a>
-											&lt;/li>
-										&lt;/ul>
+									&lt;ul class="o-pagination__wrapper">
+									&lt;li class="o-pagination__item">
+									&lt;a href="#" aria-label="Previous">
+									&lt;span aria-hidden="true">&laquo;&lt;/span>
+									&lt;/a>
+									&lt;/li>
+									&lt;li class="o-pagination__item">&lt;a href="#">1&lt;/a>&lt;/li>
+									&lt;li class="o-pagination__item">&lt;a href="#">2&lt;/a>&lt;/li>
+									&lt;li class="o-pagination__item">&lt;a href="#">3&lt;/a>&lt;/li>
+									&lt;li class="o-pagination__item">&lt;a href="#">4&lt;/a>&lt;/li>
+									&lt;li class="o-pagination__item">&lt;a href="#">5&lt;/a>&lt;/li>
+									&lt;li class="o-pagination__item">
+									&lt;a href="#" aria-label="Next">
+									&lt;span aria-hidden="true">&raquo;&lt;/span>
+									&lt;/a>
+									&lt;/li>
+									&lt;/ul>
 									&lt;/nav>
 								</code>
 							</pre>
@@ -877,8 +912,8 @@
 								<ul>
 									<li class="m-tabs__item m-tabs__item--selected" role="presentation"><a class="m-tabs__item__link" href="#home" role="tab" data-toggle="tab" aria-controls="home">Home</a></li>
 									<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-    								<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-    								<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+									<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+									<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
 								</ul>
 
 								<div class="o-select m-tabs__nav__selectbox__container">
@@ -904,8 +939,8 @@
 								<ul>
 									<li class="m-tabs__item m-tabs__item--selected" role="presentation"><a class="m-tabs__item__link" href="#start" role="tab" data-toggle="tab" aria-controls="start">start</a></li>
 									<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#end" aria-controls="end" role="tab" data-toggle="tab">end</a></li>
-    								<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#weekend" aria-controls="weekend" role="tab" data-toggle="tab">weekend</a></li>
-    								<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#finish" aria-controls="finish" role="tab" data-toggle="tab">finish</a></li>
+									<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#weekend" aria-controls="weekend" role="tab" data-toggle="tab">weekend</a></li>
+									<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#finish" aria-controls="finish" role="tab" data-toggle="tab">finish</a></li>
 								</ul>
 
 								<div class="o-select m-tabs__nav__selectbox__container">
@@ -931,30 +966,30 @@
 								<code class="language-markup">
 
 									&lt;div class="m-tabs">
-										&lt;nav class="m-tabs__nav">
-											&lt;ul>
-												&lt;li class="m-tabs__item m-tabs__item--selected" role="presentation">&lt;a class="m-tabs__item__link" href="#home" role="tab" data-toggle="tab" aria-controls="home">Home&lt;/a>&lt;/li>
-												&lt;li class="m-tabs__item" role="presentation">&lt;a class="m-tabs__item__link" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile&lt;/a>&lt;/li>
-			    								&lt;li class="m-tabs__item" role="presentation">&lt;a class="m-tabs__item__link" href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages&lt;/a>&lt;/li>
-			    								&lt;li class="m-tabs__item" role="presentation">&lt;a class="m-tabs__item__link" href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings&lt;/a>&lt;/li>
-											&lt;/ul>
+									&lt;nav class="m-tabs__nav">
+									&lt;ul>
+									&lt;li class="m-tabs__item m-tabs__item--selected" role="presentation">&lt;a class="m-tabs__item__link" href="#home" role="tab" data-toggle="tab" aria-controls="home">Home&lt;/a>&lt;/li>
+									&lt;li class="m-tabs__item" role="presentation">&lt;a class="m-tabs__item__link" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile&lt;/a>&lt;/li>
+									&lt;li class="m-tabs__item" role="presentation">&lt;a class="m-tabs__item__link" href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages&lt;/a>&lt;/li>
+									&lt;li class="m-tabs__item" role="presentation">&lt;a class="m-tabs__item__link" href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings&lt;/a>&lt;/li>
+									&lt;/ul>
 
-											&lt;div class="o-select m-tabs__nav__selectbox__container">
-												&lt;select class="m-tabs__nav__selectbox">
-													&lt;option value="0">home&lt;/option>
-													&lt;option value="1">profile&lt;/option>
-													&lt;option value="2">messages&lt;/option>
-													&lt;option value="3">settings&lt;/option>
-												&lt;/select>
-												&lt;div class="o-select__arrow">&lt;/div>
-											&lt;/div>
-										&lt;/nav>
-										&lt;div class="m-tabs__content">
-											&lt;div role="tabpanel" class="m-tabs__pane m-tabs__pane--active" id="home">1...&lt;/div>
-											&lt;div role="tabpanel" class="m-tabs__pane" id="profile">2...&lt;/div>
-											&lt;div role="tabpanel" class="m-tabs__pane" id="messages">3...&lt;/div>
-											&lt;div role="tabpanel" class="m-tabs__pane" id="settings">4...&lt;/div>
-										&lt;/div>
+									&lt;div class="o-select m-tabs__nav__selectbox__container">
+									&lt;select class="m-tabs__nav__selectbox">
+									&lt;option value="0">home&lt;/option>
+									&lt;option value="1">profile&lt;/option>
+									&lt;option value="2">messages&lt;/option>
+									&lt;option value="3">settings&lt;/option>
+									&lt;/select>
+									&lt;div class="o-select__arrow">&lt;/div>
+									&lt;/div>
+									&lt;/nav>
+									&lt;div class="m-tabs__content">
+									&lt;div role="tabpanel" class="m-tabs__pane m-tabs__pane--active" id="home">1...&lt;/div>
+									&lt;div role="tabpanel" class="m-tabs__pane" id="profile">2...&lt;/div>
+									&lt;div role="tabpanel" class="m-tabs__pane" id="messages">3...&lt;/div>
+									&lt;div role="tabpanel" class="m-tabs__pane" id="settings">4...&lt;/div>
+									&lt;/div>
 									&lt;/div>
 
 								</code>
@@ -977,9 +1012,9 @@
 								<code class="language-markup">
 
 									&lt;div class="o-loading-indicator">
-										&lt;div class="o-loading-indicator__cut">
-											&lt;div class="o-loading-indicator__circle">&lt;/div>
-										&lt;/div>	
+									&lt;div class="o-loading-indicator__cut">
+									&lt;div class="o-loading-indicator__circle">&lt;/div>
+									&lt;/div>	
 									&lt;/div>
 
 								</code>
@@ -1000,7 +1035,7 @@
 								<code class="language-markup">
 
 									&lt;div class="o-embedded o-embedded--16-by-9">
-										&lt;iframe class="o-embedded" width="560" height="315" src="https://www.youtube.com/embed/lK13SW0QW04" frameborder="0" allowfullscreen>&lt;/iframe>
+									&lt;iframe class="o-embedded" width="560" height="315" src="https://www.youtube.com/embed/lK13SW0QW04" frameborder="0" allowfullscreen>&lt;/iframe>
 									&lt;/div>
 
 								</code>
