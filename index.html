@@ -46,6 +46,8 @@
 						<a class="menu-item" href="#dropdowns">Dropdowns</a>
 						<a class="menu-item" href="#pagination">Pagination</a>
 						<a class="menu-item" href="#tabs">Tabs</a>
+						<a class="menu-item" href="#loading-indicator">Loading indicator</a>
+						<a class="menu-item" href="#embedded">Embedded content</a>
 					</nav>
 				</div>
 				<div class="col-xxs-8">
@@ -960,36 +962,51 @@
 						</figure>
 
 					</section>
-					<section id="tooltip">
-						<div id="component"></div>
-						<div class="o-tooltip"></div>
+
+					<section id="loading-indicator">
+						<h2 class="section__title">Loading indicator</h2>
+
+						<div class="o-loading-indicator">
+							<div class="o-loading-indicator__cut">
+								<div class="o-loading-indicator__circle"></div>
+							</div>	
+						</div>
+
+						<figure class="highlight">
+							<pre data-src="stylesheet.html" class="language-markup">
+								<code class="language-markup">
+
+									&lt;div class="o-loading-indicator">
+										&lt;div class="o-loading-indicator__cut">
+											&lt;div class="o-loading-indicator__circle">&lt;/div>
+										&lt;/div>	
+									&lt;/div>
+
+								</code>
+							</pre>
+						</figure>
+					</section>
+
+					<section id="embedded">
+						<h2 class="section__title">Embedded content</h2>
+
+						<div class="o-embedded o-embedded--16-by-9">
+							<iframe class="o-embedded" width="560" height="315" src="https://www.youtube.com/embed/lK13SW0QW04" frameborder="0" allowfullscreen></iframe>
+						</div>
 
 
-						<button id="simple-alert__button--error">Show Me An Error Alert</button>
-<section class="demo-section" id="alerts"></section>
+						<figure class="highlight">
+							<pre data-src="stylesheet.html" class="language-markup">
+								<code class="language-markup">
 
+									&lt;div class="o-embedded o-embedded--16-by-9">
+										&lt;iframe class="o-embedded" width="560" height="315" src="https://www.youtube.com/embed/lK13SW0QW04" frameborder="0" allowfullscreen>&lt;/iframe>
+									&lt;/div>
 
-<button id="simple-alert__button--error">Show Me An Error Alert</button>
-<section class="demo-section" id="alerts"></section>
+								</code>
+							</pre>
+						</figure>
 
-<script>
-  ( function() {
-    // cache vars
-    var btn_error = document.getElementById("simple-alert__button--error");
-
-    // show error
-    btn_error.addEventListener( "click", function(e) {
-      e.preventDefault();
-      var sa = new SimpleAlert({
-        wrapper : document.getElementById("alerts"),
-        type : "error",
-        message : "Show me an error!"
-      });
-      sa.show();
-    });
-
-  })();
-</script>
 					</section>
 				</div>
 			</div>
