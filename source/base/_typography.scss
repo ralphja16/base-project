@@ -15,7 +15,7 @@ $blockquote-text-color:			$gray3;
 ============================================================================= */
 
 p {
-	line-height: 1.2em;
+	line-height: 1.2;
 	margin: 1em 0;
 	@include rem(16);
 }
@@ -24,7 +24,7 @@ p {
 h1 {
 	font-family: $font-family--primary;
 	font-weight: bold;
-	line-height: 1.2em;
+	line-height: 1.2;
 	word-wrap: break-word;
 	@include rem(36);
 }
@@ -33,7 +33,7 @@ h1 {
 h2 {
 	font-family: $font-family--primary;
 	font-weight: bold;
-	line-height: 1.2em;
+	line-height: 1.2;
 	word-wrap: break-word;
 	@include rem(32);
 }
@@ -42,7 +42,7 @@ h2 {
 h3 {
 	font-family: $font-family--primary;
 	font-weight: bold;
-	line-height: 1.2em;
+	line-height: 1.2;
 	word-wrap: break-word;
 	@include rem(28);
 }
@@ -51,7 +51,7 @@ h3 {
 h4 {
 	font-family: $font-family--primary;
 	font-weight: bold;
-	line-height: 1.2em;
+	line-height: 1.2;
 	word-wrap: break-word;
 	@include rem(21);
 }
@@ -60,7 +60,7 @@ h4 {
 h5 {
 	font-family: $font-family--primary;
 	font-weight: bold;
-	line-height: 1.2em;
+	line-height: 1.2;
 	word-wrap: break-word;
 	@include rem(16);
 }
@@ -69,7 +69,7 @@ h5 {
 h6 {
 	font-family: $font-family--primary;
 	font-weight: bold;
-	line-height: 1.2em;
+	line-height: 1.2;
 	word-wrap: break-word;
 	@include rem(12);
 }
