@@ -7,7 +7,7 @@ const mModal = (function () {
             span            = document.querySelectorAll('.m-modal__close'),
             len             = modalButton.length;
 
-    var openModal = (e) => {
+    let openModal = (e) => {
         // get data-modal ID of clicked button
         let _hashId = e.target.dataset.modal;
 

@@ -10,6 +10,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
+	<div class="test-navigation">
+
+
+
+	</div>
 
 	<div id="l-wrapper">
 
@@ -778,6 +783,20 @@
 							</ul>
 						</div>
 
+						<div class="o-dropdown">
+							<button class="o-btn o-dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Dropdown 2
+								<span class="caret">&#9660;</span>
+							</button>
+							<ul class="o-dropdown__menu" aria-labelledby="dropdownMenu2">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#">Separated link</a></li>
+							</ul>
+						</div>
+
 						<figure class="highlight">
 							<pre data-src="stylesheet.html" class="language-markup">
 								<code class="language-markup">
@@ -878,6 +897,33 @@
 							</div>
 						</div>
 
+						<div class="m-tabs">
+							<nav class="m-tabs__nav">
+								<ul>
+									<li class="m-tabs__item m-tabs__item--selected" role="presentation"><a class="m-tabs__item__link" href="#start" role="tab" data-toggle="tab" aria-controls="start">start</a></li>
+									<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#end" aria-controls="end" role="tab" data-toggle="tab">end</a></li>
+    								<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#weekend" aria-controls="weekend" role="tab" data-toggle="tab">weekend</a></li>
+    								<li class="m-tabs__item" role="presentation"><a class="m-tabs__item__link" href="#finish" aria-controls="finish" role="tab" data-toggle="tab">finish</a></li>
+								</ul>
+
+								<div class="o-select m-tabs__nav__selectbox__container">
+									<select class="m-tabs__nav__selectbox">
+										<option value="0">start</option>
+										<option value="1">end</option>
+										<option value="2">weekend</option>
+										<option value="3">finish</option>
+									</select>
+									<div class="o-select__arrow"></div>
+								</div>
+							</nav>
+							<div class="m-tabs__content">
+								<div role="tabpanel" class="m-tabs__pane m-tabs__pane--active" id="home">1...</div>
+								<div role="tabpanel" class="m-tabs__pane" id="profile">2...</div>
+								<div role="tabpanel" class="m-tabs__pane" id="messages">3...</div>
+								<div role="tabpanel" class="m-tabs__pane" id="settings">4...</div>
+							</div>
+						</div>
+
 						<figure class="highlight">
 							<pre data-src="stylesheet.html" class="language-markup">
 								<code class="language-markup">
@@ -913,6 +959,37 @@
 							</pre>
 						</figure>
 
+					</section>
+					<section id="tooltip">
+						<div id="component"></div>
+						<div class="o-tooltip"></div>
+
+
+						<button id="simple-alert__button--error">Show Me An Error Alert</button>
+<section class="demo-section" id="alerts"></section>
+
+
+<button id="simple-alert__button--error">Show Me An Error Alert</button>
+<section class="demo-section" id="alerts"></section>
+
+<script>
+  ( function() {
+    // cache vars
+    var btn_error = document.getElementById("simple-alert__button--error");
+
+    // show error
+    btn_error.addEventListener( "click", function(e) {
+      e.preventDefault();
+      var sa = new SimpleAlert({
+        wrapper : document.getElementById("alerts"),
+        type : "error",
+        message : "Show me an error!"
+      });
+      sa.show();
+    });
+
+  })();
+</script>
 					</section>
 				</div>
 			</div>

@@ -2,10 +2,10 @@
 
 const mTabs = (function () {
 
-    let holder          = document.querySelector('.m-tabs'),
-        tabItem         = holder.querySelectorAll('.m-tabs__item__link'),
-        tabPane         = holder.querySelectorAll('.m-tabs__pane'),
-        tabSelectbox    = holder.querySelector('.m-tabs__nav__selectbox'),
+    let holder          = document.querySelectorAll('.m-tabs'),
+        tabItem         = document.querySelector('.m-tabs__item__link'),
+        tabPane         = document.querySelector('.m-tabs__pane'),
+        tabSelectbox    = document.querySelector('.m-tabs__nav__selectbox'),
         activeIndex     = 0,
         initCalled      = false;
 
@@ -40,7 +40,8 @@ const mTabs = (function () {
             tabPane[index].classList.add('m-tabs__pane--active');
             activeIndex = index;
         }
-    }
+    };
+
 
     const init = () => {
         setup();
