@@ -6,7 +6,7 @@
 	CONFIG
 ============================================================================= */
 
-$container-width: 		100em;	// Base size * $container-width
+$container-width: 		75em;	// Base size * $container-width
 $gutter-enabled:		'false'; // True => Add gutter between grid__items
 $gutter:				2em;	// Gutter between grid__items
 $column--padding:		1em;	// Padding inside grid__item
@@ -15,21 +15,32 @@ $column--padding:		1em;	// Padding inside grid__item
 /* =============================================================================
 	BREAKPOINTS FOR MIN-WIDTH MEDIA QUERIES
 ============================================================================= */
+// xxs: 320px,
+// 	// xs: 375px,
+// 	xs: 480px,
+// 	// xs: 568px,
+// 	// xs: 640px,
+// 	sm: 768px,
+// 	ms: 800px,
+// 	md: 992px,
+// 	mlg: 1024px,
+// 	lg: 1200px,
+// 	xlg: 1440px,
+// 	2xlg: 1600px,
+// 	3xlg: 2000px
+
 
 $breakpoints-min: (
-	xxs: 320px,
-	// xs: 375px,
-	xs: 480px,
-	// xs: 568px,
-	// xs: 640px,
-	sm: 768px,
-	ms: 800px,
-	md: 992px,
-	mlg: 1024px,
-	lg: 1200px,
-	xlg: 1440px,
-	2xlg: 1600px,
-	3xlg: 2000px
+	xxs: 20em,
+	xs: 30em,
+	sm: 48em,
+	ms: 50em,
+	md: 61.9375em,
+	mlg: 64em,
+	lg: 75em,
+	xlg: 90em,
+	2xlg: 100em,
+	3xlg: 125em
 );
 
 
@@ -38,19 +49,16 @@ $breakpoints-min: (
 ============================================================================= */
 
 $breakpoints-max: (
-	xxs: 319px,
-	// xs: 374px,
-	xs: 479px,
-	// xs: 567px,
-	// xs: 639px,
-	sm: 767px,
-	ms: 799px,
-	md: 991px,
-	mlg: 1023px,
-	lg: 1199px,
-	xl: 1439px,
-	2xl: 1599px,
-	3xl: 1999px
+	xxs: 19.9375em,
+	xs: 29.9375em,
+	sm: 47.9375em,
+	ms: 49.9375em,
+	md: 61.9375em,
+	mlg: 63.9375em,
+	lg: 74.9375em,
+	xl: 89.9375em,
+	2xl: 99.9375em,
+	3xl: 124.9375em
 );
 
 /* =============================================================================
@@ -106,8 +114,8 @@ $breakpoints-max: (
 	width: 100%;
 	margin: 0 auto;
 	display: table;
-	padding-left: $gutter / 2;
-	padding-right: $gutter / 2;
+	padding-left: 0.9375em;
+	padding-right: 0.9375em;
 
 	&:before {
 		display: table;
@@ -118,13 +126,18 @@ $breakpoints-max: (
 		display: table;
 		content: " ";
 		clear: both;
+	}
+
+	@include respond-to-min (sm) {
+		padding-left: 0.938em;
+		padding-right: 0.938em;
 	}
 }
 
 .l-container--fluid {
 	width: 100%;
-	padding-left: $gutter / 2;
-	padding-right: $gutter / 2;
+	padding-left: 0.9375em;
+	padding-right: 0.9375em;
 
 	&:before {
 		display: table;
@@ -135,6 +148,11 @@ $breakpoints-max: (
 		display: table;
 		content: " ";
 		clear: both;
+	}
+
+	@include respond-to-min (sm) {
+		padding-left: 0.938em;
+		padding-right: 0.938em;
 	}
 }
 
@@ -287,8 +305,8 @@ $breakpoints-max: (
 ============================================================================= */
 
 .row {
-	margin-left: -$gutter / 2;
-	margin-right: -$gutter / 2;
+	margin-left: -0.9375em;
+	margin-right: -0.9375em;
 
 	&:before {
 		display: table;
@@ -299,6 +317,11 @@ $breakpoints-max: (
 		display: table;
 		content: " ";
 		clear: both;
+	}
+
+	@include respond-to-min (sm) {
+		padding-left: 0.938em;
+		padding-right: 0.938em;
 	}
 }
 
@@ -331,13 +354,8 @@ $breakpoints-max: (
 	&__item {
 
 		@if $gutter-enabled == 'true' {
-			margin-left: $gutter / 2;
-			margin-right: $gutter / 2;
+			margin-left: 0.9375em;
+			margin-right: 0.9375em;
 		}
 	}
 }
-
-
-/* =============================================================================
-	FLEXBOX GRID:: COMING SOON
-============================================================================= */
