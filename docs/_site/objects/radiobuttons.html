@@ -6,7 +6,7 @@
 
 <title>
   
-    Download &middot; 
+    Radiobuttons &middot; 
   
 </title>
 
@@ -38,23 +38,67 @@
 		<main id="l-content docs__container">
 			<div class="l-container">
 				<div class="col-xxs-12 col-md-9 docs__content">
-					<h1 id="download">Download</h1>
+					<h1 id="radiobuttons">Radiobuttons</h1>
 
-<p><strong>Bootstrap v</strong> is available for download in several ways, including some of your favorite package managers. Choose from the options below to snag just what you need.</p>
+<section id="headings clearfix">
+	<h2 class="section__title">Radiobuttons</h2>
 
-<h2 id="contents">Contents</h2>
+	<fieldset class="o-radiobutton__container">
+		<label class="o-radiobutton__label">First radio
+			<input class="o-radiobutton__input" type="radio" name="radio" checked="checked" />
+			<div class="o-radiobutton__indicator"></div>
+		</label>
+	</fieldset>
+	<fieldset class="o-radiobutton__container">
+		<label class="o-radiobutton__label">Second radio
+			<input class="o-radiobutton__input" type="radio" name="radio" />
+			<div class="o-radiobutton__indicator"></div>
+		</label>
+	</fieldset>
+	<fieldset class="o-radiobutton__container">
+		<label class="o-radiobutton__label">Disabled
+			<input class="o-radiobutton__input" type="radio" name="radio2" disabled="disabled" />
+			<div class="o-radiobutton__indicator"></div>
+		</label>
+	</fieldset>
+	<fieldset class="o-radiobutton__container">
+		<label class="o-radiobutton__label">Disabled &amp; checked
+			<input class="o-radiobutton__input" type="radio" name="radio2" disabled="disabled" checked="checked" />
+			<div class="o-radiobutton__indicator"></div>
+		</label>
+	</fieldset>
 
-<ul id="markdown-toc">
-  <li><a href="#download" id="markdown-toc-download">Download</a>    <ul>
-      <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
-      <li><a href="#bootstrap-css-and-js" id="markdown-toc-bootstrap-css-and-js">Bootstrap CSS and JS</a></li>
-    </ul>
-  </li>
-</ul>
 
-<h2 id="bootstrap-css-and-js">Bootstrap CSS and JS</h2>
+	
+	
+<figure class="highlight"><pre><code class="language-html" data-lang="html">	<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"o-radiobutton__container"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"o-radiobutton__label"</span><span class="nt">&gt;</span>First radio
+			<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"o-radiobutton__input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radio"</span> <span class="na">checked=</span><span class="s">"checked"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"o-radiobutton__indicator"</span><span class="nt">&gt;&lt;/div&gt;</span>
+		<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;/fieldset&gt;</span>
+	<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"o-radiobutton__container"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"o-radiobutton__label"</span><span class="nt">&gt;</span>Second radio
+			<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"o-radiobutton__input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radio"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"o-radiobutton__indicator"</span><span class="nt">&gt;&lt;/div&gt;</span>
+		<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;/fieldset&gt;</span>
+	<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"o-radiobutton__container"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"o-radiobutton__label"</span><span class="nt">&gt;</span>Disabled
+			<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"o-radiobutton__input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radio2"</span> <span class="na">disabled=</span><span class="s">"disabled"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"o-radiobutton__indicator"</span><span class="nt">&gt;&lt;/div&gt;</span>
+		<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;/fieldset&gt;</span>
+	<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"o-radiobutton__container"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"o-radiobutton__label"</span><span class="nt">&gt;</span>Disabled <span class="err">&amp;</span> checked
+			<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"o-radiobutton__input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radio2"</span> <span class="na">disabled=</span><span class="s">"disabled"</span> <span class="na">checked=</span><span class="s">"checked"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"o-radiobutton__indicator"</span><span class="nt">&gt;&lt;/div&gt;</span>
+		<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;/fieldset&gt;</span>
+	</code></pre></figure>
 
-<p><strong>Download Bootstrap’s ready-to-use code to easily drop into your project.</strong> Includes compiled and minified versions of all our CSS bundles (default, grid only, or Reboot only) and JavaScript plugins. Doesn’t include documentation or source files.</p>
+
+</section>
 
 				</div>
 				<div class="col-xxs-12 col-md-3 docs__nav__container">
@@ -68,7 +112,7 @@
 
   
 
-  <div class="docs-category active">
+  <div class="docs-category ">
       <a class="docs-category-heading" href="/getting-started/download/">
         Getting started
       </a>

@@ -12,14 +12,13 @@
 			</div>
 		</header>
 
-		<main id="l-content">
+		<main id="l-content docs__container">
 			<div class="l-container">
-				
-				<div class="col-xxs-12 col-md-3">
-					
-				</div>
-				<div class="col-xxs-12 col-md-3">
+				<div class="col-xxs-12 col-md-9 docs__content">
 					{{ content }}
+				</div>
+				<div class="col-xxs-12 col-md-3 docs__nav__container">
+					{% include nav-docs.html %}
 				</div>
 			</div>
 		</main>
@@ -33,16 +32,3 @@
 	{% include footer.html %}
 </body>
 </html>
-
-
-<div class="container">
-      <div class="row">
-        <div class="col-12 col-md-3 push-md-9 bd-sidebar">
-          {% include nav-docs.html %}
-        </div>
-        <div class="col-12 col-md-9 pull-md-3 bd-content">
-          <h1 class="bd-title" id="content">{{ page.title }}</h1>
-          {{ content }}
-        </div>
-      </div>
-    </div>

@@ -21,8 +21,13 @@ a {
     text-decoration: none;
 }
 
-#docs-menu {
-    position: fixed;
+figure {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Documentation navigation */
+.docs__nav {
     width: 350px;
     margin-bottom: 15px;
     list-style: none;
@@ -33,7 +38,27 @@ a {
     font-size: 14px;
 }
 
-#docs-menu .menu-item {
+/* Documentation nav category */
+.docs__nav .docs-category {
+    padding: 15px;
+}
+
+/* Documentation nav category head */
+.docs__nav .docs-category-heading {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Documentation nav category nav */
+.docs__nav .docs-category-nav {
+    list-style: none;
+    padding-left: 15px;
+    margin: 0;
+}
+
+
+/* Documentation nav item */
+.docs__nav .menu-item {
     position: relative;
     display: block;
     padding: 8px 10px;
@@ -41,25 +66,25 @@ a {
     border-bottom: 1px solid #eee;
 }
 
-#docs-menu .menu-item:hover {
+.docs__nav .menu-item:hover {
     text-decoration: none;
     background-color: #f9f9f9;
 }
 
-#docs-menu .menu-item:first-child {
+.docs__nav .menu-item:first-child {
     border-top: 0;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
 }
 
-#docs-menu .menu-item:last-child {
+.docs__nav .menu-item:last-child {
     border-bottom: 0;
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
 }
 
 @media (min-width: 34em) {
-    #docs-menu {
+    .docs__nav {
         margin-right: 1rem;
     }
 }
@@ -81,8 +106,6 @@ section+.highlight {
 }
 
 
-
-
 /* GRID STYLE */
 .l-grid__item {
     background: rgba(0,0,0,0.1);
@@ -95,8 +118,8 @@ section+.highlight {
 }
 
 .l-flex__item {
-    background-color: rgba(86,61,124,.15);
-    border: 1px solid rgba(86,61,124,.15);
+    background-color: rgba(0,0,0,0.1);
+    border: 1px solid 1px solid #333;
     padding: 0.5rem 0.5rem !important;
     margin: 0 10px;
     width: 100px;

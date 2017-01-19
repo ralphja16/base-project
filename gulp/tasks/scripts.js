@@ -37,6 +37,7 @@ gulp.task('scripts', function(){
     .pipe(concat('main.min.js'))
     //Stop plumber errors
     .pipe(plumber.stop())
+    .pipe(gulp.dest('./docs/assets/js'))
     // will write the source maps to ./Library/scripts/maps
     .pipe(sourcemaps.write('./maps'))
     // Where to store the finalized JS

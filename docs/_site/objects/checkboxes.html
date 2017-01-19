@@ -6,7 +6,7 @@
 
 <title>
   
-    Download &middot; 
+    Checkboxes &middot; 
   
 </title>
 
@@ -38,23 +38,73 @@
 		<main id="l-content docs__container">
 			<div class="l-container">
 				<div class="col-xxs-12 col-md-9 docs__content">
-					<h1 id="download">Download</h1>
+					<h1 id="checkboxes">Checkboxes</h1>
 
-<p><strong>Bootstrap v</strong> is available for download in several ways, including some of your favorite package managers. Choose from the options below to snag just what you need.</p>
+<section id="headings clearfix">
+	<h2 class="section__title">Checkboxes</h2>
 
-<h2 id="contents">Contents</h2>
+	<fieldset class="o-checkbox__container">
+		<label class="o-checkbox__label">First checkbox
+			<input class="o-checkbox__input" type="checkbox" checked="checked" />
+			<div class="o-checkbox__indicator"></div>
+		</label>
+	</fieldset>
 
-<ul id="markdown-toc">
-  <li><a href="#download" id="markdown-toc-download">Download</a>    <ul>
-      <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
-      <li><a href="#bootstrap-css-and-js" id="markdown-toc-bootstrap-css-and-js">Bootstrap CSS and JS</a></li>
-    </ul>
-  </li>
-</ul>
+	<fieldset class="o-checkbox__container">
+		<label class="o-checkbox__label">Second checkbox
+			<input class="o-checkbox__input" type="checkbox" />
+			<div class="o-checkbox__indicator"></div>
+		</label>
+	</fieldset>
 
-<h2 id="bootstrap-css-and-js">Bootstrap CSS and JS</h2>
+	<fieldset class="o-checkbox__container">
+		<label class="o-checkbox__label">Disabled
+			<input class="o-checkbox__input" type="checkbox" disabled="disabled" />
+			<div class="o-checkbox__indicator"></div>
+		</label>
+	</fieldset>
 
-<p><strong>Download Bootstrap’s ready-to-use code to easily drop into your project.</strong> Includes compiled and minified versions of all our CSS bundles (default, grid only, or Reboot only) and JavaScript plugins. Doesn’t include documentation or source files.</p>
+	<fieldset class="o-checkbox__container">
+		<label class="o-checkbox__label">Disabled &amp; checked
+			<input class="o-checkbox__input" type="checkbox" disabled="disabled" checked="checked" />
+			<div class="o-checkbox__indicator"></div>
+		</label>
+	</fieldset>
+
+
+	
+	
+<figure class="highlight"><pre><code class="language-html" data-lang="html">	<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"o-checkbox__container"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"o-checkbox__label"</span><span class="nt">&gt;</span>First checkbox
+			<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"o-checkbox__input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">checked=</span><span class="s">"checked"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"o-checkbox__indicator"</span><span class="nt">&gt;&lt;/div&gt;</span>
+		<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;/fieldset&gt;</span>
+
+	<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"o-checkbox__container"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"o-checkbox__label"</span><span class="nt">&gt;</span>Second checkbox
+			<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"o-checkbox__input"</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"o-checkbox__indicator"</span><span class="nt">&gt;&lt;/div&gt;</span>
+		<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;/fieldset&gt;</span>
+
+	<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"o-checkbox__container"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"o-checkbox__label"</span><span class="nt">&gt;</span>Disabled
+			<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"o-checkbox__input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">disabled=</span><span class="s">"disabled"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"o-checkbox__indicator"</span><span class="nt">&gt;&lt;/div&gt;</span>
+		<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;/fieldset&gt;</span>
+
+	<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"o-checkbox__container"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"o-checkbox__label"</span><span class="nt">&gt;</span>Disabled <span class="ni">&amp;amp;</span> checked
+			<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"o-checkbox__input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">disabled=</span><span class="s">"disabled"</span> <span class="na">checked=</span><span class="s">"checked"</span><span class="nt">/&gt;</span>
+			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"o-checkbox__indicator"</span><span class="nt">&gt;&lt;/div&gt;</span>
+		<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;/fieldset&gt;</span>
+	</code></pre></figure>
+
+
+</section>
 
 				</div>
 				<div class="col-xxs-12 col-md-3 docs__nav__container">
@@ -68,7 +118,7 @@
 
   
 
-  <div class="docs-category active">
+  <div class="docs-category ">
       <a class="docs-category-heading" href="/getting-started/download/">
         Getting started
       </a>
