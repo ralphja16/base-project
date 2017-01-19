@@ -10,6 +10,12 @@ group: getting-started
 <section id="headings clearfix">
 	<h2 class="section__title">}</h2>
 
+	### Installation
+
+	### Git
+
+	### Gulp
+
 
 	
 	{% highlight html %}

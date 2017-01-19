@@ -10,7 +10,9 @@ group: getting-started
 <section id="headings clearfix">
 	<h2 class="section__title">}</h2>
 
+	### Browsers
 
+	### Devices	
 	
 	{% highlight html %}
 
