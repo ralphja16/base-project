@@ -7,7 +7,7 @@ var gulp            = require('gulp'),
     eslint          = require('gulp-eslint');
 
 gulp.task('scripts_deploy', function(){
-	gulp.src(config.paths.js)
+	gulp.src(config.paths.js.src)
 		// Initialize Sourcemaps
 		.pipe(sourcemaps.init())
 		// Babel compiling
@@ -37,5 +37,5 @@ gulp.task('scripts_deploy', function(){
 		// will write the source maps to ./Library/scripts/maps
 		.pipe(sourcemaps.write('./maps'))
 		// Where to store the finalized JS
-		.pipe(gulp.dest('./public/library/js'));
+		.pipe(gulp.dest(config.paths.scripts.dest));
 });

@@ -8,7 +8,7 @@ var gulp            = require('gulp'),
     notify          = require('gulp-notify');
 
 gulp.task('scripts', function(){
-    gulp.src(config.paths.scripts)
+    gulp.src(config.paths.scripts.dest)
     .pipe(plumber({ errorHandler: function(err) {
         notify.onError({
             title: "Gulp error in " + err.plugin,
@@ -37,9 +37,9 @@ gulp.task('scripts', function(){
     .pipe(concat('main.min.js'))
     //Stop plumber errors
     .pipe(plumber.stop())
-    .pipe(gulp.dest('./docs/assets/js'))
+    .pipe(gulp.dest(config.paths.docs.js))
     // will write the source maps to ./Library/scripts/maps
     .pipe(sourcemaps.write('./maps'))
     // Where to store the finalized JS
-    .pipe(gulp.dest('./public/library/js'));
+    .pipe(gulp.dest(config.paths.scripts.dest));
 });

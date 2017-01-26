@@ -3,7 +3,7 @@ var gulp            = require('gulp'),
     babel           = require('gulp-babel');
 
 gulp.task('babel', function() {
-    gulp.src(config.paths.scripts)
+    gulp.src(config.paths.scripts.src)
     .pipe(babel())
-    .pipe(gulp.dest('./public/library/js'));
+    .pipe(gulp.dest(config.paths.scripts.dest));
 });

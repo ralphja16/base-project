@@ -3,12 +3,12 @@ var gulp            = require('gulp'),
     imageop         = require('gulp-image-optimization');
 
 gulp.task('images', function(){
-    gulp.src(config.paths.images)
+    gulp.src(config.paths.images.src)
         .pipe(imageop({
             optimizationLevel: 5,
             progressive: true,
             interlaced: true
         }))
-        .pipe(gulp.dest('./public/library/img'));
+        .pipe(gulp.dest(config.paths.images.dest));
 
 });

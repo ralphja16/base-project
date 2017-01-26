@@ -27,11 +27,11 @@ gulp.task('sass', function() {
     // .pipe(cssnano())
     // Initialize sourcemaps
     .pipe(sourcemaps.init())
-    .pipe(gulp.dest('./docs/assets/css'))
+    .pipe(gulp.dest(config.paths.docs.css))
     .pipe(sass({outputStyle: 'uncompressed'}))
     // Write sourcemaps to /library/css/maps
     .pipe(sourcemaps.write('./maps'))
     // CSS destination
-    .pipe(gulp.dest('./public/library/css'));
+    .pipe(gulp.dest(config.paths.sass.dest));
     
 });

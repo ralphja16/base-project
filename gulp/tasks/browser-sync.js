@@ -6,15 +6,15 @@ gulp.task('browser-sync', function() {
 
         browserSync.init({
             server: {
-                baseDir: "./"
+                baseDir: config.browserSync.path
             }
 
-            // proxy: "http://localhost/"
+            proxy: config.browserSync.url
 
         });
 
-        gulp.watch(config.paths.sass, ['sass']).on('change', browserSync.reload);
-        gulp.watch(config.paths.scripts, ['scripts']).on('change', browserSync.reload);
+        gulp.watch(config.paths.sass.src, ['sass']).on('change', browserSync.reload);
+        gulp.watch(config.paths.scripts.src, ['scripts']).on('change', browserSync.reload);
         gulp.watch("*.html").on('change', browserSync.reload);
 
 });

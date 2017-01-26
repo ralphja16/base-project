@@ -6,7 +6,7 @@ var gulp            = require('gulp'),
     minifyCss       = require('gulp-minify-css');
 
 gulp.task('sass_deploy', function() {
-	gulp.src('./source/main.scss')
+	gulp.src(config.paths.sass.src)
 		// Initialize sourcemaps
 		.pipe(sourcemaps.init())
 		// Prevent pipe breaking caused by errors from gulp plugins
@@ -14,7 +14,7 @@ gulp.task('sass_deploy', function() {
 		// Compiles sass to css
         .pipe(sass())
         // Minify CSS
-        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(minifyCss({compatibility: 'ie9'}))
         // CSS destination
-        .pipe(gulp.dest('./public/library/css'));
+        .pipe(gulp.dest(config.paths.sass.src));
 });
