@@ -11,6 +11,9 @@ gulp.task('watch', ['browser-sync'], function(){
 	gulp.watch(config.paths.sass, ['sass']);
 	gulp.watch(config.paths.tests, ['mocha']);
 	gulp.watch(config.paths.scripts, ['scripts']);
+	gulp.watch(config.paths.svgIcons.src, ['sprite']).on('change', function(evt) {
+		changeEvent(evt);
+	});
 });
 
 //GULP SETUP TASK

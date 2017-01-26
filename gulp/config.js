@@ -28,10 +28,10 @@ module.exports = {
     		'./source/templates/'
     	],
         svgIcons: {
-            src: './public/library/icons/*.svg',
+            src: './public/library/icons/*',
             temp: './source/templates/sprite-templates.scss',
             svg: './public/library/img/sprite.svg',
-            dest: './source/base/fonts/_svg-sprite.scss',
+            dest: './source/base/_svg-sprite.scss',
         },
     }
 };

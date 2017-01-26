@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+
+/* =============================================================================
+MIXIN: IE-SPRITE
+USEAGE: @include ie-sprite(chevron-down);
+============================================================================= */
+
+@mixin ie-sprite($icon, $type: all) {
+    $iconMap: icon-attr($icon);
+
+    @if $ieSprite {
+        #{$ieSprite} & {
+            @if $type == all {
+                // Shares the PNG background
+                @extend %ie-sprite;
+            }
+            // Outputs dimensions of icon
+            @if $type == all or $type == size {
+                width: map-get($iconMap, width);
+                height: map-get($iconMap, height);
+            }
+            // Outputs background position
+            @if $type == all or $type == bg {
+                background-position: (map-get($iconMap, x) - 5) (map-get($iconMap, y) - 5);
+            }
+        }
+    }
+}
+
+
+/* =============================================================================
+MIXIN: SPRITE
+USEAGE: @include sprite(chevron-down);
+============================================================================= */
+
+
+@mixin sprite($icon, $type: all) {
+    @if $type == all {
+        // Shares the backgrounds
+        @extend %sprite;
+    }
+
+    $iconMap: icon-attr($icon);
+
+    // Outputs dimensions in em
+    @if $type == all or $type == size {
+        width: mq-px2em(map-get($iconMap, width) + 1);
+        height: mq-px2em(map-get($iconMap, height) + 1);
+    }
+
+    // Outputs background position in em
+    @if $type == all or $type == bg {
+        background-position: mq-px2em(map-get($iconMap, x) - 5) mq-px2em(map-get($iconMap, y) - 5);
+    }
+
+    // Add ie fallback
+    @include ie-sprite($icon, $type);
+
+}

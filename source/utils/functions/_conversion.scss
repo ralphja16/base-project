@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* =============================================================================
-MIXIN: STRIP UNIT TYPES OF VALUE
+FUNCTION: STRIP UNIT TYPES OF VALUE
 USEAGE: @include strip-unit(32em); // OUTPUT 32
 REFERENCE: https://css-tricks.com/snippets/sass/strip-unit-function/
 ============================================================================= */

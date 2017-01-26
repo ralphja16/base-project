@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+// SVG SPRITE
+
+@import "base/svg-sprite";
+
 // Utils
 @import "utils/vars/index",
 		"utils/functions/index",
@@ -12,6 +16,7 @@
 // Base
 @import "base/normalize",
         "base/fonts",
+        "base/svg-sprite",
 		"base/typography",
 		"base/base";
 

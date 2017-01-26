@@ -1,0 +1,8 @@
+$icons: (
+	sprite: (width: 210px, height: 210px, pngPath: '../img/sprite.png', svgPath: '../img/sprite.svg'),
+		checkmark: (width: 32px, height: 32px, backgroundX: 0px, backgroundY: 0px),
+			chevron-down: (width: 32px, height: 32px, backgroundX: -42px, backgroundY: -42px),
+			chevron-left: (width: 32px, height: 32px, backgroundX: -84px, backgroundY: -84px),
+			chevron-right: (width: 32px, height: 32px, backgroundX: -126px, backgroundY: -126px),
+			chevron-up: (width: 32px, height: 32px, backgroundX: -168px, backgroundY: -168px),
+	);
