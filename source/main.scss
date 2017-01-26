@@ -2,6 +2,7 @@
 
 // Utils
 @import "utils/vars/index",
+		"utils/functions/index",
 		"utils/mixins/index",
 		"utils/helpers/index";
 
@@ -15,10 +16,10 @@
 		"base/base";
 
 // Layouts
-@import "layout/l-base",
+@import "layout/l-colors",
 		"layout/l-grid",
 		"layout/l-flexbox",
-		"layout/l-colors";
+		"layout/l-base";
 
 // objects
 @import "objects/index";
