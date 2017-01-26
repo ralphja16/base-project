@@ -1,10 +1,9 @@
 'use strict';
 
-const mTabs = (function () {
+const mTabs = (function (holder) {
 
-    let holder          = document.querySelectorAll('.m-tabs'),
-        tabItem         = document.querySelector('.m-tabs__item__link'),
-        tabPane         = document.querySelector('.m-tabs__pane'),
+    let tabItem         = document.querySelectorAll('.m-tabs__item__link'),
+        tabPane         = document.querySelectorAll('.m-tabs__pane'),
         tabSelectbox    = document.querySelector('.m-tabs__nav__selectbox'),
         activeIndex     = 0,
         initCalled      = false;
@@ -44,8 +43,10 @@ const mTabs = (function () {
 
 
     const init = () => {
-        setup();
-        goToTabMobile();
+        if(holder.length > 0)  {
+            setup();
+            goToTabMobile();
+        }
     };
 
     return {
@@ -54,7 +55,7 @@ const mTabs = (function () {
     };
 
 
-})();
+})(document.querySelectorAll('.m-tabs'));
 
 const callback = function(){
     // Handler when the DOM is fully loaded
