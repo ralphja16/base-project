@@ -1,24 +1,50 @@
 var gulp            = require('gulp'),
-    config          = require('../config.js'),
-    iconfont		= require('gulp-iconfont'),
-	iconfontCss		= require('gulp-iconfont-css');
+    config          = require('../config.js');
 
-var fontName 		= 'xxx-icons';
-var runTimestamp 	= Math.round(Date.now()/1000);
+var $ = {
+	gutil: require('gulp-util'),
+	svgSprite: require('gulp-svg-sprite'),
+	svg2png: require('gulp-svg2png'),
+	size: require('gulp-size'),
+}
 
-gulp.task('iconfont', function(){
-	gulp.src(['./public/library/icons/*.svg'])
-	.pipe(iconfontCss({
-  		fontName: fontName,
-		path: paths.templates + '_icons.scss',
-		targetPath: '../../../../source/base/fonts/_icons.scss',
-		fontPath: '../fonts/icons/'
-	}))
-    .pipe(iconfont({
-    	fontName: fontName, // Name of the font
-		appendUnicode: true, // recommended option
-		formats: ['svg', 'ttf', 'eot', 'woff', 'woff2'], // default, 'woff2' and 'svg' are available
-		timestamp: runTimestamp, // recommended to get consistent builds when watching files
-    }))
-    .pipe(gulp.dest('./public/library/fonts/icons/'));
+
+gulp.task('svgSprite', function () {
+	return gulp.src(config.paths.svgIcons.src)
+		.pipe($.svgSprite({
+			shape: {
+				spacing: {
+					padding: 5
+				}
+			},
+			mode: {
+				css: {
+					dest: "../../../",
+					layout: "diagonal",
+					sprite: config.paths.svgIcons.svg,
+					bust: false,
+					render: {
+						scss: {
+							dest: config.paths.svgIcons.dest,
+							template: config.paths.svgIcons.temp
+						}
+					}
+				}
+			},
+			variables: {
+				mapname: "icons"
+			}
+		}))
+		.pipe(gulp.dest(config.paths.svgIcons.svg));
 });
+
+gulp.task('pngSprite', ['svgSprite'], function() {
+	return gulp.src( config.paths.svgIcons.svg)
+		.pipe($.svg2png())
+		.pipe($.size({
+			showFiles: true
+		}))
+		.pipe(gulp.dest(config.paths.images.dest));
+});
+
+gulp.task('sprite', ['pngSprite']);

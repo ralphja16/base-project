@@ -15,9 +15,10 @@ module.exports = {
     	vendors: [
     		// './public/library/js/vendor/bootstrap.min.js',
     	],
-    	images: [
-    		'./public/library/img/*',
-    	],
+    	images: {
+    		src: './public/library/img/*',
+            dest: './public/library/img/',
+        },
     	tests: [
     		'./test/components/*.test.js',
     		'./test/modules/*.test.js',
@@ -25,6 +26,12 @@ module.exports = {
     	],
     	templates: [
     		'./source/templates/'
-    	]
+    	],
+        svgIcons: {
+            src: './public/library/icons/*.svg',
+            temp: './source/templates/sprite-templates.scss',
+            svg: './public/library/img/sprite.svg',
+            dest: './source/base/fonts/_svg-sprite.scss',
+        },
     }
 };
