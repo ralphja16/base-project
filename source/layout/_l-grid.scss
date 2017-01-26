@@ -7,13 +7,12 @@
 ============================================================================= */
 
 $container-width: 		75em;	// Base size * $container-width
-$gutter-enabled:		'false'; // True => Add gutter between grid__items
-$gutter:				2em;	// Gutter between grid__items
-$column--padding:		1em;	// Padding inside grid__item
+
 
 
 /* =============================================================================
 	BREAKPOINTS FOR MIN-WIDTH MEDIA QUERIES
+	REFERENCE: https://zellwk.com/blog/media-query-units/
 ============================================================================= */
 // xxs: 320px,
 // 	// xs: 375px,
@@ -110,12 +109,12 @@ $breakpoints-max: (
 ============================================================================= */
 
 .l-container {
-	max-width: $container-width + $gutter;
+	max-width: $container-width;
 	width: 100%;
 	margin: 0 auto;
 	display: table;
-	padding-left: 0.9375em;
-	padding-right: 0.9375em;
+	padding-left: 0.625em;
+	padding-right: 0.625em;
 
 	&:before {
 		display: table;
@@ -136,8 +135,8 @@ $breakpoints-max: (
 
 .l-container--fluid {
 	width: 100%;
-	padding-left: 0.9375em;
-	padding-right: 0.9375em;
+	padding-left: 0.625em;
+	padding-right: 0.625em;
 
 	&:before {
 		display: table;
@@ -151,8 +150,8 @@ $breakpoints-max: (
 	}
 
 	@include respond-to-min (sm) {
-		padding-left: 0.938em;
-		padding-right: 0.938em;
+		padding-left: 0.9375em;
+		padding-right: 0.9375em;
 	}
 }
 
@@ -294,17 +293,30 @@ $breakpoints-max: (
 
 	@include respond-to-min($key) {
 
-		.hidden-#{$key} {
+		.hidden-min-#{$key} {
 			display: none;
 		}
 	}
 }
 
+
+@each $key, $value in $breakpoints-max {
+
+	@include respond-to-max($key) {
+
+		.hidden-max-#{$key} {
+			display: none;
+		}
+	}
+}
+
+
+
 /* =============================================================================
 	GRID
 ============================================================================= */
 
-.row {
+.l-row {
 	margin-left: -0.9375em;
 	margin-right: -0.9375em;
 
@@ -320,8 +332,8 @@ $breakpoints-max: (
 	}
 
 	@include respond-to-min (sm) {
-		padding-left: 0.938em;
-		padding-right: 0.938em;
+		padding-left: -0.938em;
+		padding-right: -0.938em;
 	}
 }
 
@@ -329,33 +341,11 @@ $breakpoints-max: (
 	float: left;
 	min-height: 1px;
 	position: relative;
-	padding: $column--padding;
-}
+	padding-left: 0.9375em;
+	padding-right: 0.9375em;
 
-.l-grid {
-	display: inline-block;
-	width: 100%;
-
-	&__row {
-		margin-bottom: 10px;
-
-		&:before {
-			display: table;
-			content: " ";
-		}
-
-		&:after {
-			display: table;
-			content: " ";
-			clear: both;
-		}
-	}
-
-	&__item {
-
-		@if $gutter-enabled == 'true' {
-			margin-left: 0.9375em;
-			margin-right: 0.9375em;
-		}
+	@include respond-to-min (sm) {
+		padding-left: 0.938em;
+		padding-right: 0.938em;
 	}
 }

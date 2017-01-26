@@ -4,10 +4,7 @@
 CONFIG
 ============================================================================= */
 
-$container-width: 		75em;	// Base size * $container-width
-$gutter-enabled:		'false'; // True => Add gutter between grid__items
-$gutter:				2em;	// Gutter between grid__items
-$column--padding:		1em;	// Padding inside grid__item
+$item--padding:		0 0.9375em;	// Padding inside grid__item
 
 
 /* =============================================================================
@@ -15,8 +12,6 @@ BASE
 ============================================================================= */
 
 .l-flex {
-	background-color: rgba(86,61,124,.15);
-	border: 1px solid rgba(86,61,124,.15);
 	display: flex !important;
 	
 	&__justify {
@@ -43,11 +38,6 @@ BASE
 	}
 	
 	&__item {
-		background-color: rgba(86,61,124,.15);
-		border: 1px solid rgba(86,61,124,.15);
-		padding: 0.5rem 0.5rem !important;
-		margin: 0 10px;
-		width: 100px;
-		text-align: center;
+		padding: $item--padding;
 	}
 }

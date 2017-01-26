@@ -4,19 +4,44 @@
   CONFIG
 ============================================================================= */
 
+$body-bg: 				$white;
+$wrapper-bg:			$grayE;
+$content-bg:			$white;
+$sidebar-bg:			none;
+$footer-bg: 			$gray3;
+
+$header-bg:				$gray9;
+$header-height:			60px;
+
 
 /* =============================================================================
   BASE
 ============================================================================= */
 
+body {
+	background: $body-bg;
+}
+
 #l-wrapper {
+	background: $wrapper-bg;
+	@include clearfix();
 }
 
 #l-header {
+	height: $header-height;
+	background: $header-bg;
+	@include clearfix();
 }
 
 #l-content {
+	background: $content-bg;
+}
+
+#l-sidebar {
+	background: $sidebar-bg;
 }
 
 #l-footer {
+	background: $footer-bg;
+	@include clearfix();
 }
