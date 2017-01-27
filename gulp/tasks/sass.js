@@ -15,7 +15,7 @@ gulp.task('sass', function() {
         reporter(),
     ];
 
-    gulp.src('./source/main.scss')
+    gulp.src(config.paths.sass.src)
     .pipe(plumber({ errorHandler: function(err) {
         notify.onError({
             title: "Gulp error in " + err.plugin,

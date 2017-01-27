@@ -8,7 +8,7 @@ var gulp            = require('gulp'),
     notify          = require('gulp-notify');
 
 gulp.task('scripts', function(){
-    gulp.src(config.paths.scripts.dest)
+    gulp.src(config.paths.scripts.src)
     .pipe(plumber({ errorHandler: function(err) {
         notify.onError({
             title: "Gulp error in " + err.plugin,

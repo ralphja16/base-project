@@ -105,57 +105,6 @@ $breakpoints-max: (
 
 
 /* =============================================================================
-	Containers
-============================================================================= */
-
-.l-container {
-	max-width: $container-width;
-	width: 100%;
-	margin: 0 auto;
-	display: table;
-	padding-left: 0.625em;
-	padding-right: 0.625em;
-
-	&:before {
-		display: table;
-		content: " ";
-	}
-
-	&:after {
-		display: table;
-		content: " ";
-		clear: both;
-	}
-
-	@include respond-to-min (sm) {
-		padding-left: 0.938em;
-		padding-right: 0.938em;
-	}
-}
-
-.l-container--fluid {
-	width: 100%;
-	padding-left: 0.625em;
-	padding-right: 0.625em;
-
-	&:before {
-		display: table;
-		content: " ";
-	}
-
-	&:after {
-		display: table;
-		content: " ";
-		clear: both;
-	}
-
-	@include respond-to-min (sm) {
-		padding-left: 0.9375em;
-		padding-right: 0.9375em;
-	}
-}
-
-/* =============================================================================
 	COLUMNS DEFAULT GRID
 ============================================================================= */
 
@@ -310,6 +259,56 @@ $breakpoints-max: (
 	}
 }
 
+/* =============================================================================
+	Containers
+============================================================================= */
+
+.l-container {
+	max-width: $container-width;
+	width: 100%;
+	margin: 0 auto;
+	display: table;
+	padding-left: 0.625em;
+	padding-right: 0.625em;
+
+	&:before {
+		display: table;
+		content: " ";
+	}
+
+	&:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
+
+	@include respond-to-min (sm) {
+		padding-left: 0.938em;
+		padding-right: 0.938em;
+	}
+}
+
+.l-container--fluid {
+	width: 100%;
+	padding-left: 0.625em;
+	padding-right: 0.625em;
+
+	&:before {
+		display: table;
+		content: " ";
+	}
+
+	&:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
+
+	@include respond-to-min (sm) {
+		padding-left: 0.9375em;
+		padding-right: 0.9375em;
+	}
+}
 
 
 /* =============================================================================
@@ -317,8 +316,8 @@ $breakpoints-max: (
 ============================================================================= */
 
 .l-row {
-	margin-left: -0.9375em;
-	margin-right: -0.9375em;
+	margin-left: -0.625em;
+	margin-right: -0.625em;
 
 	&:before {
 		display: table;
@@ -341,8 +340,8 @@ $breakpoints-max: (
 	float: left;
 	min-height: 1px;
 	position: relative;
-	padding-left: 0.9375em;
-	padding-right: 0.9375em;
+	padding-left: 0.625em;
+	padding-right: 0.625em;
 
 	@include respond-to-min (sm) {
 		padding-left: 0.938em;

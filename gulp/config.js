@@ -14,7 +14,7 @@ module.exports = {
         	],
             src: './source/main.scss',
             dest: './public/library/css',
-        }
+        },
     	scripts: {
             src: [
         		'./source/components/**/js/*.js',
@@ -22,7 +22,7 @@ module.exports = {
         		'./source/objects/**/js/*.js'
         	],
             dest:   './public/library/js',
-        }
+        },
     	vendors: {
             src: [
                     './public/library/js/vendors/jquery-3.1.1.min.js',

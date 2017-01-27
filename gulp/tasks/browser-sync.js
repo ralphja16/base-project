@@ -9,7 +9,7 @@ gulp.task('browser-sync', function() {
                 baseDir: config.browserSync.path
             }
 
-            proxy: config.browserSync.url
+            // proxy: config.browserSync.url
 
         });
 
