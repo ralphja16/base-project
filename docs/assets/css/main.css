@@ -2736,20 +2736,36 @@ STATES
     margin: 0;
     padding: 0; }
     .m-navigation ul li {
-      display: inline;
+      float: left;
+      position: relative;
       background: transparent; }
       .m-navigation ul li:hover {
         background: transparent; }
-        .m-navigation ul li:hover a {
+        .m-navigation ul li:hover > a {
           color: #000; }
+      .m-navigation ul li.is--active > .m-navigation__submenu {
+        display: block; }
       .m-navigation ul li a {
         height: 60px;
         padding: 0.5em 0.75em;
         color: #fff;
         display: table-cell;
         vertical-align: middle; }
-  .m-navigation__submenu {
-    display: none; }
+  .m-navigation .m-navigation__submenu {
+    display: none;
+    top: 60px;
+    position: absolute;
+    z-index: 9999;
+    background: #4c8bc1; }
+    .m-navigation .m-navigation__submenu li:hover {
+      background: #4c8bc1; }
+      .m-navigation .m-navigation__submenu li:hover a {
+        color: #000; }
+    .m-navigation .m-navigation__submenu li a {
+      height: auto;
+      display: inline-block;
+      padding: 0.5em 0.75em;
+      color: #fff; }
 
 /* =============================================================================
   CONFIG
