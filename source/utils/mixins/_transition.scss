@@ -2,7 +2,7 @@
 
 /* =============================================================================
 MIXIN: TRANSITION ANIMATION
-USEAGE: @include transition(color 200ms ease-in-out);
+USEAGE: @include transition(color, 200ms, ease-in-out);
 ============================================================================= */
 
 @mixin transition($property, $timing, $ease) {

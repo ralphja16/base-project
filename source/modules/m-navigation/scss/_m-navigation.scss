@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$module-name: 						        'navigation';
+
+$navigation-bg:								transparent;
+$navigation-height:							60px;
+$navigation-ul-align:						right;
+
+$navigation-item-bg:						transparent;
+$navigation-item-txt:						$white;
+$navigation-item-padding:					0.5em 0.75em;
+$navigation-item-hover-bg:					transparent;
+$navigation-item-hover-txt:					$black;
+
+$navigation-submenu-bg:						$blue;
+$navigation-submenu-item-txt:				$white;
+$navigation-submenu-item-hover-bg:			$blue;
+$navigation-submenu-item-hover-txt:			$black;
+$navigation-submenu-item-padding:			0.5em 0.75em;
+
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+.m-#{$module-name} {
+	flex-grow: 1;
+	background: $navigation-bg;
+
+	ul {
+		float: $navigation-ul-align;
+		list-style: none;
+		@include reset();
+
+		li {
+			float: left;
+			position: relative;
+			background: $navigation-item-bg;
+
+			// Hover on li menu item
+			&:hover {
+				background: $navigation-item-hover-bg;
+
+				> a {
+					color: $navigation-item-hover-txt;
+				}
+			}
+
+			&.is--active {
+				> .m-#{$module-name}__submenu {
+					display: block;
+				}
+			}
+
+			a {
+				height: $navigation-height;
+				padding: $navigation-item-padding;
+				color: $navigation-item-txt;
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.m-#{$module-name}__submenu {
+		display: none;
+		top: $navigation-height;
+		position: absolute;
+		z-index: 9999;
+		background: $navigation-submenu-bg;
+
+		li {
+			&:hover {
+				background: $navigation-submenu-item-hover-bg;
+
+				a {
+					color: $navigation-submenu-item-hover-txt;
+				}
+			}
+
+			a {
+				height: auto;
+				display: inline-block;
+				padding: $navigation-submenu-item-padding;
+				color: $navigation-submenu-item-txt;
+			}
+		}
+	}
+}
