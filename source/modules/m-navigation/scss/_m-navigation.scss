@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$module-name: 						        'navigation';
+
+$navigation-bg:								transparent;
+$navigation-height:							60px;
+$navigation-ul-align:						right;
+
+$navigation-item-bg:						transparent;
+$navigation-item-txt:						$white;
+$navigation-item-padding:					0.5em 0.75em;
+$navigation-item-hover-bg:					transparent;
+$navigation-item-hover-txt:					$black;
+
+
+
+
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+.m-#{$module-name} {
+	flex-grow: 1;
+	background: $navigation-bg;
+
+	ul {
+		float: $navigation-ul-align;
+		list-style: none;
+		@include reset();
+
+		li {
+			display: inline;
+			background: $navigation-item-bg;
+
+			// Hover on li menu item
+			&:hover {
+				background: $navigation-item-hover-bg;
+
+				a {
+					color: $navigation-item-hover-txt;
+				}
+			}
+
+			a {
+				height: $navigation-height;
+				padding: $navigation-item-padding;
+				color: $navigation-item-txt;
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	&__submenu {
+		display: none;
+	}
+}
