@@ -1,14 +1,20 @@
-var gulp            = require('gulp'),
-    config          = require('../config.js'),
-    imageop         = require('gulp-image-optimization');
+const gulp = require('gulp');
+const config = require('../config.js');
+const imagemin = require('gulp-imagemin');
 
-gulp.task('images', function(){
-    gulp.src(config.paths.images.src)
-        .pipe(imageop({
-            optimizationLevel: 5,
-            progressive: true,
-            interlaced: true
-        }))
-        .pipe(gulp.dest(config.paths.images.dest));
-
+// imagemin task
+gulp.task('imagemin', () => {
+	return gulp
+		.src(config.paths.images + '**/*.{png,jpg,jpeg,gif,svg}')
+		.pipe(
+			imagemin({
+				progressive: true,
+				interlaced: true,
+				optimizationLevel: 7,
+				svgoPlugins: [{ removeViewBox: false }],
+				verbose: true,
+				use: []
+			})
+		)
+		.pipe(gulp.dest(config.paths.images));
 });
