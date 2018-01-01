@@ -1,35 +1,33 @@
-(function(window) {
+// (function(window) {
 
-'use strict';
+// 'use strict';
 
-	const Navigation = (function() {
+// 	const Navigation = (function() {
 
-		var _this = this;
+// 		var _this = this;
 
-		const init = () => {
-			console.log('test')
-		};
+// 		const init = () => {
+// 			console.log('test')
+// 		};
 
-		return {
-			init: init,
-		};
-	});
+// 		return {
+// 			init: init,
+// 		};
+// 	});
 
-	const callback = function(){
-	    // Handler when the DOM is fully loaded
-	    window.Navigation = Navigation().init();
-	    console.log(window);
-	};
+// 	const callback = function(){
+// 	    // Handler when the DOM is fully loaded
+// 	    window.Navigation = Navigation().init();
+// 	    console.log(window);
+// 	};
 
-	if ( document.readyState === 'complete' || (document.readyState !== 'loading' && !document.documentElement.doScroll) ) {
-	    callback();
-	} else {
-	    document.addEventListener('DOMContentLoaded', callback);
-	}
+// 	if ( document.readyState === 'complete' || (document.readyState !== 'loading' && !document.documentElement.doScroll) ) {
+// 	    callback();
+// 	} else {
+// 	    document.addEventListener('DOMContentLoaded', callback);
+// 	}
 
-
-})(window);
-
+// })(window);
 
 // const callback = function(){
 //     // Handler when the DOM is fully loaded
@@ -41,3 +39,9 @@
 // } else {
 //     document.addEventListener('DOMContentLoaded', callback);
 // }
+
+export default class mNavigation {
+	constructor() {
+		console.log('test navigation');
+	}
+}
