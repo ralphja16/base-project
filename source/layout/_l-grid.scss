@@ -6,9 +6,7 @@
 	CONFIG
 ============================================================================= */
 
-$container-width: 		75em;	// Base size * $container-width
-
-
+$container-width: 75em; // Base size * $container-width
 
 /* =============================================================================
 	BREAKPOINTS FOR MIN-WIDTH MEDIA QUERIES
@@ -28,7 +26,6 @@ $container-width: 		75em;	// Base size * $container-width
 // 	2xlg: 1600px,
 // 	3xlg: 2000px
 
-
 $breakpoints-min: (
 	xxs: 20em,
 	xs: 30em,
@@ -41,7 +38,6 @@ $breakpoints-min: (
 	2xlg: 100em,
 	3xlg: 125em
 );
-
 
 /* =============================================================================
 	BREAKPOINTS FOR MAX-WIDTH MEDIA QUERIES
@@ -66,21 +62,15 @@ $breakpoints-max: (
 ============================================================================= */
 
 @mixin respond-to-min($breakpoint) {
-
 	@if map-has-key($breakpoints-min, $breakpoint) {
-
 		@media screen and (min-width: #{map-get($breakpoints-min, $breakpoint)}) {
 			@content;
 		}
-	}
-
-	@else {
-
-		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-		+ "Please make sure it is defined in `$breakpoints` map.";
+	} @else {
+		@warn "Unfortunately,
+			no value could be retrieved from `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map.";
 	}
 }
-
 
 /* =============================================================================
 	MIXIN: RESPOND-TO-MAX
@@ -88,30 +78,22 @@ $breakpoints-max: (
 ============================================================================= */
 
 @mixin respond-to-max($breakpoint) {
-
 	@if map-has-key($breakpoints-max, $breakpoint) {
-
 		@media screen and (max-width: #{map-get($breakpoints-max, $breakpoint)}) {
 			@content;
 		}
-	}
-
-	@else {
-
-		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-		+ "Please make sure it is defined in `$breakpoints` map.";
+	} @else {
+		@warn "Unfortunately,
+			no value could be retrieved from `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map.";
 	}
 }
-
 
 /* =============================================================================
 	COLUMNS DEFAULT GRID
 ============================================================================= */
 
 @each $key, $value in $breakpoints-min {
-
 	@include respond-to-min($key) {
-
 		.col-#{$key}-1 {
 			width: 8.33333333%;
 		}
@@ -162,15 +144,12 @@ $breakpoints-max: (
 	}
 }
 
-
 /* =============================================================================
 	COLUMNS FLEXBOX GRID
 ============================================================================= */
 
 @each $key, $value in $breakpoints-min {
-
 	@include respond-to-min($key) {
-
 		.fl-col-#{$key}-1 {
 			flex-basis: 8.33333333%;
 			max-width: 8.33333333%;
@@ -233,26 +212,20 @@ $breakpoints-max: (
 	}
 }
 
-
 /* =============================================================================
 	RESPONSIVE UTILITIES
 ============================================================================= */
 
 @each $key, $value in $breakpoints-min {
-
 	@include respond-to-min($key) {
-
 		.hidden-min-#{$key} {
 			display: none;
 		}
 	}
 }
 
-
 @each $key, $value in $breakpoints-max {
-
 	@include respond-to-max($key) {
-
 		.hidden-max-#{$key} {
 			display: none;
 		}
@@ -268,18 +241,18 @@ $breakpoints-max: (
 	width: 100%;
 	margin: 0 auto;
 	display: table;
-	display: flex;
+	// display: flex;
 	padding-left: 0.625em;
 	padding-right: 0.625em;
 
 	&:before {
 		display: table;
-		content: " ";
+		content: ' ';
 	}
 
 	&:after {
 		display: table;
-		content: " ";
+		content: ' ';
 		clear: both;
 	}
 
@@ -296,12 +269,12 @@ $breakpoints-max: (
 
 	&:before {
 		display: table;
-		content: " ";
+		content: ' ';
 	}
 
 	&:after {
 		display: table;
-		content: " ";
+		content: ' ';
 		clear: both;
 	}
 
@@ -310,7 +283,6 @@ $breakpoints-max: (
 		padding-right: 0.9375em;
 	}
 }
-
 
 /* =============================================================================
 	GRID
@@ -322,12 +294,12 @@ $breakpoints-max: (
 
 	&:before {
 		display: table;
-		content: " ";
+		content: ' ';
 	}
 
 	&:after {
 		display: table;
-		content: " ";
+		content: ' ';
 		clear: both;
 	}
 
