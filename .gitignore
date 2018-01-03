@@ -175,3 +175,5 @@ public/library/css/main.css
 
 public/library/js/maps/main.min.js.map
 /.cache
+/build
+/public/library/js/preload.bundle.js
