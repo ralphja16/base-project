@@ -3,36 +3,42 @@ const pkg = require('./package.json');
 const config = require('./gulp/config.js');
 const gulp = require('gulp');
 const requireDir = require('require-dir');
-
-// load all plugins in 'devDependencies' into the variable $
-const $ = require('gulp-load-plugins')({
-	pattern: ['*'],
-	scope: ['devDependencies']
-});
-
+const moment = require('moment');
+const gitRevSync = require('git-rev-sync');
 // // Pulling in all tasks from the tasks folder
 requireDir('./gulp/tasks', { recurse: true });
 
-//GULP WATCH TASK
-// gulp.task('watch', ['browser-sync'], function() {
-// 	gulp.watch(config.paths.sass.src2, ['sass']);
-// 	gulp.watch(config.paths.tests, ['mocha']);
-// 	gulp.watch(config.paths.scripts.src, ['scripts']);
-// 	gulp
-// 		.watch(config.paths.svgIcons.src, ['sprite'])
-// 		.on('change', function(evt) {
-// 			changeEvent(evt);
-// 		});
-// });
+const banner = [
+	'/**',
+	' * @project        <%= pkg.name %>',
+	' * @author         <%= pkg.author %>',
+	' * @build          ' + moment().format('llll') + ' ET',
+	' * @release        ' +
+		gitRevSync.long() +
+		' [' +
+		gitRevSync.branch() +
+		']',
+	' * @copyright      Copyright (c) ' +
+		moment().format('YYYY') +
+		', <%= pkg.copyright %>',
+	' *',
+	' */',
+	''
+].join('\n');
 
-// //GULP SETUP TASK
-// gulp.task('setup', ['sass', 'scripts', 'vendors', 'images']);
+// Default task
+gulp.task('watch', ['browser-sync'], () => {
+	gulp.watch([config.paths.scss.src + '**/*.scss'], ['css']);
+	gulp.watch([config.paths.scss.dest + '**/*.css'], ['css']);
+	gulp.watch([config.paths.scripts.src + '**/*.js'], ['webpack']);
+});
 
-// //GULP BUILD TASK
-// gulp.task('build', ['watch', 'browser-sync']);
-
-// //DEFAULT GULP TASK
-// gulp.task('default', ['watch', 'browser-sync']);
-
-// //DEPLOY GULP TASK
-// gulp.task('deploy', ['sass_deploy', 'scripts_deploy', 'vendors', 'images']);
+// Production build
+// gulp.task('build', [
+// 	'download',
+// 	'default',
+// 	'favicons',
+// 	'imagemin',
+// 	'fonts',
+// 	'criticalcss'
+// ]);

@@ -1,24 +1,24 @@
-const gulp          = require('gulp');
-const config         = require('../config.js');
-const fancyLog      = require('fancy-log');
-const plumber       = require('gulp-plumber');
-const sourcemaps    = require('gulp-sourcemaps');
-const sass          = require('gulp-sass');
-const cached        = require('gulp-cached');
-const autoprefixer   = require('gulp-autoprefixer');
-const size          = require('gulp-size');
-const print         = require('gulp-print');
-const cssnano       = require('gulp-cssnano');
-const concat        = require('gulp-concat');
-const newer         = require('gulp-newer');
-const moment        = require('moment');
-const gitRevSync    = require('git-rev-sync');
-const header        = require('gulp-header');
-const filter         = require('gulp-filter');
-const livereload    = require('gulp-livereload');
+const gulp = require('gulp');
+const config = require('../config.js');
+const fancyLog = require('fancy-log');
+const plumber = require('gulp-plumber');
+const sourcemaps = require('gulp-sourcemaps');
+const sass = require('gulp-sass');
+const cached = require('gulp-cached');
+const autoprefixer = require('gulp-autoprefixer');
+const size = require('gulp-size');
+const print = require('gulp-print');
+const cssnano = require('gulp-cssnano');
+const concat = require('gulp-concat');
+const newer = require('gulp-newer');
+const moment = require('moment');
+const gitRevSync = require('git-rev-sync');
+const header = require('gulp-header');
+const filter = require('gulp-filter');
+const livereload = require('gulp-livereload');
 
-const onError = (err) => {
-    console.log(err);
+const onError = err => {
+	console.log(err);
 };
 
 // const banner = [
@@ -33,29 +33,33 @@ const onError = (err) => {
 //     ""
 // ].join("\n");
 
-
 // css task - combine & minimize any distribution CSS into the public css folder, and add our banner to it
-gulp.task("css", ["scss"], () => {
-    fancyLog("-> Building css");
-    return gulp.src(config.paths.sass.dest+'/main.css')
-        .pipe(plumber({errorHandler: onError}))
-        .pipe(newer({dest: config.paths.sass.dest + 'main.min.css'}))
-        .pipe(print())
-        .pipe(sourcemaps.init({loadMaps: true}))
-        // .pipe(concat(pkg.vars.siteCssName))
-        .pipe(cssnano({
-            discardComments: {
-                removeAll: true
-            },
-            discardDuplicates: true,
-            discardEmpty: true,
-            minifyFontValues: true,
-            minifySelectors: true
-        }))
-        // .pipe(header(banner, {pkg: pkg}))
-        .pipe(sourcemaps.write("./"))
-        .pipe(size({gzip: true, showFiles: true}))
-        .pipe(gulp.dest(config.paths.sass.dest))
-        .pipe(filter("**/*.css"))
-        .pipe(livereload());
+gulp.task('css', ['scss'], () => {
+	fancyLog('-> Building css');
+	return (
+		gulp
+			.src(config.paths.scss.dest + '/main.css')
+			.pipe(plumber({ errorHandler: onError }))
+			.pipe(newer({ dest: config.paths.scss.dest + 'main.min.css' }))
+			.pipe(print())
+			.pipe(sourcemaps.init({ loadMaps: true }))
+			// .pipe(concat(pkg.vars.siteCssName))
+			.pipe(
+				cssnano({
+					discardComments: {
+						removeAll: true
+					},
+					discardDuplicates: true,
+					discardEmpty: true,
+					minifyFontValues: true,
+					minifySelectors: true
+				})
+			)
+			// .pipe(header(banner, {pkg: pkg}))
+			.pipe(sourcemaps.write('./'))
+			.pipe(size({ gzip: true, showFiles: true }))
+			.pipe(gulp.dest(config.paths.scss.dest))
+			.pipe(filter('**/*.css'))
+			.pipe(livereload())
+	);
 });

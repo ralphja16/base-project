@@ -4,7 +4,7 @@ module.exports = {
 		path: './'
 	},
 	paths: {
-		sass: {
+		scss: {
 			src2: [
 				'./source/modules/**/scss/*.scss',
 				'./source/objects/**/scss/*.scss',
@@ -15,11 +15,8 @@ module.exports = {
 			dest: './public/library/css'
 		},
 		scripts: {
-			src: [
-				'./source/components/**/js/*.js',
-				'./source/modules/**/js/*.js',
-				'./source/objects/**/js/*.js'
-			],
+			src: ['./source/modules/**/js/*.js'],
+			build: './build/js/',
 			dest: './public/library/js'
 		},
 		vendors: {
@@ -48,5 +45,18 @@ module.exports = {
 			dest: './public/library/img/favicons/',
 			path: './public/library/img/favicons/'
 		}
+	},
+	globs: {
+		distJs: [
+			'./build/js/**/js/*.js'
+			// './node_modules/lazysizes/lazysizes.min.js',
+			// './node_modules/lazysizes/plugins/bgset/ls.bgset.min.js',
+			// './node_modules/picturefill/dist/picturefill.min.js',
+			// './node_modules/vue/dist/vue.min.js',
+			// './node_modules/vue2-autocomplete/dist/vue2-autocomplete.js',
+			// './node_modules/vue-resource/dist/vue-resource.min.js'
+		],
+		babelJs: ['./source/modules/**/js/*.js'],
+		siteIcon: './public/img/site/favicon.*'
 	}
 };
