@@ -57,9 +57,3 @@
 // } else {
 //     document.addEventListener('DOMContentLoaded', callback);
 // }
-
-export class mModal {
-    constructor() {
-        console.log('test modal');
-    }
-}
