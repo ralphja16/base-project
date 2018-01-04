@@ -15,6 +15,12 @@
 </head>
 
 <body>
+	<a id="l-skip-to-main" class="sr-only sr-only-focusable" href="#main-content">
+		<div class="l-container">
+			<div class="l-skiplink-text">Skip to main content</div>
+		</div>
+	</a>
+
 	<div id="l-wrapper">
 
 		<header id="l-header">
@@ -26,7 +32,16 @@
 					<div class="col-9">
 						<nav class="m-navigation">
 
-							<ul>
+							<div class="d-flex justify-content-between hidden-lg-up">
+								<a class="o-logo o-logo--text" href="/">Stylesheet</a>
+								<div class="m-navigation__toggle">
+									<button type="button" aria-label="Toggle main navigation" aria-expanded="false">
+										<i class="fas fa-bars"></i>
+									</button>
+								</div>
+							</div>
+
+							<ul class="m-navigation__container">
 								<li class="m-navigation__item">
 									<a href="">Get started
 										<i class="fas fa-caret-down"></i>
@@ -66,7 +81,7 @@
 
 		<div id="l-content">
 			<aside>Sidebar</aside>
-			<main>Content</main>
+			<main id="main-content">Content</main>
 		</div>
 
 		<footer id="l-footer">
