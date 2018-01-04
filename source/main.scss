@@ -2,8 +2,8 @@
 
 // Utils
 @import 'utils/vars/index',
-	'utils/functions/index',
 	'utils/mixins/index',
+	'utils/functions/index',
 	'utils/helpers/index';
 
 // Vendors
@@ -14,9 +14,8 @@
 
 // Layouts
 @import 'layout/l-colors',
-	'layout/l-grid',
 	'layout/l-css-grid',
-	'layout/l-flexbox',
+	'layout/l-grid',
 	'layout/l-base';
 
 // objects
@@ -24,9 +23,6 @@
 
 // Modules
 @import 'modules/index';
-
-// Components
-@import 'components/index';
 
 // States
 @import 'states/print';

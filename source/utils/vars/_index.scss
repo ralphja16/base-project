@@ -4,20 +4,21 @@
 CONFIG
 ============================================================================= */
 
-
-
 /* =============================================================================
 BASE
 ============================================================================= */
 
-
+@import 'global';
 
 /* =============================================================================
 IMPORTS
 ============================================================================= */
 
-@import "file-paths";
-@import "colors";
-@import "fonts";
-@import "margins";
-@import "paddings";
+@import 'breakpoints';
+@import 'colors';
+@import 'fonts';
+@import 'file-paths';
+@import 'grid-columns';
+@import 'grid-containers';
+@import 'margins';
+@import 'paddings';

@@ -1,323 +1,57 @@
-@charset "UTF-8";
+@include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
+@include _assert-starts-at-zero($grid-breakpoints);
 
-// https://zellwk.com/blog/responsive-grid-system
+@include _assert-ascending($container-max-widths, '$container-max-widths');
 
-/* =============================================================================
-	CONFIG
-============================================================================= */
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
 
-$container-width: 75em; // Base size * $container-width
-
-/* =============================================================================
-	BREAKPOINTS FOR MIN-WIDTH MEDIA QUERIES
-	REFERENCE: https://zellwk.com/blog/media-query-units/
-============================================================================= */
-// xxs: 320px,
-// 	// xs: 375px,
-// 	xs: 480px,
-// 	// xs: 568px,
-// 	// xs: 640px,
-// 	sm: 768px,
-// 	ms: 800px,
-// 	md: 992px,
-// 	mlg: 1024px,
-// 	lg: 1200px,
-// 	xlg: 1440px,
-// 	2xlg: 1600px,
-// 	3xlg: 2000px
-
-$breakpoints-min: (
-	xxs: 20em,
-	xs: 30em,
-	sm: 48em,
-	ms: 50em,
-	md: 61.9375em,
-	mlg: 64em,
-	lg: 75em,
-	xlg: 90em,
-	2xlg: 100em,
-	3xlg: 125em
-);
-
-/* =============================================================================
-	BREAKPOINTS FOR MAX-WIDTH MEDIA QUERIES
-============================================================================= */
-
-$breakpoints-max: (
-	xxs: 19.9375em,
-	xs: 29.9375em,
-	sm: 47.9375em,
-	ms: 49.9375em,
-	md: 61.9375em,
-	mlg: 63.9375em,
-	lg: 74.9375em,
-	xl: 89.9375em,
-	2xl: 99.9375em,
-	3xl: 124.9375em
-);
-
-/* =============================================================================
-	MIXIN: RESPOND-TO-MIN
-	USEAGE: @include respond-to-min(sm) { ... }
-============================================================================= */
-
-@mixin respond-to-min($breakpoint) {
-	@if map-has-key($breakpoints-min, $breakpoint) {
-		@media screen and (min-width: #{map-get($breakpoints-min, $breakpoint)}) {
-			@content;
-		}
-	} @else {
-		@warn "Unfortunately,
-			no value could be retrieved from `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map.";
+@if $enable-grid-classes {
+	.l-container {
+		@include make-container();
+		@include make-container-max-widths();
 	}
 }
 
-/* =============================================================================
-	MIXIN: RESPOND-TO-MAX
-	USEAGE: @include respond-to-max(small) { ... }
-============================================================================= */
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but with 100% width for
+// fluid, full width layouts.
 
-@mixin respond-to-max($breakpoint) {
-	@if map-has-key($breakpoints-max, $breakpoint) {
-		@media screen and (max-width: #{map-get($breakpoints-max, $breakpoint)}) {
-			@content;
-		}
-	} @else {
-		@warn "Unfortunately,
-			no value could be retrieved from `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map.";
+@if $enable-grid-classes {
+	.l-container--fluid {
+		@include make-container();
 	}
 }
 
-/* =============================================================================
-	COLUMNS DEFAULT GRID
-============================================================================= */
+// Row
+//
+// Rows contain and clear the floats of your columns.
 
-@each $key, $value in $breakpoints-min {
-	@include respond-to-min($key) {
-		.col-#{$key}-1 {
-			width: 8.33333333%;
-		}
+@if $enable-grid-classes {
+	.l-row {
+		@include make-row();
+	}
 
-		.col-#{$key}-2 {
-			width: 16.66666667%;
-		}
+	// Remove the negative margin from default .row, then the horizontal padding
+	// from all immediate children columns (to prevent runaway style inheritance).
+	.l-no-gutters {
+		margin-right: 0;
+		margin-left: 0;
 
-		.col-#{$key}-3 {
-			width: 25%;
-		}
-
-		.col-#{$key}-4 {
-			width: 33.33333333%;
-		}
-
-		.col-#{$key}-5 {
-			width: 41.66666667%;
-		}
-
-		.col-#{$key}-6 {
-			width: 50%;
-		}
-
-		.col-#{$key}-7 {
-			width: 58.33333333%;
-		}
-
-		.col-#{$key}-8 {
-			width: 66.66666667%;
-		}
-
-		.col-#{$key}-9 {
-			width: 75%;
-		}
-
-		.col-#{$key}-10 {
-			width: 83.33333333%;
-		}
-
-		.col-#{$key}-11 {
-			width: 91.66666667%;
-		}
-
-		.col-#{$key}-12 {
-			width: 100%;
+		> .l-col,
+		> [class*='l-col-'] {
+			padding-right: 0;
+			padding-left: 0;
 		}
 	}
 }
 
-/* =============================================================================
-	COLUMNS FLEXBOX GRID
-============================================================================= */
+// Columns
+//
+// Common styles for small and large grid columns
 
-@each $key, $value in $breakpoints-min {
-	@include respond-to-min($key) {
-		.fl-col-#{$key}-1 {
-			flex-basis: 8.33333333%;
-			max-width: 8.33333333%;
-		}
-
-		.fl-col-#{$key}-2 {
-			flex-basis: 16.66666667%;
-			max-width: 16.66666667%;
-		}
-
-		.fl-col-#{$key}-3 {
-			flex-basis: 25%;
-			max-width: 25%;
-		}
-
-		.fl-col-#{$key}-4 {
-			flex-basis: 33.33333333%;
-			max-width: 33.33333333%;
-		}
-
-		.fl-col-#{$key}-5 {
-			flex-basis: 41.66666667%;
-			max-width: 41.66666667%;
-		}
-
-		.fl-col-#{$key}-6 {
-			flex-basis: 505;
-			max-width: 50%;
-		}
-
-		.fl-col-#{$key}-7 {
-			flex-basis: 58.33333333%;
-			max-width: 58.33333333%;
-		}
-
-		.fl-col-#{$key}-8 {
-			flex-basis: 66.66666667%;
-			max-width: 66.66666667%;
-		}
-
-		.fl-col-#{$key}-9 {
-			flex-basis: 75%;
-			max-width: 75%;
-		}
-
-		.fl-col-#{$key}-10 {
-			flex-basis: 83.33333333%;
-			max-width: 83.33333333%;
-		}
-
-		.fl-col-#{$key}-11 {
-			flex-basis: 91.66666667%;
-			max-width: 91.66666667%;
-		}
-
-		.fl-col-#{$key}-12 {
-			flex-basis: 100%;
-			max-width: 100%;
-		}
-	}
-}
-
-/* =============================================================================
-	RESPONSIVE UTILITIES
-============================================================================= */
-
-@each $key, $value in $breakpoints-min {
-	@include respond-to-min($key) {
-		.hidden-min-#{$key} {
-			display: none;
-		}
-	}
-}
-
-@each $key, $value in $breakpoints-max {
-	@include respond-to-max($key) {
-		.hidden-max-#{$key} {
-			display: none;
-		}
-	}
-}
-
-/* =============================================================================
-	Containers
-============================================================================= */
-
-.l-container {
-	max-width: $container-width;
-	width: 100%;
-	margin: 0 auto;
-	display: table;
-	// display: flex;
-	padding-left: 0.625em;
-	padding-right: 0.625em;
-
-	&:before {
-		display: table;
-		content: ' ';
-	}
-
-	&:after {
-		display: table;
-		content: ' ';
-		clear: both;
-	}
-
-	@include respond-to-min (sm) {
-		padding-left: 0.938em;
-		padding-right: 0.938em;
-	}
-}
-
-.l-container--fluid {
-	width: 100%;
-	padding-left: 0.625em;
-	padding-right: 0.625em;
-
-	&:before {
-		display: table;
-		content: ' ';
-	}
-
-	&:after {
-		display: table;
-		content: ' ';
-		clear: both;
-	}
-
-	@include respond-to-min (sm) {
-		padding-left: 0.9375em;
-		padding-right: 0.9375em;
-	}
-}
-
-/* =============================================================================
-	GRID
-============================================================================= */
-
-.l-row {
-	margin-left: -0.625em;
-	margin-right: -0.625em;
-
-	&:before {
-		display: table;
-		content: ' ';
-	}
-
-	&:after {
-		display: table;
-		content: ' ';
-		clear: both;
-	}
-
-	@include respond-to-min (sm) {
-		padding-left: -0.938em;
-		padding-right: -0.938em;
-	}
-}
-
-[class*='col-'] {
-	float: left;
-	min-height: 1px;
-	position: relative;
-	padding-left: 0.625em;
-	padding-right: 0.625em;
-
-	@include respond-to-min (sm) {
-		padding-left: 0.938em;
-		padding-right: 0.938em;
-	}
+@if $enable-grid-classes {
+	@include make-grid-columns();
 }
