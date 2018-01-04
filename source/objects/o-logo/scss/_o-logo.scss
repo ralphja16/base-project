@@ -1,18 +1,17 @@
 @charset "UTF-8";
 
-
 /* =============================================================================
   CONFIG
 ============================================================================= */
 
-$object-name: 					'logo';
-$logo-width:					200px;
-$logo-height: 					30px;
+$object-name: 'logo';
+$logo-width: 200px;
+$logo-height: 30px;
 
-$logo-text-color:				$white;
-$logo-text-hover-color:			$black;
-$logo-text-weight:				bold;
-$logo-text-size:				24px;
+$logo-text-color: $white;
+$logo-text-hover-color: $black;
+$logo-text-weight: bold;
+$logo-text-size: 24;
 
 /* =============================================================================
   BASE
@@ -21,7 +20,6 @@ $logo-text-size:				24px;
 .o-#{$object-name} {
 	width: $logo-width;
 	height: $logo-height;
-
 
 	&--text {
 		line-height: 60px;
