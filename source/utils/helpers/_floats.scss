@@ -4,30 +4,22 @@
   CONFIG
 ============================================================================= */
 
-
-
 /* =============================================================================
   BASE
 ============================================================================= */
 
 .left {
-    float: left !important;
+	float: left !important;
 }
 
 .right {
-    float: right !important;
+	float: right !important;
 }
 
 .clearfix {
-
-    &:before {
-        display: table;
-        content: "";
-    }
-
-    &:after {
-        display: table;
-        clear: both;
-        content: "";
-    }
+	&:after {
+		display: block;
+		content: '';
+		clear: both;
+	}
 }
