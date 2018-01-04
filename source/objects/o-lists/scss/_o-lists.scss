@@ -1,77 +1,65 @@
 @charset "UTF-8";
 
-
 /* =============================================================================
   CONFIG
 ============================================================================= */
 
-$object-name: 					'list';
-
-
+$object-name: 'list';
 
 /* =============================================================================
   BASE
 ============================================================================= */
 
-ol, ul {
-    margin-top: 0;
-    margin-bottom: $margin-small;
+dl,
+ol,
+ul {
+	margin-top: 0;
+	margin-bottom: 1rem;
 }
 
 ol ol,
 ol ul,
 ul ol,
 ul ul {
-    margin-bottom: 0;
-}
-
-// Description list
-dl {
-    margin-top: 0;
-    margin-bottom: ($margin-small * 2);
-}
-
-dd, dt {
-    line-height: 1.42857143;
+	margin-bottom: 0;
 }
 
 dt {
-    font-weight: 700;
+	font-weight: 700;
 }
 
 dd {
-    margin-left: 0;
+	margin-left: 0;
+	margin-bottom: 0.5rem;
 }
 
 // Horizontal description list
 .o-dl--horizontal {
+	dt {
+		float: left;
+		width: 160px;
+		overflow: hidden;
+		clear: left;
+		text-align: right;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
 
-    dt {
-        float: left;
-        width: 160px;
-        overflow: hidden;
-        clear: left;
-        text-align: right;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    dd {
-        margin-left: 180px;
-    }
+	dd {
+		margin-left: 180px;
+	}
 }
 
 .o-#{$object-name} {
+	&--inline {
+		padding-left: 0;
+		margin-left: -$margin-xsmall;
+		list-style: none;
 
-    &--inline {
-        padding-left: 0;
-        margin-left: -$margin-xsmall;
-        list-style: none;
-
-        > li {
-            display: inline-block;
-            padding-right: $padding-xsmall;
-            padding-left: $padding-xsmall;
-        }
-    }
+		> li {
+			display: inline-block;
+			padding-right: $padding-xsmall;
+			padding-left: $padding-xsmall;
+		}
+	}
 }
