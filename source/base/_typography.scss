@@ -4,74 +4,81 @@
   CONFIG
 ============================================================================= */
 
-$font-family--primary:			$open-sans;
-$marked-bg-color:				#fcf899;
-$blockquote-border:				$gray9;
-$blockquote-text-color:			$gray3;
-
+$font-family--primary: $open-sans;
+$marked-bg-color: #fcf899;
+$blockquote-border: $gray9;
+$blockquote-text-color: $gray3;
 
 /* =============================================================================
   BASE
 ============================================================================= */
 
 p {
-	line-height: 1.2;
-	margin: 1em 0;
-	@include rem(16);
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0.5rem;
+	line-height: 1.1;
+	font-weight: 500;
+	word-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
 }
 
 .h1,
 h1 {
 	font-family: $font-family--primary;
-	font-weight: bold;
-	line-height: 1.2;
-	word-wrap: break-word;
-	@include rem(36);
+	@include rem(40);
 }
 
 .h2,
 h2 {
 	font-family: $font-family--primary;
-	font-weight: bold;
-	line-height: 1.2;
-	word-wrap: break-word;
 	@include rem(32);
 }
 
 .h3,
 h3 {
 	font-family: $font-family--primary;
-	font-weight: bold;
-	line-height: 1.2;
-	word-wrap: break-word;
 	@include rem(28);
 }
 
 .h4,
 h4 {
 	font-family: $font-family--primary;
-	font-weight: bold;
-	line-height: 1.2;
-	word-wrap: break-word;
-	@include rem(21);
+	@include rem(24);
 }
 
 .h5,
 h5 {
 	font-family: $font-family--primary;
-	font-weight: bold;
-	line-height: 1.2;
-	word-wrap: break-word;
-	@include rem(16);
+	@include rem(20);
 }
 
 .h6,
 h6 {
 	font-family: $font-family--primary;
-	font-weight: bold;
-	line-height: 1.2;
-	word-wrap: break-word;
-	@include rem(12);
+	@include rem(16);
 }
 
 .small,
@@ -83,19 +90,26 @@ small {
 
 .lead {
 	font-weight: 300;
-	line-height: 1.4;
 	@include rem(21);
 }
 
 .mark,
 mark {
-	padding: .2em;
+	padding: 0.2em;
 	background-color: $marked-bg-color;
 }
 
 blockquote {
-	margin: 0;
-	padding: 0 $padding-medium;
+	margin-bottom: 1rem;
+	padding: 0.5rem 1rem;
 	color: $blockquote-text-color;
-	border-left: 4px solid $blockquote-border;
+	border-left: 0.25rem solid $blockquote-border;
+	@include rem(20);
+}
+
+pre {
+	display: block;
+	margin-top: 0;
+	margin-bottom: 1rem;
+	font-size: 90%;
 }

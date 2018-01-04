@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-// SVG SPRITE
-
-@import 'base/svg-sprite';
-
 // Utils
 @import 'utils/vars/index',
 	'utils/functions/index',
@@ -14,11 +10,7 @@
 // @import "vendors/";
 
 // Base
-@import 'base/normalize',
-	'base/fonts',
-	'base/svg-sprite',
-	'base/typography',
-	'base/base';
+@import 'base/normalize', 'base/fonts', 'base/typography', 'base/base';
 
 // Layouts
 @import 'layout/l-colors',
