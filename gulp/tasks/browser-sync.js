@@ -4,11 +4,11 @@ const browserSync = require('browser-sync');
 
 gulp.task('browser-sync', function() {
 	browserSync.init({
-		server: {
-			baseDir: './'
-		}
+		// server: {
+		// 	baseDir: config.paths.browserSync.path
+		// }
 
-		// proxy: "http://localhost/"
+		proxy: config.paths.browserSync.url
 	});
 
 	gulp
