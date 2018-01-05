@@ -24,6 +24,8 @@ $navigation-submenu-item-hover-bg: darken($blue, 10%);
 $navigation-submenu-item-hover-txt: $white;
 $navigation-submenu-item-padding: 0.5em 1em;
 
+$navigation-mobile-background: rgba(0, 0, 0, 0.9);
+
 /* =============================================================================
   BASE
 ============================================================================= */
@@ -40,16 +42,6 @@ $navigation-submenu-item-padding: 0.5em 1em;
 		}
 	}
 
-	// Mobile toggle button
-	&__toggle {
-		background: none;
-		border: none;
-		color: $navigation-item-txt;
-		align-self: flex-start;
-		line-height: $navigation-height;
-		@include rem(24);
-	}
-
 	ul {
 		float: $navigation-ul-align;
 		list-style: none;
@@ -59,6 +51,10 @@ $navigation-submenu-item-padding: 0.5em 1em;
 			float: left;
 			position: relative;
 			background: $navigation-item-bg;
+
+			.fa-caret-down {
+				@include transition(transform, ease, 0.3s);
+			}
 
 			// Hover on li menu item
 			&:hover {
@@ -72,6 +68,11 @@ $navigation-submenu-item-padding: 0.5em 1em;
 			&.is--active {
 				background: $navigation-item-active-bg;
 				color: $navigation-item-active-txt;
+
+				.fa-caret-down {
+					transform: rotate(180deg);
+					@include transition(all, ease, 0.3s);
+				}
 
 				> .m-#{$module-name}__submenu {
 					display: block;
@@ -93,31 +94,68 @@ $navigation-submenu-item-padding: 0.5em 1em;
 			}
 		}
 	}
+}
 
-	.m-#{$module-name}__submenu {
-		display: none;
-		top: $navigation-height;
-		position: absolute;
-		z-index: 9999;
-		background: $navigation-submenu-bg;
+// Submenu
+.m-#{$module-name}__submenu {
+	display: none;
+	top: $navigation-height;
+	position: absolute;
+	z-index: 9999;
+	background: $navigation-submenu-bg;
 
-		li {
-			width: 100%;
+	li {
+		width: 100%;
 
-			&:hover {
-				background: $navigation-submenu-item-hover-bg;
-
-				a {
-					color: $navigation-submenu-item-hover-txt;
-				}
-			}
+		&:hover {
+			background: $navigation-submenu-item-hover-bg;
 
 			a {
-				width: 100%;
-				height: auto;
-				display: inline-block;
-				padding: $navigation-submenu-item-padding;
-				color: $navigation-submenu-item-txt;
+				color: $navigation-submenu-item-hover-txt;
+			}
+		}
+
+		a {
+			width: 100%;
+			height: auto;
+			display: inline-block;
+			padding: $navigation-submenu-item-padding;
+			color: $navigation-submenu-item-txt;
+		}
+	}
+}
+
+// Mobile toggle button
+.m-#{$module-name}__toggle {
+	background: none;
+	border: none;
+	color: $navigation-item-txt;
+	align-self: flex-start;
+	line-height: $navigation-height;
+	@include rem(24);
+}
+
+// Mobile menu is collapsed
+.m-#{$module-name}.is--open {
+	.m-#{$module-name}__container {
+		float: none;
+		display: block;
+		position: fixed;
+		top: $navigation-height;
+		left: 0;
+		right: 0;
+		width: 100vw;
+		height: calc(100vh - #{$navigation-height});
+		background: $navigation-mobile-background;
+
+		li {
+			display: block;
+			width: 100%;
+
+			ul {
+				position: relative;
+				float: none;
+				top: 0;
 			}
 		}
 	}
