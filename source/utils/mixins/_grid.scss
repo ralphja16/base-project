@@ -1,6 +1,14 @@
-/// Grid system
-//
-// Generate semantic grid columns with these mixins.
+@charset "UTF-8";
+
+/* =============================================================================
+GRID SYSTEM
+Generate semantic grid columns with these mixins.
+============================================================================= */
+
+/* =============================================================================
+MIXIN: MAKE CONTAINER
+DESCRIPTION: Container default styling
+============================================================================= */
 
 @mixin make-container() {
 	width: 100%;
@@ -10,7 +18,11 @@
 	margin-left: auto;
 }
 
-// For each breakpoint, define the maximum width of the container in a media query
+/* =============================================================================
+MIXIN: MAKE CONTAINER MAX WIDTHS
+DESCRIPTION: For each breakpoint, define the maximum width of the container in a media query
+============================================================================= */
+
 @mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
 	@each $breakpoint, $container-max-width in $max-widths {
 		@include media-breakpoint-up($breakpoint, $breakpoints) {
@@ -19,12 +31,22 @@
 	}
 }
 
+/* =============================================================================
+MIXIN: MAKE ROW
+DESCRIPTION: Row default style
+============================================================================= */
+
 @mixin make-row() {
 	display: flex;
 	flex-wrap: wrap;
 	margin-right: ($grid-gutter-width / -2);
 	margin-left: ($grid-gutter-width / -2);
 }
+
+/* =============================================================================
+MIXIN: MAKE COL READY
+DESCRIPTION: Column default style
+============================================================================= */
 
 @mixin make-col-ready() {
 	position: relative;
@@ -37,6 +59,11 @@
 	padding-left: ($grid-gutter-width / 2);
 }
 
+/* =============================================================================
+MIXIN: MAKE COL
+DESCRIPTION: Column flexbox style
+============================================================================= */
+
 @mixin make-col($size, $columns: $grid-columns) {
 	flex: 0 0 percentage($size / $columns);
 	// Add a `max-width` to ensure content within each column does not blow out
@@ -44,6 +71,11 @@
 	// do not appear to require this.
 	max-width: percentage($size / $columns);
 }
+
+/* =============================================================================
+MIXIN: MAKE COL OFFSET
+DESCRIPTION: Column offset style
+============================================================================= */
 
 @mixin make-col-offset($size, $columns: $grid-columns) {
 	$num: $size / $columns;

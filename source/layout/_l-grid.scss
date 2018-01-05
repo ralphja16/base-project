@@ -1,11 +1,18 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
 @include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
 @include _assert-starts-at-zero($grid-breakpoints);
 
 @include _assert-ascending($container-max-widths, '$container-max-widths');
 
-// Container widths
-//
-// Set the container width, and override it for fixed navbars in media queries.
+/* =============================================================================
+SELECTOR: CONTAINER WIDTHS
+DESCRIPTION: Set the container width, and override it for fixed navbars in media queries.
+============================================================================= */
 
 @if $enable-grid-classes {
 	.l-container {
@@ -14,10 +21,11 @@
 	}
 }
 
-// Fluid container
-//
-// Utilizes the mixin meant for fixed width containers, but with 100% width for
-// fluid, full width layouts.
+/* =============================================================================
+SELECTOR: FLUID CONTAINER
+DESCRIPTION: Utilizes the mixin meant for fixed width containers,
+			but with 100% width for fluid, full width layouts.
+============================================================================= */
 
 @if $enable-grid-classes {
 	.l-container--fluid {
@@ -25,32 +33,34 @@
 	}
 }
 
-// Row
-//
-// Rows contain and clear the floats of your columns.
+/* =============================================================================
+SELECTOR: ROW
+DESCRIPTION: Rows contain and clear the floats of your columns.
+============================================================================= */
 
 @if $enable-grid-classes {
 	.l-row {
 		@include make-row();
 	}
 
-	// Remove the negative margin from default .row, then the horizontal padding
+	// Remove the negative margin from default .l-row, then the horizontal padding
 	// from all immediate children columns (to prevent runaway style inheritance).
 	.l-no-gutters {
 		margin-right: 0;
 		margin-left: 0;
 
-		> .l-col,
-		> [class*='l-col-'] {
+		> .col,
+		> [class*='col-'] {
 			padding-right: 0;
 			padding-left: 0;
 		}
 	}
 }
 
-// Columns
-//
-// Common styles for small and large grid columns
+/* =============================================================================
+SELECTOR: COLUMNS
+DESCRIPTION: Common styles for small and large grid columns
+============================================================================= */
 
 @if $enable-grid-classes {
 	@include make-grid-columns();

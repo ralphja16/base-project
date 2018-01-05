@@ -1,5 +1,8 @@
-// Ascending
-// Used to evaluate Sass maps like our grid breakpoints.
+/* =============================================================================
+MIXIN: ASCENDING
+DESCRIPTION: Used to evaluate Sass maps like our grid breakpoints.
+============================================================================= */
+
 @mixin _assert-ascending($map, $map-name) {
 	$prev-key: null;
 	$prev-num: null;

@@ -1,8 +1,14 @@
-// stylelint-disable declaration-no-important
+@charset "UTF-8";
 
-//
-// Utilities for common `display` values
-//
+/* =============================================================================
+GRID SYSTEM
+Utilities for common `display` values
+============================================================================= */
+
+/* =============================================================================
+FUNCTION: DISPLAY CLASSES FOR BREAKPOINTS
+DESCRIPTION: Display classes for each breakpoint
+============================================================================= */
 
 @each $breakpoint in map-keys($grid-breakpoints) {
 	@include media-breakpoint-up($breakpoint) {
@@ -38,7 +44,11 @@
 	}
 }
 
-// Hidden classes for media queries
+/* =============================================================================
+FUNCTION: HIDDEN CLASSES MIN WIDTH BREAKPOINTS
+DESCRIPTION: Hidden classes for each breakpoint
+============================================================================= */
+
 @each $breakpoint in map-keys($grid-breakpoints) {
 	@include media-breakpoint-up($breakpoint) {
 		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
@@ -49,7 +59,11 @@
 	}
 }
 
-// Hidden classes for media queries
+/* =============================================================================
+FUNCTION: HIDDEN CLASSES MAX WIDTH BREAKPOINTS
+DESCRIPTION: Hidden classes for each breakpoint
+============================================================================= */
+
 @each $breakpoint in map-keys($grid-breakpoints) {
 	@include media-breakpoint-down($breakpoint) {
 		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
@@ -57,39 +71,5 @@
 		.hidden#{$infix}-down {
 			display: none !important;
 		}
-	}
-}
-
-//
-// Utilities for toggling `display` in print
-//
-
-.d-print-block {
-	display: none !important;
-
-	@media print {
-		display: block !important;
-	}
-}
-
-.d-print-inline {
-	display: none !important;
-
-	@media print {
-		display: inline !important;
-	}
-}
-
-.d-print-inline-block {
-	display: none !important;
-
-	@media print {
-		display: inline-block !important;
-	}
-}
-
-.d-print-none {
-	@media print {
-		display: none !important;
 	}
 }
