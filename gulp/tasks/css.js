@@ -1,5 +1,7 @@
 const gulp = require('gulp');
 const config = require('../config.js');
+const onError = require('../errorHandler');
+const pkg = require('../../package.json');
 const fancyLog = require('fancy-log');
 const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
@@ -14,24 +16,24 @@ const newer = require('gulp-newer');
 const moment = require('moment');
 const gitRevSync = require('git-rev-sync');
 const header = require('gulp-header');
-const filter = require('gulp-filter');
-const livereload = require('gulp-livereload');
 
-const onError = err => {
-	console.log(err);
-};
-
-// const banner = [
-//     "/**",
-//     " * @project        <%= pkg.name %>",
-//     " * @author         <%= pkg.author %>",
-//     " * @build          " + moment().format("llll") + " ET",
-//     " * @release        " + gitRevSync.long() + " [" + $.gitRevSync.branch() + "]",
-//     " * @copyright      Copyright (c) " + moment().format("YYYY") + ", <%= pkg.copyright %>",
-//     " *",
-//     " */",
-//     ""
-// ].join("\n");
+const banner = [
+	'/**',
+	' * @project        <%= pkg.name %>',
+	' * @author         <%= pkg.author %>',
+	' * @build          ' + moment().format('llll') + ' ET',
+	' * @release        ' +
+		gitRevSync.long() +
+		' [' +
+		gitRevSync.branch() +
+		']',
+	' * @copyright      Copyright (c) ' +
+		moment().format('YYYY') +
+		', <%= pkg.copyright %>',
+	' *',
+	' */',
+	''
+].join('\n');
 
 // css task - combine & minimize any distribution CSS into the public css folder, and add our banner to it
 gulp.task('css', ['scss'], () => {
@@ -55,11 +57,9 @@ gulp.task('css', ['scss'], () => {
 					minifySelectors: true
 				})
 			)
-			// .pipe(header(banner, {pkg: pkg}))
+			.pipe(header(banner, { pkg: pkg }))
 			.pipe(sourcemaps.write('./'))
 			.pipe(size({ gzip: true, showFiles: true }))
 			.pipe(gulp.dest(config.paths.scss.dest))
-			.pipe(filter('**/*.css'))
-			.pipe(livereload())
 	);
 });
