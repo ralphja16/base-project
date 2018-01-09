@@ -53,8 +53,7 @@
 		"webpack": "^3.10.0"
 	},
 	"scripts": {
-		"test":
-			"mocha ./test/unit-tests/**/*.test.js --require babel-polyfill --compilers js:babel-register --watch",
+		"test": "mocha ./test/unit-tests/**/*.test.js --require babel-polyfill --compilers js:babel-register --watch",
 		"e2e-test": "casperjs test ./test/e2e-tests/*.test.js"
 	},
 	"repository": {
