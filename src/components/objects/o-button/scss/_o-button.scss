@@ -5,7 +5,7 @@
 ============================================================================= */
 
 $object-name: "btn";
-$button-font-color: $black;
+$button-font-color: $white;
 $button-font-weight: 400;
 $button-background--primary: $blue;
 $button-background--secondary: $succes-green;
@@ -21,7 +21,7 @@ $button-border-color: transparent;
 .o-#{$object-name} {
 	color: $button-font-color;
 	display: inline-block;
-	padding: 0.5em 0.75em;
+	padding: 0.5rem 0.75rem;
 	margin-bottom: 0;
 	font-weight: $button-font-weight;
 	line-height: 1.4;

@@ -4,105 +4,101 @@
 CONFIG
 ============================================================================= */
 
-$checkbox-bg-color: 			    #ddd;
-$checkbox-bg-color-disabled:        #eee;
-$checkmark-color-disabled:          $gray6;
-$checkmark-color:                   $white;
-$checkmark-bg-color:                $succes-green;
+$checkbox-bg-color: #ddd;
+$checkbox-bg-color-disabled: #eee;
+$checkmark-color-disabled: $gray6;
+$checkmark-color: $white;
+$checkmark-bg-color: $succes-green;
 
-$checkbox-border-radius:            3px;
-$checkbox-border-radius-enabled:    "true";
+$checkbox-border-radius: 3px;
+$checkbox-border-radius-enabled: "true";
 
 /* =============================================================================
 BASE
 ============================================================================= */
 
 input[type="checkbox"] {
-    -webkit-appearance: checkbox;
-    box-sizing: border-box;
+	-webkit-appearance: checkbox;
+	box-sizing: border-box;
 }
 
 .o-checkbox {
+	// Fieldset container
+	&__container {
+	}
 
-    // Fieldset container
-    &__container {
+	&__label {
+		display: block;
+		position: relative;
+		padding-left: $padding-large;
+		margin-bottom: $margin-medium;
+		cursor: pointer;
+		@include rem(18);
+		@include transition(background, 0.3s, ease);
 
-    }
+		&:hover input ~ .o-checkbox__indicator,
+		input:focus ~ .o-checkbox__indicator {
+			background: darken($checkbox-bg-color, 10%);
+		}
 
-    &__label {
-        display: block;
-        position: relative;
-        padding-left: 30px;
-        margin-bottom: 15px;
-        cursor: pointer;
-        font-size: 18px;
-        @include transition(background, .3s, ease);
+		input:checked ~ .o-checkbox__indicator {
+			background: $checkmark-bg-color;
+		}
 
-        &:hover input ~ .o-checkbox__indicator,
-        input:focus ~ .o-checkbox__indicator {
-            background: darken($checkbox-bg-color, 10%);
-        }
+		&:hover input:not([disabled]):checked ~ .o-checkbox__indicator,
+		input:checked:focus ~ .o-checkbox__indicator {
+			background: darken($checkmark-bg-color, 10%);
+		}
 
-        input:checked ~ .o-checkbox__indicator {
-            background: $checkmark-bg-color;
-        }
+		input:disabled ~ .o-checkbox__indicator {
+			background: $checkbox-bg-color-disabled;
+			opacity: 0.6;
+			pointer-events: none;
+		}
 
-        &:hover input:not([disabled]):checked ~ .o-checkbox__indicator,
-        input:checked:focus ~ .o-checkbox__indicator {
-            background: darken($checkmark-bg-color, 10%);
-        }
+		input:checked ~ .o-checkbox__indicator:after {
+			display: block;
+		}
 
-        input:disabled ~ .o-checkbox__indicator {
-            background: $checkbox-bg-color-disabled;
-            opacity: 0.6;
-            pointer-events: none;
-        }
+		.o-checkbox__indicator:after {
+			left: 7px;
+			top: 4px;
+			width: 6px;
+			height: 10px;
+			border: solid $checkmark-color;
+			border-width: 0 2px 2px 0;
+			transform: rotate(45deg);
+		}
 
-        input:checked ~ .o-checkbox__indicator:after {
-            display: block;
-        }
+		input:disabled ~ .o-checkbox__indicator:after {
+			border-color: $checkmark-color-disabled;
+		}
+	}
 
-        .o-checkbox__indicator:after {
-            left: 7px;
-            top: 4px;
-            width: 6px;
-            height: 10px;
-            border: solid $checkmark-color;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
+	&__input {
+		position: absolute;
+		z-index: -1;
+		opacity: 0;
+	}
 
-        input:disabled ~ .o-checkbox__indicator:after {
-            border-color: $checkmark-color-disabled;
-        }
-    }
+	&__indicator {
+		position: absolute;
+		top: 2px;
+		left: 0;
+		height: 20px;
+		width: 20px;
+		background: $checkbox-bg-color;
 
-    &__input {
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-    }
+		@if $checkbox-border-radius-enabled == "true" {
+			@include border-radius($checkbox-border-radius);
+		}
 
-    &__indicator {
-        position: absolute;
-        top: 2px;
-        left: 0;
-        height: 20px;
-        width: 20px;
-        background: $checkbox-bg-color;
+		@include transition(background, 0.3s, ease);
 
-        @if $checkbox-border-radius-enabled == "true" {
-            @include border-radius($checkbox-border-radius);
-        }
-
-        @include transition(background, .3s, ease);
-
-        &:after {
-            content: '';
-            position: absolute;
-            display: none;
-        }
-    }
-
-
+		&:after {
+			content: "";
+			position: absolute;
+			display: none;
+		}
+	}
 }

@@ -4,87 +4,81 @@
 CONFIG
 ============================================================================= */
 
-$dropdown-menu-bg: 			    $white;
-$dropdown-menu-border-color:    $grayC;
-$dropdown-menu-border-width:    1px;
-$dropdown-menu-txt-color:       $gray3;
+$dropdown-menu-bg: $white;
+$dropdown-menu-border-color: $grayC;
+$dropdown-menu-border-width: 1px;
+$dropdown-menu-txt-color: $gray3;
 $dropdown-menu-txt-color-hover: $gray2;
-$dropdown-menu-txt-bg-hover:    $grayD;
-
+$dropdown-menu-txt-bg-hover: $grayD;
 
 /* =============================================================================
 BASE
 ============================================================================= */
 
-
 .o-dropdown {
-    position: relative;
+	position: relative;
 
-    // Caret
-    .caret {
-        display: inline-block;
-        @include rem(12);
-        @include transition(all, .3s, ease);
-    }
+	// Caret
+	.caret {
+		display: inline-block;
+		@include rem(12);
+		@include transition(all, 0.3s, ease);
+	}
 
-    &__menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1000;
-        display: none;
-        float: left;
-        min-width: 160px;
-        padding: 5px 0;
-        margin: 2px 0 0;
-        font-size: 14px;
-        text-align: left;
-        list-style: none;
-        background-color: $dropdown-menu-bg;
-        -webkit-background-clip: padding-box;
-        background-clip: padding-box;
-        border: $dropdown-menu-border-width solid $dropdown-menu-border-color;
-        border: $dropdown-menu-border-width solid rgba(0,0,0,.15);
-        border-radius: 4px;
-        -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	&__menu {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 1000;
+		display: none;
+		float: left;
+		min-width: 160px;
+		padding: $padding-xsmall 0;
+		margin: 2px 0 0;
+		font-size: 14px;
+		text-align: left;
+		list-style: none;
+		background-color: $dropdown-menu-bg;
+		-webkit-background-clip: padding-box;
+		background-clip: padding-box;
+		border: $dropdown-menu-border-width solid $dropdown-menu-border-color;
+		border: $dropdown-menu-border-width solid rgba(0, 0, 0, 0.15);
+		border-radius: 4px;
+		-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 
-        li {
+		li {
+			> a {
+				display: block;
+				padding: 3px ($padding-small * 2);
+				clear: both;
+				font-weight: 400;
+				line-height: 1.42857143;
+				color: $dropdown-menu-txt-color;
+				white-space: nowrap;
+			}
+		}
 
-            > a {
-                display: block;
-                padding: 3px 20px;
-                clear: both;
-                font-weight: 400;
-                line-height: 1.42857143;
-                color: $dropdown-menu-txt-color;
-                white-space: nowrap;
-            }
-        }
+		> li {
+			> a {
+				&:focus,
+				&:hover {
+					color: $dropdown-menu-txt-color-hover;
+					text-decoration: none;
+					background-color: $dropdown-menu-txt-bg-hover;
+				}
+			}
+		}
+	}
 
-        >li {
+	//  open state
+	&.is--open {
+		> .o-dropdown__menu {
+			display: block;
+		}
 
-            >a {
-
-                &:focus,
-                &:hover {
-                    color: $dropdown-menu-txt-color-hover;
-                    text-decoration: none;
-                    background-color: $dropdown-menu-txt-bg-hover;
-                }
-            }
-        }
-    }
-
-    //  open state
-    &.is--open {
-
-        >.o-dropdown__menu {
-            display: block;
-        }
-
-        .caret {
-            transform: rotate(180deg);
-        }
-    }
+		.caret {
+			transform: rotate(180deg);
+		}
+	}
 }
