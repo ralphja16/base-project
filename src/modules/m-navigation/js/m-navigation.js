@@ -1,9 +1,9 @@
 class Navigation {
 	constructor(holder) {
 		this.holder = document.querySelector(holder);
-		this.navItems = this.holder.querySelectorAll('.m-navigation__item');
-		this.toggleButton = this.holder.querySelector('.m-navigation__toggle');
-		this.activeClass = 'is--active';
+		this.navItems = this.holder.querySelectorAll(".m-navigation__item");
+		this.toggleButton = this.holder.querySelector(".m-navigation__toggle");
+		this.activeClass = "is--active";
 		this.initEventHandler();
 		this.mobileToggle(this.holder);
 	}
@@ -17,10 +17,10 @@ class Navigation {
 	}
 
 	mobileToggle(holder) {
-		this.toggleButton.addEventListener('click', function() {
+		this.toggleButton.addEventListener("click", function() {
 			const iconElement = this.firstElementChild;
-			const bars = 'fa-bars';
-			const cross = 'fa-times';
+			const bars = "fa-bars";
+			const cross = "fa-times";
 
 			if (iconElement.classList.contains(bars)) {
 				iconElement.classList.add(cross);
@@ -29,7 +29,7 @@ class Navigation {
 				iconElement.classList.add(bars);
 				iconElement.classList.remove(cross);
 			}
-			holder.classList.toggle('is--open');
+			holder.classList.toggle("is--open");
 		});
 	}
 
@@ -39,8 +39,8 @@ class Navigation {
 		for (let i = 0; i < this.navItems.length; i++) {
 			const item = this.navItems[i];
 
-			if (item.querySelector('.m-navigation__submenu')) {
-				item.addEventListener('click', function(e) {
+			if (item.querySelector(".m-navigation__submenu")) {
+				item.addEventListener("click", function(e) {
 					e.preventDefault();
 
 					if (this.classList.contains(_this.activeClass)) {
@@ -54,4 +54,4 @@ class Navigation {
 	}
 }
 
-const navigation = new Navigation('.m-navigation');
+const navigation = new Navigation(".m-navigation");
