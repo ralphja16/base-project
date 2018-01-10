@@ -6,8 +6,7 @@ module.exports = {
 	paths: {
 		scss: {
 			src2: [
-				"./src/modules/**/scss/*.scss",
-				"./src/objects/**/scss/*.scss",
+				"./src/components/**/**/scss/*.scss",
 				"./src/main.scss",
 				"./src/**/*.scss"
 			],
@@ -15,7 +14,7 @@ module.exports = {
 			dest: "./public/css"
 		},
 		scripts: {
-			src: ["./src/modules/**/js/*.js"],
+			src: ["./src/components/**/**/js/*.js"],
 			dest: "./public/js"
 		},
 		vendors: {
@@ -23,7 +22,7 @@ module.exports = {
 			dest: "./public/js"
 		},
 		images: ["./public/img/"],
-		tests: ["./test/modules/*.test.js", "./test/objects/*.test.js"],
+		tests: ["./src/components/**/**/js/*.test.js"],
 		templates: ["./src/templates/"],
 		favicons: {
 			src: "./src/assets/favicons/logo.png",

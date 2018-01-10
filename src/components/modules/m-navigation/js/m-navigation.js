@@ -21,14 +21,14 @@ class Navigation {
 			const iconElement = this.firstElementChild;
 			const bars = "fa-bars";
 			const cross = "fa-times";
-
-			if (iconElement.classList.contains(bars)) {
-				iconElement.classList.add(cross);
-				iconElement.classList.remove(bars);
-			} else {
-				iconElement.classList.add(bars);
-				iconElement.classList.remove(cross);
-			}
+			console.log(iconElement);
+			// if (iconElement.classList.contains(bars)) {
+			// 	iconElement.classList.add(cross);
+			// 	iconElement.classList.remove(bars);
+			// } else {
+			// 	iconElement.classList.add(bars);
+			// 	iconElement.classList.remove(cross);
+			// }
 			holder.classList.toggle("is--open");
 		});
 	}
