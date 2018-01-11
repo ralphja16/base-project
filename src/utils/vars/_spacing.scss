@@ -1,16 +1,9 @@
 /* =============================================================================
-	GLOBAL VARIABLES
-  	Quickly modify global styling by enabling or disabling optional features.
+	GSPACING
+  	Control the default styling of most Bootstrap elements by modifying these
+	variables. Mostly focused on spacing.
+	You can add more entries to the $spacers map, should you need more variation.
 ============================================================================= */
-
-$enable-grid-classes: true !default;
-$enable-print-styles: true !default;
-
-// Spacing
-//
-// Control the default styling of most Bootstrap elements by modifying these
-// variables. Mostly focused on spacing.
-// You can add more entries to the $spacers map, should you need more variation.
 
 $spacer: 1.5rem !default;
 $spacers: (

@@ -4,10 +4,10 @@
 IMPORTS
 ============================================================================= */
 
-@import 'display';
-@import 'floats';
-@import 'print';
-@import 'screen-readers';
-@import 'spacing';
-@import 'truncation';
-@import 'txt-align';
+@import 'display/scss/display';
+@import 'floats/scss/floats';
+@import 'print/scss/print';
+@import 'screen-readers/scss/screen-readers';
+@import 'spacing/scss/spacing';
+@import 'truncation/scss/truncation';
+@import 'txt-align/scss/txt-align';

@@ -5,6 +5,8 @@ GRID SYSTEM
 Generate semantic grid columns with these mixins.
 ============================================================================= */
 
+$enable-grid-classes: true !default;
+
 /* =============================================================================
 MIXIN: MAKE CONTAINER
 DESCRIPTION: Container default styling
