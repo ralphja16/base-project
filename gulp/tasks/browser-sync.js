@@ -10,4 +10,13 @@ gulp.task('browser-sync', function() {
 
 		// proxy: config.browserSync.url
 	});
+
+	gulp
+		.watch(config.paths.scss.src2, ['css'])
+		.on('change', browserSync.reload);
+	gulp
+		.watch(config.paths.scripts.src, ['webpack'])
+		.on('change', browserSync.reload);
+	gulp.watch([config.paths.html.src], ['parse-html']);
+	gulp.watch('*.html').on('change', browserSync.reload);
 });
