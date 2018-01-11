@@ -25,7 +25,7 @@ module.exports = {
 		tests: ['./src/components/**/**/js/*.test.js'],
 		html: {
 			src: ['./*.html'],
-			dest: ['./public']
+			dest: './public'
 		},
 		templates: ['./src/templates/'],
 		favicons: {
