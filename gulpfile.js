@@ -31,12 +31,13 @@ gulp.task('watch', ['browser-sync'], () => {
 	gulp.watch([config.paths.scss.src + '**/*.scss'], ['css']);
 	gulp.watch([config.paths.scss.dest + '**/*.css'], ['css']);
 	gulp.watch([config.paths.scripts.src + '**/*.js'], ['webpack']);
+	gulp.watch([config.paths.html.src], ['parse-html']);
 });
 
 // Production build
 // gulp.task('build', [
 // 	'download',
-// 	'default',
+// 	'default',§
 // 	'favicons',
 // 	'imagemin',
 // 	'fonts',

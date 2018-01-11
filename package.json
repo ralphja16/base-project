@@ -4,8 +4,8 @@
 	"description": "A base bootstrap for web projects",
 	"main": "index.js",
 	"dependencies": {
-		"jquery": "^3.1.1",
-		"node-sass": "^4.7.2"
+		"gulp-inject-partials": "^1.0.3",
+		"jquery": "^3.1.1"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
@@ -47,16 +47,14 @@
 		"gulp-uglify": "^3.0.0",
 		"gulp-util": "^3.0.8",
 		"moment": "^2.18.1",
+		"node-sass": "^4.7.2",
 		"pa11y": "^4.12.1",
 		"require-dir": "^0.3.2",
 		"uglifyjs-webpack-plugin": "^1.1.5",
 		"vinyl-source-stream": "^1.1.0",
 		"webpack": "^3.10.0"
 	},
-	"scripts": {
-		"test": "mocha ./test/unit-tests/**/*.test.js --require babel-polyfill --compilers js:babel-register --watch",
-		"e2e-test": "casperjs test ./test/e2e-tests/*.test.js"
-	},
+	"scripts": {},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/ralphja16/base-project.git"
