@@ -1,11 +1,11 @@
 language: node_js
 node_js:
-    - "6.1"
+    - "8.0.0"
 cache:
   directories:
     - node_modules
 before_script:
-  - npm install -g gulp mocha phantomjs casperjs
-script: mocha ./test/unit-tests/**/*.test.js --require babel-polyfill --compilers js:babel-register
+  - npm install -g gulp 
+# script: mocha ./test/unit-tests/**/*.test.js --require babel-polyfill --compilers js:babel-register
 notifications:
   email: false
