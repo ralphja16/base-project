@@ -1,7 +1,7 @@
 module.exports = {
 	browserSync: {
 		url: 'http://localhost',
-		path: './public'
+		path: './public/views'
 	},
 	paths: {
 		scss: {
