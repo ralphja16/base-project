@@ -25,7 +25,6 @@ BASE
 		.l-#{$layout-name}__col-#{$i} {
 			grid-column: span #{$i};
 			padding: $grid-column-padding;
-			background: red;
 		}
 	}
 }

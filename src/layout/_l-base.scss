@@ -4,13 +4,13 @@
   CONFIG
 ============================================================================= */
 
-$body-bg: $white;
-$wrapper-bg: $grayE;
-$content-bg: $white;
+$body-bg: map-get($colors, white);
+$wrapper-bg: map-get($colors, grayE);
+$content-bg: map-get($colors, white);
 $sidebar-bg: none;
-$footer-bg: $gray3;
+$footer-bg: map-get($colors, gray3);
 
-$header-bg: $blue;
+$header-bg: map-get($colors, blue);
 $header-height: 60px;
 
 /* =============================================================================
@@ -23,13 +23,13 @@ body {
 
 #l-skip-to-main {
 	display: block;
-	padding: 1em;
-	color: #fff;
-	background-color: $blue;
+	padding: 1rem;
+	color: map-get($colors, white);
+	background-color: $header-bg;
 	outline: 0;
 
 	.l-skiplink-text {
-		padding: 0.5em;
+		padding: 0.5rem;
 		outline: 1px dotted;
 	}
 }

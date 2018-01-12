@@ -6,8 +6,8 @@
 
 $font-family--primary: $open-sans;
 $marked-bg-color: #fcf899;
-$blockquote-border: $gray9;
-$blockquote-text-color: $gray3;
+$blockquote-border: map-get($colors, gray9);
+$blockquote-text-color: map-get($colors, gray3);
 
 /* =============================================================================
   BASE
