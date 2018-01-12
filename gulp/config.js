@@ -7,7 +7,7 @@ module.exports = {
 		scss: {
 			src2: [
 				'./src/components/**/**/scss/*.scss',
-				'./src/main.scss',
+				'./src/index.scss',
 				'./src/**/*.scss'
 			],
 			src: './src/main.scss',
