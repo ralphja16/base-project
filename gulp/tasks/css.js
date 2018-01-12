@@ -42,7 +42,7 @@ gulp.task('css', ['scss'], () => {
 		gulp
 			.src(config.paths.scss.dest + '/main.css')
 			.pipe(plumber({ errorHandler: onError }))
-			.pipe(newer({ dest: config.paths.scss.dest + 'main.min.css' }))
+			.pipe(newer({ dest: config.paths.scss.dest + 'index.css' }))
 			.pipe(print())
 			.pipe(sourcemaps.init({ loadMaps: true }))
 			// .pipe(concat(pkg.vars.siteCssName))
