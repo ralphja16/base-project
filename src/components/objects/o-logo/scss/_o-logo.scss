@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$object-name: 'logo';
+$logo-textual: false;
+$logo-width: 200px;
+$logo-height: 30px;
+$logo-img-url: '../img/nestegg-logo.png';
+$logo-img-width: 168px;
+$logo-img-height: 28px;
+
+$logo-text-color: $white;
+$logo-text-hover-color: $black;
+$logo-text-weight: bold;
+$logo-text-size: 24;
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+.o-#{$object-name} {
+    width: $logo-width;
+    height: $logo-height;
+}
+
+@if $logo-textual == true {
+    .o-#{$object-name}--text {
+        line-height: 60px;
+        color: $logo-text-color;
+        font-weight: $logo-text-weight;
+        @include rem($logo-text-size);
+
+        &:hover {
+            color: $logo-text-hover-color;
+        }
+    }
+}
+
+@if $logo-textual == false {
+    .o-#{$object-name}--img {
+        background-image: url($logo-img-url);
+        background-repeat: no-repeat;
+        background-size: $logo-img-width $logo-img-height;
+        width: $logo-img-width;
+        height: $logo-img-height;
+    }
+}
