@@ -48,37 +48,113 @@ h6 {
 .h1,
 h1 {
 	font-family: $font-family--primary;
-	@include rem(40);
+	@include rem(30);
+
+	@media (min-width: breakpoint-min(xs)) {
+		@include rem(32);
+	}
+
+	@media (min-width: breakpoint-min(sm)) {
+		@include rem(36);
+	}
+
+	@media (min-width: breakpoint-min(md)) {
+		@include rem(40);
+	}
+
+	@media (min-width: breakpoint-min(lg)) {
+		@include rem(44);
+	}
+
+	@media (min-width: breakpoint-min(xl)) {
+		@include rem(48);
+	}
 }
 
 .h2,
 h2 {
 	font-family: $font-family--primary;
-	@include rem(32);
+	@include rem(26);
+
+	@media (min-width: breakpoint-min(xs)) {
+		@include rem(28);
+	}
+
+	@media (min-width: breakpoint-min(sm)) {
+		@include rem(30);
+	}
+
+	@media (min-width: breakpoint-min(md)) {
+		@include rem(32);
+	}
+
+	@media (min-width: breakpoint-min(lg)) {
+		@include rem(36);
+	}
+
+	@media (min-width: breakpoint-min(xl)) {
+		@include rem(40);
+	}
 }
 
 .h3,
 h3 {
 	font-family: $font-family--primary;
-	@include rem(28);
+	@include rem(22);
+
+	@media (min-width: breakpoint-min(xs)) {
+		@include rem(24);
+	}
+
+	@media (min-width: breakpoint-min(sm)) {
+		@include rem(26);
+	}
+
+	@media (min-width: breakpoint-min(md)) {
+		@include rem(28);
+	}
+
+	@media (min-width: breakpoint-min(lg)) {
+		@include rem(30);
+	}
+
+	@media (min-width: breakpoint-min(xl)) {
+		@include rem(32);
+	}
 }
 
 .h4,
 h4 {
 	font-family: $font-family--primary;
-	@include rem(24);
+	@include rem(20);
+
+	@media (min-width: breakpoint-min(sm)) {
+		@include rem(22);
+	}
+
+	@media (min-width: breakpoint-min(lg)) {
+		@include rem(24);
+	}
 }
 
 .h5,
 h5 {
 	font-family: $font-family--primary;
-	@include rem(20);
+	@include rem(18);
+
+	@media (min-width: breakpoint-min(md)) {
+		@include rem(20);
+	}
 }
 
 .h6,
 h6 {
 	font-family: $font-family--primary;
 	@include rem(16);
+
+	@media (min-width: breakpoint-min(md)) {
+		@include rem(18);
+	}
 }
 
 .small,
