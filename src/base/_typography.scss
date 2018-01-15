@@ -15,7 +15,7 @@ $blockquote-text-color: map-get($colors, gray3);
 
 p {
 	margin-top: 0;
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 }
 
 .h1,
@@ -30,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-	margin-bottom: 0.5rem;
+	margin: 3rem 0 1.5rem 0;
 	line-height: 1.1;
 	font-weight: 500;
 	word-wrap: break-word;
@@ -42,7 +42,7 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: 0;
+	//margin-top: 0;
 }
 
 .h1,
@@ -176,11 +176,25 @@ mark {
 }
 
 blockquote {
-	margin-bottom: 1rem;
-	padding: 0.5rem 1rem;
+	margin-bottom: 1.5rem;
+	padding: 1rem 1.5rem;
 	color: $blockquote-text-color;
 	border-left: 0.25rem solid $blockquote-border;
 	@include rem(20);
+
+	@media (min-width: breakpoint-min(md)) {
+		@include rem(22);
+		padding: 1rem 1.75rem;
+	}
+
+	@media (min-width: breakpoint-min(lg)) {
+		@include rem(24);
+		padding: 1rem 2rem;
+	}
+
+	p {
+		margin: 0;
+	}
 }
 
 pre {
@@ -188,4 +202,43 @@ pre {
 	margin-top: 0;
 	margin-bottom: 1rem;
 	font-size: 90%;
+}
+
+.section__title {
+	border-bottom: 1px solid map-get($colors, grayD);
+	padding-bottom: 2rem;
+	padding-top: 2rem;
+	margin-bottom: 3rem;
+}
+
+ul,
+ol {
+	margin-bottom: 1.5rem;
+}
+
+table {
+	margin-bottom: 1.5rem;
+
+	thead {
+	}
+
+	tbody {
+	}
+
+	caption {
+		text-align: left;
+		margin-bottom: 0.5rem;
+	}
+
+	tr {
+		border: 1px solid map-get($colors, grayD);
+
+		th,
+		td {
+			padding: 0.5rem 0.8rem;
+		}
+
+		th {
+		}
+	}
 }
