@@ -19,7 +19,7 @@ gulp.task('scss', () => {
 		.pipe(
 			sass({
 				includePaths: config.paths.scss.src2
-			})
+			}).on('error', sass.logError)
 		)
 		.pipe(cached('sass_compile'))
 		.pipe(autoprefixer())

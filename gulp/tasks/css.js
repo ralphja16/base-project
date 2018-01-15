@@ -40,7 +40,7 @@ gulp.task('css', ['scss'], () => {
 	fancyLog('-> Building css');
 	return (
 		gulp
-			.src(config.paths.scss.dest + '/main.css')
+			.src(config.paths.scss.dest + '/index.css')
 			.pipe(plumber({ errorHandler: onError }))
 			.pipe(newer({ dest: config.paths.scss.dest + 'index.css' }))
 			.pipe(print())
