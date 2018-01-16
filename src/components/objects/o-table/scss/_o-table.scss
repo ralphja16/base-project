@@ -18,7 +18,7 @@ table {
 	background-color: transparent;
 	border-spacing: 0;
 	border-collapse: collapse;
-	margin-bottom: 3rem;
+	margin-bottom: $content-spacing;
 }
 
 th {
@@ -26,16 +26,13 @@ th {
 }
 
 caption {
-	padding-top: 8px;
-	padding-bottom: 8px;
-	color: #777;
-	text-align: left;
+	@include caption();
 }
 
 .o-#{$object-name} {
 	width: 100%;
 	max-width: 100%;
-	margin-bottom: 3rem;
+	margin-bottom: $content-spacing;
 
 	> thead {
 		> tr {
