@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$object-name: 'table';
+$table-head-border-color: map-get($colors, grayD);
+$table-head-border-width: 2px;
+$table-row-border-color: map-get($colors, grayD);
+$table-row-border-width: 1px;
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+table {
+	background-color: transparent;
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin-bottom: 3rem;
+}
+
+th {
+	text-align: left;
+}
+
+caption {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: #777;
+	text-align: left;
+}
+
+.o-#{$object-name} {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 3rem;
+
+	> thead {
+		> tr {
+			> th {
+				vertical-align: bottom;
+				border-bottom: $table-head-border-width solid
+					$table-head-border-color;
+			}
+		}
+	}
+
+	> tbody > tr > td,
+	> tbody > tr > th,
+	> tfoot > tr > td,
+	> tfoot > tr > th,
+	> thead > tr > td,
+	> thead > tr > th {
+		padding: 8px;
+		line-height: 1.42857143;
+		vertical-align: top;
+		border-top: $table-row-border-width solid $table-row-border-color;
+	}
+
+	> caption + thead > tr:first-child > td,
+	> caption + thead > tr:first-child > th,
+	> colgroup + thead > tr:first-child > td,
+	> colgroup + thead > tr:first-child > th,
+	> thead:first-child > tr:first-child > td,
+	> thead:first-child > tr:first-child > th {
+		border-top: 0;
+	}
+}
