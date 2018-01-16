@@ -3,10 +3,10 @@
 /* =============================================================================
   CONFIG
 ============================================================================= */
-$font-open-sans: false;
-$font-roboto: true;
+$font-open-sans: true;
+$font-roboto: false;
 
-$titles-bold: true;
+$titles-bold: false;
 
 @if $font-open-sans == true {
 	$font-family--primary: $open-sans !global;

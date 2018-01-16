@@ -23,7 +23,7 @@ img {
 
 figure {
 	margin: 0;
-	margin: 3rem 0;
+	margin: $content-spacing 0;
 
 	img {
 		margin: 0;
@@ -31,5 +31,6 @@ figure {
 
 	figcaption {
 		@include caption();
+		padding-bottom: 0;
 	}
 }

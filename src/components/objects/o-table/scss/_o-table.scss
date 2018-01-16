@@ -5,10 +5,11 @@
 ============================================================================= */
 
 $object-name: 'table';
-$table-head-border-color: map-get($colors, grayD);
+$table-border-color: map-get($colors, grayD);
 $table-head-border-width: 2px;
-$table-row-border-color: map-get($colors, grayD);
 $table-row-border-width: 1px;
+$table-striped-background-color: map-get($colors, grayE);
+$table-hover-background-color: map-get($colors, grayE);
 
 /* =============================================================================
   BASE
@@ -39,7 +40,7 @@ caption {
 			> th {
 				vertical-align: bottom;
 				border-bottom: $table-head-border-width solid
-					$table-head-border-color;
+					$table-border-color;
 			}
 		}
 	}
@@ -53,7 +54,7 @@ caption {
 		padding: 8px;
 		line-height: 1.42857143;
 		vertical-align: top;
-		border-top: $table-row-border-width solid $table-row-border-color;
+		border-top: $table-row-border-width solid $table-border-color;
 	}
 
 	> caption + thead > tr:first-child > td,
@@ -63,5 +64,37 @@ caption {
 	> thead:first-child > tr:first-child > td,
 	> thead:first-child > tr:first-child > th {
 		border-top: 0;
+	}
+
+	&.o-table--striped {
+		> tbody > tr:nth-of-type(odd) {
+			background-color: $table-striped-background-color;
+		}
+	}
+
+	&.o-table--bordered {
+		border: $table-row-border-width solid $table-border-color;
+
+		tr th,
+		tr td {
+			border: $table-row-border-width solid $table-border-color;
+		}
+
+		tr th {
+			border-bottom-width: 2px;
+		}
+	}
+
+	&.o-table--hover {
+		tbody > tr:hover {
+			background-color: $table-hover-background-color;
+		}
+	}
+
+	&__responsive-wrapper {
+		width: 100%;
+		overflow-y: hidden;
+		overflow-x: auto;
+		min-height: 0.01%;
 	}
 }
