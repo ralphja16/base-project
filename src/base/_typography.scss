@@ -3,10 +3,10 @@
 /* =============================================================================
   CONFIG
 ============================================================================= */
-$font-open-sans: true;
-$font-roboto: false;
+$font-open-sans: false;
+$font-roboto: true;
 
-$titles-bold: false;
+$titles-bold: true;
 
 @if $font-open-sans == true {
 	$font-family--primary: $open-sans !global;
@@ -270,4 +270,9 @@ ELEMENTS
 ul,
 ol {
 	margin-bottom: 1.5rem;
+
+	ul,
+	ol {
+		margin-bottom: 0;
+	}
 }

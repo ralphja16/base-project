@@ -63,35 +63,39 @@ body {
 EMBEDDED CONTENT
 ============================================================================= */
 
-img {
-	max-width: 100%;
-	height: auto;
-	border: none;
-	vertical-align: middle;
-	margin-bottom: 3rem;
-}
+// img {
+// 	max-width: 100%;
+// 	height: auto;
+// 	border: none;
+// 	vertical-align: middle;
+// 	margin: $content-spacing 0;
+// }
 
-figure {
-	margin: 0;
-	margin-bottom: 3rem;
+// figure {
+// 	margin: 0;
+// 	margin: 3rem 0;
 
-	img {
-		margin-bottom: 0;
-	}
+// 	&:has(> figcaption) {
+// 		margin: $content-spacing 0 2.2rem 0;
+// 	}
 
-	figcaption {
-		@include caption();
-	}
-}
+// 	img {
+// 		margin: $content-spacing 0;
+// 	}
+
+// 	figcaption {
+// 		@include caption();
+// 	}
+// }
 
 /* =============================================================================
 TABLE
 ============================================================================= */
 
-table {
-	border-collapse: collapse;
-	background-color: transparent;
-}
+// table {
+// 	border-collapse: collapse;
+// 	background-color: transparent;
+// }
 
 /* =============================================================================
 FORM
