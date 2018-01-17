@@ -3,7 +3,7 @@
 /* =============================================================================
 CONFIG
 ============================================================================= */
-
+$container-maxwidth: 1170px;
 @include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
 @include _assert-starts-at-zero($grid-breakpoints);
 
@@ -16,8 +16,9 @@ DESCRIPTION: Set the container width, and override it for fixed navbars in media
 
 @if $enable-grid-classes {
 	.l-container {
+		max-width: $container-maxwidth;
 		@include make-container();
-		@include make-container-max-widths();
+		// @include make-container-max-widths();
 	}
 }
 
