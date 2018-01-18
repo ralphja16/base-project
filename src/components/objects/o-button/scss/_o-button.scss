@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$object-name: 'btn';
+$button-font-color: map-get($colors, white);
+$button-font-weight: 400;
+$button-background--primary: map-get($colors, orange);
+$button-background--secondary: map-get($colors, blue-dark);
+$button-radius: 10px;
+$button-padding: 1rem 3rem;
+$button-border-width: 1px;
+$button-border-style: solid;
+$button-border-color: transparent;
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+.o-#{$object-name} {
+	color: $button-font-color;
+	display: inline-block;
+	padding: $button-padding;
+	margin-bottom: 0;
+	font-weight: $button-font-weight;
+	line-height: 1.4;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: $button-border-width $button-border-style $button-border-color;
+	@include border-radius($button-radius);
+	@include transition(all, 200ms, ease-in-out);
+	@include rem(18);
+}
+
+.o-#{$object-name}--primary {
+	color: $button-font-color;
+	background: $button-background--primary;
+
+	&:hover {
+		background: darken($button-background--primary, 10%);
+	}
+}
+
+.o-#{$object-name}--secondary {
+	color: $button-font-color;
+	background: $button-background--secondary;
+
+	&:hover {
+		background: darken($button-background--secondary, 10%);
+	}
+}

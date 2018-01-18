@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Stylesheet for project</title>
 	<link rel="stylesheet" href="../css/index.css">
+	<link rel="dns-prefetch" href="//use.fontawesome.com/">
 	<script async src="../js/vendors/modernizr-custom.js"></script>
 	<script async src="../js/vendors/detectizr.min.js"></script>
 	<script async defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
@@ -36,7 +37,7 @@
 <body>
 	<div id="l-wrapper">
 
-		<header id="l-header">
+		<header id="l-header" role="banner">
 			<div class="l-container">
 				<a class="o-logo o-logo--text" href="/">Stylesheet</a>
 				<nav class="m-navigation">
@@ -305,19 +306,32 @@
 				<section id="inputfields">
 					<h2 class="section__title">Input fields</h2>
 
-					<fieldset class="o-input-field__container">
-						<label for="uniqueID" class="o-input-field__label">Input label</label>
-						<input type="text" class="o-input-field" id="uniqueID" placeholder="This is a placeholder">
+					<fieldset class="o-form__fieldgroup">
+						<div class="o-input-field__container">
+							<label for="uniqueID" class="o-input-field__label">Input label</label>
+							<input type="text" class="o-input-field" id="uniqueID" placeholder="This is a placeholder">
+						</div>
 					</fieldset>
 
-					<fieldset class="o-input-field__container">
-						<label for="uniqueID2" class="o-input-field__label">Input label disabled</label>
-						<input type="text" class="o-input-field" id="uniqueID2" placeholder="This is a placeholder" disabled="disabled">
+					<fieldset class="o-form__fieldgroup">
+						<div class="o-input-field__container">
+							<label for="uniqueID2" class="o-input-field__label">Input label disabled</label>
+							<input type="text" class="o-input-field" id="uniqueID2" placeholder="This is a placeholder" disabled="disabled">
+						</div>
 					</fieldset>
 
-					<fieldset class="o-input-field__container">
-						<label for="uniqueID3" class="o-input-field__label">Small input label</label>
-						<input type="text" class="o-input-field o-input-field--sm" id="uniqueID3" placeholder="This is a placeholder">
+					<fieldset class="o-form__fieldgroup">
+						<div class="o-input-field__container">
+							<label for="uniqueID3" class="o-input-field__label">Small input label</label>
+							<input type="text" class="o-input-field o-input-field--sm" id="uniqueID3" placeholder="This is a placeholder">
+						</div>
+					</fieldset>
+
+					<fieldset class="o-form__fieldgroup">
+						<div class="o-input-field__container">
+							<label for="uniqueID3" class="o-input-field__label sr-only"></label>
+							<input type="text" class="o-input-field o-input-field--sm" id="uniqueID3" placeholder="Without label">
+						</div>
 					</fieldset>
 
 				</section>
@@ -325,32 +339,40 @@
 				<section id="checkboxes">
 					<h2 class="section__title">Checkboxes</h2>
 
-					<fieldset class="o-checkbox__container">
-						<label class="o-checkbox__label">First checkbox
-							<input class="o-checkbox__input" type="checkbox" checked="checked" />
-							<div class="o-checkbox__indicator"></div>
-						</label>
+					<fieldset class="o-form__fieldgroup">
+						<div class="o-checkbox__container">
+							<label class="o-checkbox__label">First checkbox
+								<input class="o-checkbox__input" type="checkbox" checked="checked" />
+								<div class="o-checkbox__indicator"></div>
+							</label>
+						</div>
 					</fieldset>
 
-					<fieldset class="o-checkbox__container">
-						<label class="o-checkbox__label">Second checkbox
-							<input class="o-checkbox__input" type="checkbox" />
-							<div class="o-checkbox__indicator"></div>
-						</label>
+					<fieldset class="o-form__fieldgroup">
+						<div class="o-checkbox__container">
+							<label class="o-checkbox__label">Second checkbox
+								<input class="o-checkbox__input" type="checkbox" />
+								<div class="o-checkbox__indicator"></div>
+							</label>
+						</div>
 					</fieldset>
 
-					<fieldset class="o-checkbox__container">
-						<label class="o-checkbox__label">Disabled
-							<input class="o-checkbox__input" type="checkbox" disabled="disabled" />
-							<div class="o-checkbox__indicator"></div>
-						</label>
+					<fieldset class="o-form__fieldgroup">
+						<div class="o-checkbox__container">
+							<label class="o-checkbox__label">Disabled
+								<input class="o-checkbox__input" type="checkbox" disabled="disabled" />
+								<div class="o-checkbox__indicator"></div>
+							</label>
+						</div>
 					</fieldset>
 
-					<fieldset class="o-checkbox__container">
-						<label class="o-checkbox__label">Disabled &amp; checked
-							<input class="o-checkbox__input" type="checkbox" disabled="disabled" checked="checked" />
-							<div class="o-checkbox__indicator"></div>
-						</label>
+					<fieldset class="o-form__fieldgroup">
+						<div class="o-checkbox__container">
+							<label class="o-checkbox__label">Disabled &amp; checked
+								<input class="o-checkbox__input" type="checkbox" disabled="disabled" checked="checked" />
+								<div class="o-checkbox__indicator"></div>
+							</label>
+						</div>
 					</fieldset>
 				</section>
 
