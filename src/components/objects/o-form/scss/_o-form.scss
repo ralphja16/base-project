@@ -5,14 +5,76 @@ CONFIG
 ============================================================================= */
 
 $object-name: 'form';
-$form-fieldgroup-spacing: 1.5rem 0;
+$form-fieldgroup-spacing: $content-spacing--small 0;
 
 /* =============================================================================
 BASE
 ============================================================================= */
 
+fieldset {
+	min-width: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+legend {
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin-bottom: 0.5rem;
+	line-height: inherit;
+	@include rem(24);
+}
+
+label {
+	display: inline-block;
+	margin-bottom: 0.5rem;
+}
+
+[role='button'],
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea {
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+}
+
+button,
+input,
+select,
+textarea {
+	line-height: inherit;
+}
+
+// CHECKBOX & RADIOBUTTON
+[type='checkbox'],
+[type='radio'] {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+}
+
+// TEXTAREA
+textarea {
+	resize: vertical;
+}
+
+// DATE & TIME INPUT
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'] {
+	-webkit-appearance: listbox;
+}
+
 .o-#{$object-name} {
-    &__fieldgroup {
-        margin: $form-fieldgroup-spacing;
-    }
+	&__item {
+		margin: $form-fieldgroup-spacing;
+	}
 }

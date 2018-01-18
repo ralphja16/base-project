@@ -31,9 +31,6 @@ input[type='checkbox'] {
 }
 
 .o-#{$object-name} {
-	&__container {
-	}
-
 	&__label {
 		display: block;
 		cursor: pointer;
