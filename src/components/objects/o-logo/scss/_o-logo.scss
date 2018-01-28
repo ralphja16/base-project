@@ -9,6 +9,8 @@ $logo-textual: 'true';
 $logo-width: 200px;
 $logo-height: 30px;
 $logo-img-url: '../img/nestegg-logo.png';
+$logo-img-width--mobile: 108px;
+$logo-img-height--mobile: 18px;
 $logo-img-width: 168px;
 $logo-img-height: 28px;
 
@@ -39,12 +41,22 @@ $logo-text-size: 24;
 	}
 }
 
-@if $logo-textual == 'false' {
+@if $logo-textual == false {
 	.o-#{$object-name}--img {
 		background-image: url($logo-img-url);
 		background-repeat: no-repeat;
-		background-size: $logo-img-width $logo-img-height;
+		background-size: $logo-img-width--mobile $logo-img-height--mobile;
 		width: $logo-img-width;
-		height: $logo-img-height;
+		height: $logo-img-height--mobile;
+		display: block;
+
+		position: relative;
+		left: 30px;
+		top: 15px;
+
+		@media (min-width: breakpoint-min(lg)) {
+			height: $logo-img-height;
+			background-size: $logo-img-width $logo-img-height;
+		}
 	}
 }

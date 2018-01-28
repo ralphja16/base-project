@@ -40,9 +40,13 @@ body {
 }
 
 #l-header {
-	height: $header-height;
+	height: $header-height - 15;
 	background: $header-bg;
 	@include clearfix();
+
+	@media (min-width: breakpoint-min(lg)) {
+		height: $header-height;
+	}
 }
 
 #l-content {
