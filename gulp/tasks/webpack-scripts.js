@@ -2,6 +2,7 @@ const webpackConfig = require('../../webpack.config');
 const webpack = require('webpack');
 const gutil = require('gulp-util');
 const gulp = require('gulp');
+// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const config = require('../config.js');
 
 gulp.task('webpack', function(callback) {

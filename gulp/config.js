@@ -39,6 +39,7 @@ module.exports = {
 	},
 	globs: {
 		siteIcon: './public/img/site/favicon.*',
+		init: '',
 		cleaning: [
 			'./public/img/',
 			'./public/css/',
