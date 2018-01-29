@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$object-name: 'loading-indicator';
+$loading-color: map-get($colors, blue);
+$loading-border-width: 3px;
+$loading-height: 20px;
+$loading-width: 20px;
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+.o-#{$object-name} {
+    opacity: 0.75;
+    width: $loading-width;
+    height: $loading-height;
+    -webkit-animation: clockwise 650ms linear infinite;
+    animation: clockwise 650ms linear infinite;
+
+    &__cut {
+        position: relative;
+        width: $loading-width / 2;
+        height: $loading-height;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__circle {
+        box-sizing: border-box;
+        width: $loading-width;
+        height: $loading-height;
+        border: $loading-border-width solid $loading-color;
+        border-radius: 50%;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: none;
+        margin: 0;
+        -webkit-animation: donut-rotate 1200ms cubic-bezier(0.4, 0, 0.22, 1)
+            infinite;
+        animation: donut-rotate 1200ms cubic-bezier(0.4, 0, 0.22, 1) infinite;
+    }
+}
+
+@-webkit-keyframes clockwise {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes clockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes donut-rotate {
+    0% {
+        -webkit-transform: rotate(0);
+    }
+    50% {
+        -webkit-transform: rotate(-140deg);
+    }
+    100% {
+        -webkit-transform: rotate(0);
+    }
+}
+
+@keyframes donut-rotate {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(-140deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}

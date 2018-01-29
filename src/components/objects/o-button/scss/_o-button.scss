@@ -6,6 +6,7 @@
 
 $object-name: 'btn';
 $button-font-color: map-get($colors, white);
+$button-fomt-family: $font-family--primary-bold;
 $button-font-weight: 400;
 $button-background--primary: map-get($colors, orange);
 $button-background--secondary: map-get($colors, blue-dark);
@@ -25,6 +26,7 @@ $button-border-color: transparent;
 	padding: $button-padding;
 	margin-bottom: 0;
 	font-weight: $button-font-weight;
+	font-family: $button-font-family;
 	line-height: 1.4;
 	text-align: center;
 	white-space: nowrap;

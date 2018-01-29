@@ -38,6 +38,12 @@ module.exports = {
 		}
 	},
 	globs: {
-		siteIcon: './public/img/site/favicon.*'
+		siteIcon: './public/img/site/favicon.*',
+		cleaning: [
+			'./public/img/',
+			'./public/css/',
+			'./public/views/',
+			'./public/js/preload.bundle.js'
+		]
 	}
 };
