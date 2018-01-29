@@ -21,7 +21,10 @@ module.exports = {
 			src: ['./src/assets/js/jquery-3.1.1.min.js'],
 			dest: './public/js'
 		},
-		images: ['./public/img/'],
+		images: {
+			src: ['./src/assets/img/'],
+			dest: './public/img/'
+		},
 		tests: ['./src/components/**/**/js/*.test.js'],
 		html: {
 			src: ['./src/views/*.html'],
