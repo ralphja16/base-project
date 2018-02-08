@@ -10,6 +10,6 @@ module.exports = {
 		publicPath: '../dist/',
 		filename: '[name].bundle.js',
 		chunkFilename: '[id].bundle.js'
-	}
-	// plugins: [new UglifyJSPlugin()]
+	},
+	plugins: [new UglifyJSPlugin()]
 };
