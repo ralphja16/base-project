@@ -111,7 +111,7 @@ $spacing-large: (
 			} @else {
 				@media (min-width: breakpoint-min(#{$breakpoint})) {
 					#{$prop}-top: #{$spacing};
-					#{$prop}-right: #{$spacing};
+					#{$prop}-bottom: #{$spacing};
 				}
 			}
 		}
@@ -190,7 +190,7 @@ $spacing-large: (
 			} @else {
 				@media (min-width: breakpoint-min(#{$breakpoint})) {
 					#{$prop}-top: #{$spacing};
-					#{$prop}-right: #{$spacing};
+					#{$prop}-bottom: #{$spacing};
 				}
 			}
 		}
@@ -269,7 +269,7 @@ $spacing-large: (
 			} @else {
 				@media (min-width: breakpoint-min(#{$breakpoint})) {
 					#{$prop}-top: #{$spacing};
-					#{$prop}-right: #{$spacing};
+					#{$prop}-bottom: #{$spacing};
 				}
 			}
 		}
