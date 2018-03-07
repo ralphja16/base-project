@@ -33,6 +33,7 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	width: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -44,6 +45,10 @@ body {
 	line-height: 1.5;
 	font-weight: 400;
 	@include rem(16);
+
+	@media (min-width: breakpoint-min(md)) {
+		-webkit-text-size-adjust: 100%;
+	}
 }
 
 // Render fixes
@@ -68,4 +73,10 @@ MISC
 
 [hidden] {
 	display: none !important;
+}
+
+// Set cursor for element with disabled attribute
+
+[disabled] {
+	cursor: not-allowed;
 }

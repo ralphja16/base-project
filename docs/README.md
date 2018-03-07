@@ -23,3 +23,20 @@ Run the following command in terminal
 Here you can find a guid for using this framework
 
 [(https://ralphja16.github.io/base-project/)]
+
+# Format
+
+<!--
+	# Title
+
+INTRO TEXT
+
+## SCSS Variables
+
+## Examples
+
+## Methodes
+
+## Events
+
+ -->
