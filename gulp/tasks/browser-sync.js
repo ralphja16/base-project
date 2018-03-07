@@ -17,5 +17,6 @@ gulp.task('browser-sync', function() {
 	gulp
 		.watch(config.paths.scripts.src, ['webpack'])
 		.on('change', browserSync.reload);
-	gulp.watch('*.html').on('change', browserSync.reload);
+	gulp.watch([config.paths.html.src], ['parse-html']);
+	gulp.watch(config.paths.html.src).on('change', browserSync.reload);
 });

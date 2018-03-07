@@ -3,13 +3,13 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	entry: {
-		preload: './source/modules/index.js'
+		preload: './src/components/modules/index.js'
 	},
 	output: {
-		path: path.join(__dirname, 'public/library/js'),
+		path: path.join(__dirname, 'public/js'),
 		publicPath: '../dist/',
 		filename: '[name].bundle.js',
 		chunkFilename: '[id].bundle.js'
-	}
-	// plugins: [new UglifyJSPlugin()]
+	},
+	plugins: [new UglifyJSPlugin()]
 };

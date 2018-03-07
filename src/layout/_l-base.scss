@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$body-bg: map-get($colors, white);
+$wrapper-bg: map-get($colors, grayE);
+$content-bg: map-get($colors, white);
+$sidebar-bg: none;
+$footer-bg: map-get($colors, gray3);
+
+$header-bg: map-get($colors, blue);
+$header-height: 60px;
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+body {
+	background: $body-bg;
+}
+
+#l-skip-to-main {
+	display: block;
+	padding: 1rem;
+	color: map-get($colors, white);
+	background-color: $header-bg;
+	outline: 0;
+
+	.l-skiplink-text {
+		padding: 0.5rem;
+		outline: 1px dotted;
+	}
+}
+
+#l-wrapper {
+	background: $wrapper-bg;
+	@include clearfix();
+}
+
+#l-header {
+	height: $header-height - 15;
+	background: $header-bg;
+	@include clearfix();
+
+	@media (min-width: breakpoint-min(lg)) {
+		height: $header-height;
+	}
+}
+
+#l-content {
+	background: $content-bg;
+}
+
+#l-sidebar {
+	background: $sidebar-bg;
+}
+
+#l-footer {
+	background: $footer-bg;
+	@include clearfix();
+}

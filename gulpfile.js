@@ -27,18 +27,12 @@ const banner = [
 ].join('\n');
 
 // Default task
-gulp.task('watch', ['browser-sync'], () => {
+gulp.task('default', ['browser-sync'], () => {
 	gulp.watch([config.paths.scss.src + '**/*.scss'], ['css']);
 	gulp.watch([config.paths.scss.dest + '**/*.css'], ['css']);
 	gulp.watch([config.paths.scripts.src + '**/*.js'], ['webpack']);
+	gulp.watch([config.paths.html.src], ['parse-html']);
 });
 
 // Production build
-// gulp.task('build', [
-// 	'download',
-// 	'default',
-// 	'favicons',
-// 	'imagemin',
-// 	'fonts',
-// 	'criticalcss'
-// ]);
+gulp.task('build', ['css', 'webpack', 'imagemin']);

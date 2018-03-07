@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$object-name: 'input-field';
+$input-field-background: map-get($colors, gray-light);
+$input-field-border-color: map-get($colors, white);
+$input-field--focus-border-color: map-get($colors, blue);
+$input-field-color: map-get($colors, blue-dark);
+$input-placeholder-color: map-get($colors, blue-dark);
+$input-field-border-color: transparent;
+$input-field-bg-color-disabled: map-get($colors, gray-lighter);
+
+$input-field-padding: 0.5em 0.75em;
+$input-field-border-width: 1px; // This need the set because it's the same width for :focus
+$input-field-radius: 5px;
+$input-field-font-size: 18;
+
+$input-field-label-color: map-get($colors, blue-dark);
+
+$input-border: 'false';
+$input-border-radius: 'true';
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+	outline: 0;
+	padding: 0.5em 0.75em;
+	background-color: $input-field-background;
+	border: $input-field-border-width transparent solid;
+
+	@if $input-border == 'true' {
+		border: $input-field-border-width solid $input-field-border-color;
+	}
+
+	@if $input-border-radius == 'true' {
+		@include border-radius($input-field-radius);
+	}
+
+	@include rem($input-field-font-size);
+	@include placeholder($input-placeholder-color);
+	@include transition(border-color, 0.15s, ease-in-out);
+
+	&:focus {
+		border-color: $input-field--focus-border-color;
+	}
+
+	&:disabled {
+		background: $input-field-bg-color-disabled;
+	}
+}
+
+/* =============================================================================
+CUSTOM INPUT FIELD
+============================================================================= */
+
+.o-#{$object-name} {
+	&__label {
+		font-weight: 600;
+		display: inline-block;
+		color: $input-field-label-color;
+		@include rem($input-field-font-size);
+	}
+
+	// Input field
+	&__input {
+		width: 100%;
+		display: block;
+		line-height: 1.4;
+		background-image: none;
+	}
+}
+
+// Small input field
+.o-#{$object-name}--sm {
+	min-height: 26px;
+	padding: 0.25em 0.5em;
+	@include rem(14);
+}

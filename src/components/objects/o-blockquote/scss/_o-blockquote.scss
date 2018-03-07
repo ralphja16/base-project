@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$object-name: 'blockquote';
+
+$blockquote-border: map-get($colors, gray9);
+$blockquote-text-color: map-get($colors, gray9);
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+.o-#{$object-name} {
+}
+
+blockquote {
+	margin: $content-spacing 0;
+	margin-bottom: $content-spacing;
+	padding: 1rem 1.5rem;
+	line-height: 1.3;
+	color: $blockquote-text-color;
+	border-left: 0.25rem solid $blockquote-border;
+	@include rem(20);
+
+	@media (min-width: breakpoint-min(md)) {
+		padding: 1rem 1.75rem;
+		@include rem(22);
+	}
+
+	@media (min-width: breakpoint-min(lg)) {
+		padding: 1rem 2rem;
+		@include rem(24);
+	}
+
+	p {
+		margin: 0;
+	}
+}

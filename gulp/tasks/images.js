@@ -5,7 +5,7 @@ const imagemin = require('gulp-imagemin');
 // imagemin task
 gulp.task('imagemin', () => {
 	return gulp
-		.src(config.paths.images + '**/*.{png,jpg,jpeg,gif,svg}')
+		.src(config.paths.images.src + '**/*.{png,jpg,jpeg,gif,svg}')
 		.pipe(
 			imagemin({
 				progressive: true,
@@ -16,5 +16,5 @@ gulp.task('imagemin', () => {
 				use: []
 			})
 		)
-		.pipe(gulp.dest(config.paths.images));
+		.pipe(gulp.dest(config.paths.images.dest));
 });

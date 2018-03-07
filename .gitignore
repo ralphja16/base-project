@@ -178,3 +178,9 @@ public/library/js/maps/main.min.js.map
 /build
 /public/library/js/preload.bundle.js
 /public/library/js/vendors.min.js
+public/img/favicons
+public/*.html
+
+public/css/
+
+public/js/preload\.bundle\.js

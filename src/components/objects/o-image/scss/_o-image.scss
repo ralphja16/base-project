@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$object-name: 'image';
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+.o-#{$object-name} {
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border: none;
+	vertical-align: middle;
+	margin: $content-spacing 0;
+}
+
+figure {
+	margin: 0;
+	margin: $content-spacing 0;
+
+	img {
+		margin: 0;
+	}
+
+	figcaption {
+		@include caption();
+		padding-bottom: 0;
+	}
+}
