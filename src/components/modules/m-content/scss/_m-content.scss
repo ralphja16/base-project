@@ -13,6 +13,22 @@ $content-max-width: 800px;
 ============================================================================= */
 
 .m-#{$module-name} {
-	overflow: hidden;
+	position: relative;
 	max-width: $content-max-width;
+
+	@media (min-width: breakpoint-min(md)) {
+		padding-right: 15px;
+	}
+
+	@media (min-width: breakpoint-min(lg)) {
+		padding-right: 30px;
+	}
+
+	:first-child {
+		margin-top: 0;
+	}
+
+	h1 {
+		margin-top: $margin-small !important;
+	}
 }

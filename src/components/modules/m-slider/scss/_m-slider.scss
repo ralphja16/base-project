@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$modules-name: 'slider';
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+.m-#{$modules-name} {
+	overflow: hidden;
+
+	&__wrapper {
+		//height: 300px;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+
+		// @media (min-width: breakpoint-min(sm)) {
+		// 	height: 405px;
+		// }
+
+		// @media (min-width: breakpoint-min(lg)) {
+		// 	height: 510px;
+		// }
+	}
+
+	&__container {
+		position: relative;
+	}
+
+	&__item {
+		position: relative;
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 0;
+
+		//   height: 300px;
+		//	text-align: center;
+		//   line-height: 300px;
+
+		.l-row, .l-container {
+			position: relative;
+			height: 100%;
+		}
+	}
+
+	&__dots-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+	&__content {
+		position: relative;
+
+		@media (min-width: breakpoint-min(sm)) {
+			width: 80%;
+    		max-width: 500px;
+		}
+
+
+	}
+
+	&__block {
+		background-color: map-get($colors, white);
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+
+		padding-left: $padding-medium;
+		padding-right: $padding-medium;
+		padding-top: $padding-medium;
+
+		@media (min-width: breakpoint-min(md)) {
+			padding-left: ($padding-small * 2);
+			padding-right: ($padding-small * 2);
+			padding-top: ($padding-small * 2);
+		}
+
+		&__label {
+			position: absolute;
+			top: -27px;
+			left: 0;
+		}
+
+		&__title {
+			font-style: italic;
+			margin-top: 0;
+			@include rem(24);
+
+			@media (min-width: breakpoint-min(md)) {
+				margin-top: ($margin-medium * 2);
+				@include rem(30);
+			}
+		}
+
+		&__icon {
+			margin-left: $margin-small;
+		}
+	}
+
+	// Navigation buttons
+	&__nav {
+		padding: $padding-medium 0;
+	}
+
+	.btn--prev,
+	.btn--next {
+		position: relative;
+		float: right;
+		cursor: pointer;
+		background: map-get($colors, blue);
+
+		&:hover {
+			background: darken(map-get($colors, blue), 10%);
+		}
+	}
+
+	.btn--prev {
+
+		.fa, .far, .fas {
+			position: relative;
+			left: -1px;
+		}
+	}
+
+	.btn--next {
+
+		.fa, .far, .fas {
+			position: relative;
+			left: 1px;
+		}
+
+	}
+
+	// Navigation dots
+	&__dots {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		position: absolute;
+		top: 15px;
+
+		@media (min-width: breakpoint-min(md)) {
+			top: 20px;
+		}
+	}
+
+	&__dot {
+		width: 15px;
+		height: 15px;
+		background: map-get($colors, white);
+		display: inline-block;
+		margin: 0 $margin-xsmall;
+		cursor: pointer;
+
+		@include border-radius(50%);
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&.is--active {
+			background: map-get($colors, orange);
+		}
+	}
+
+	// Small slider version
+	&--small {
+		.m-#{$modules-name} {
+			&__wrapper,
+			&__img,
+			&__content {
+				height: 250px;
+
+				@media (min-width: breakpoint-min(xs)) {
+					height: 300px;
+				}
+
+				@media (min-width: breakpoint-min(sm)) {
+					height: 350px;
+				}
+
+				@media (min-width: breakpoint-min(md)) {
+					height: 375px;
+				}
+
+				@media (min-width: breakpoint-min(lg)) {
+					height: 400px;
+				}
+			}
+		}
+
+		.btn--prev {
+			margin-right: $margin-xsmall;
+		}
+	}
+}
