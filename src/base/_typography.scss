@@ -52,10 +52,9 @@ h4,
 h5,
 h6 {
 	margin: $content-spacing 0 $content-spacing--small 0;
-	line-height: 1.2;
+	line-height: 1.4;
 	font-weight: 400;
 	word-wrap: break-word;
-	font-family: $font-family--primary;
 }
 
 @if $titles-bold == true {
@@ -202,6 +201,10 @@ a {
 /* =============================================================================
 TEXT STUFFS
 ============================================================================= */
+.bold,
+a {
+	color: map-get($colors, blue);
+}
 
 b,
 strong {

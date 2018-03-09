@@ -5,13 +5,17 @@
 ============================================================================= */
 
 $body-bg: map-get($colors, white);
-$wrapper-bg: map-get($colors, grayE);
-$content-bg: map-get($colors, white);
+$wrapper-bg: map-get($colors, white);
+$content-bg: map-get($colors, rgb(12, 12, 12));
 $sidebar-bg: none;
 $footer-bg: map-get($colors, gray3);
 
+$topbar-bg: map-get($colors, blue);
+$topbar-height: 40px;
+
 $header-bg: map-get($colors, blue);
 $header-height: 60px;
+$header-mobile-height: 45px;
 
 /* =============================================================================
   BASE
@@ -39,8 +43,18 @@ body {
 	@include clearfix();
 }
 
+#l-topbar {
+	height: $topbar-height;
+	background: $topbar-bg;
+	display: none;
+
+	@media (min-width: breakpoint-min(lg)) {
+		display: block;
+	}
+}
+
 #l-header {
-	height: $header-height - 15;
+	height: $header-mobile-height;
 	background: $header-bg;
 	@include clearfix();
 

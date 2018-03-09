@@ -10,6 +10,12 @@ $print-text-color: #999;
   BASE
 ============================================================================= */
 
+@media screen {
+	.print {
+		display: none;
+	}
+}
+
 @media print {
 	* {
 		// scss-lint:disable ImportantRule
@@ -80,5 +86,13 @@ $print-text-color: #999;
 	h2,
 	h3 {
 		page-break-after: avoid;
+	}
+
+	.txt--white {
+		color: map-get($colors, black) !important;
+	}
+
+	.no--print {
+		display: none;
 	}
 }
