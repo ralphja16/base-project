@@ -32,7 +32,7 @@ gulp.task('default', ['browser-sync'], () => {
 	gulp.watch([config.paths.scss.src + '**/*.scss'], ['css']);
 	gulp.watch([config.paths.scss.dest + '**/*.css'], ['css']);
 	gulp.watch([config.paths.scripts.src + '**/*.js'], ['webpack']);
-	gulp.watch([config.paths.html.src], ['parse-html']);
+	gulp.watch([config.paths.html.src], ['html-render']);
 	gulp.watch([config.paths.images.src], ['imagemin']);
 	gulp.watch([config.paths.vendors.src], ['vendors']);
 });
@@ -40,8 +40,11 @@ gulp.task('default', ['browser-sync'], () => {
 gulp.task(
 	'dev',
 	gulpSequence(
-		['clean', 'clear-image-cache'],
+		['clear-image-cache'],
+		// ['clean', 'clear-image-cache'],
 		'html-render',
+		'css',
+		'webpack',
 		'vendors',
 		'fonts',
 		'default'
@@ -52,7 +55,8 @@ gulp.task(
 gulp.task(
 	'build',
 	gulpSequence(
-		['clean', 'clear-image-cache'],
+		['clear-image-cache'],
+		// ['clean', 'clear-image-cache'],
 		'fonts',
 		'css',
 		'webpack',

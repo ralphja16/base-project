@@ -196,8 +196,8 @@ $navigation-mobile-background: rgba(0, 0, 0, 0.9);
 // https://codepen.io/maheshambure21/pen/QwXaRw
 $animation-type-shift: 'true';
 
-@if $animation-shift == 'true' {
-	.m-#{$module-name}&.a-shift {
+@if $animation-type-shift == 'true' {
+	.m-#{$module-name}.a-shift {
 		ul li a {
 			position: relative;
 			z-index: 1;
