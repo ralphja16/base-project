@@ -184,3 +184,5 @@ public/*.html
 public/css/
 
 public/js/preload\.bundle\.js
+
+public/img/

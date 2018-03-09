@@ -5,7 +5,7 @@ const imagemin = require('gulp-imagemin');
 // imagemin task
 gulp.task('imagemin', () => {
 	return gulp
-		.src(config.paths.images.src + '**/*.{png,jpg,jpeg,gif,svg}')
+		.src(config.paths.images.src)
 		.pipe(
 			imagemin({
 				progressive: true,

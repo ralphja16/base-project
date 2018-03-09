@@ -5,6 +5,7 @@ const gulp = require('gulp');
 const requireDir = require('require-dir');
 const moment = require('moment');
 const gitRevSync = require('git-rev-sync');
+const gulpSequence = require('gulp-sequence');
 // // Pulling in all tasks from the tasks folder
 requireDir('./gulp/tasks', { recurse: true });
 
@@ -32,7 +33,30 @@ gulp.task('default', ['browser-sync'], () => {
 	gulp.watch([config.paths.scss.dest + '**/*.css'], ['css']);
 	gulp.watch([config.paths.scripts.src + '**/*.js'], ['webpack']);
 	gulp.watch([config.paths.html.src], ['parse-html']);
+	gulp.watch([config.paths.images.src], ['imagemin']);
+	gulp.watch([config.paths.vendors.src], ['vendors']);
 });
 
+gulp.task(
+	'dev',
+	gulpSequence(
+		['clean', 'clear-image-cache'],
+		'html-render',
+		'vendors',
+		'fonts',
+		'default'
+	)
+);
+
 // Production build
-gulp.task('build', ['css', 'webpack', 'imagemin']);
+gulp.task(
+	'build',
+	gulpSequence(
+		['clean', 'clear-image-cache'],
+		'fonts',
+		'css',
+		'webpack',
+		'imagemin',
+		'vendors'
+	)
+);

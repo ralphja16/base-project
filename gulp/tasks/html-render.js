@@ -1,13 +1,13 @@
 const gulp = require('gulp');
 const config = require('./../config');
-const injectPartials = require('gulp-inject-partials');
 const plumber = require('gulp-plumber');
+const htmlrender = require('gulp-htmlrender');
 const onError = require('../errorHandler');
 
-gulp.task('parse-html', function() {
+gulp.task('html-render', () => {
 	return gulp
-		.src(config.paths.html.src)
+		.src(config.paths.html.src, { read: false })
 		.pipe(plumber({ errorHandler: onError }))
-		.pipe(injectPartials())
+		.pipe(htmlrender.render())
 		.pipe(gulp.dest(config.paths.html.dest));
 });

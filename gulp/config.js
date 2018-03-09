@@ -1,4 +1,9 @@
 module.exports = {
+	name: 'base',
+	description: 'base FE framework',
+	author: 'Ralph Janssen',
+	site_url: 'http://ralphjanssen.com',
+	version: 1.0,
 	browserSync: {
 		url: 'http://localhost',
 		path: './public'
@@ -22,7 +27,7 @@ module.exports = {
 			dest: './public/js'
 		},
 		images: {
-			src: ['./src/assets/img/'],
+			src: ['./src/assets/img/*.{png,gif,jpg,jpeg,svg}'],
 			dest: './public/img/'
 		},
 		tests: ['./src/components/**/**/js/*.test.js'],
@@ -35,16 +40,14 @@ module.exports = {
 			src: './src/assets/favicons/logo.png',
 			dest: './public/img/favicons/',
 			path: './public/img/favicons/'
+		},
+		fonts: {
+			src: './src/assets/fonts/**/*',
+			dest: './public/fonts'
 		}
 	},
 	globs: {
 		siteIcon: './public/img/site/favicon.*',
-		init: '',
-		cleaning: [
-			'./public/img/',
-			'./public/css/',
-			'./public/views/',
-			'./public/js/preload.bundle.js'
-		]
+		init: ''
 	}
 };

@@ -18,11 +18,13 @@ gulp.task('scss', () => {
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(
 			sass({
+				outputStyle: 'expanded',
+				noCache: false,
 				includePaths: config.paths.scss.src2
 			}).on('error', sass.logError)
 		)
 		.pipe(cached('sass_compile'))
-		.pipe(autoprefixer())
+		.pipe(autoprefixer({ cascade: false }))
 		.pipe(sourcemaps.write('./'))
 		.pipe(size({ gzip: true, showFiles: true }))
 		.pipe(gulp.dest(config.paths.scss.dest));

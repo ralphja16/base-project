@@ -1,8 +1,7 @@
 const gulp = require('gulp');
 const config = require('../config.js');
+const clean = require('gulp-clean');
 
-const del = require('del');
-
-gulp.task('clean', function(cb) {
-	return del(config.globs.cleaning, cb);
+gulp.task('clean', function() {
+	return gulp.src('./public', { read: false }).pipe(clean({ force: true }));
 });
