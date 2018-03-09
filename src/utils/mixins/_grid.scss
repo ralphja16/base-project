@@ -18,6 +18,16 @@ DESCRIPTION: Container default styling
 	padding-left: ($grid-gutter-width / 2);
 	margin-right: auto;
 	margin-left: auto;
+
+	@media (min-width: breakpoint-min(md)) {
+		padding-right: ($grid-gutter-width / 1.5);
+		padding-left: ($grid-gutter-width / 1.5);
+	}
+
+	@media (min-width: breakpoint-min(lg)) {
+		padding-right: ($grid-gutter-width);
+		padding-left: ($grid-gutter-width);
+	}
 }
 
 /* =============================================================================
@@ -25,7 +35,10 @@ MIXIN: MAKE CONTAINER MAX WIDTHS
 DESCRIPTION: For each breakpoint, define the maximum width of the container in a media query
 ============================================================================= */
 
-@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+@mixin make-container-max-widths(
+	$max-widths: $container-max-widths,
+	$breakpoints: $grid-breakpoints
+) {
 	@each $breakpoint, $container-max-width in $max-widths {
 		@include media-breakpoint-up($breakpoint, $breakpoints) {
 			max-width: $container-max-width;
@@ -41,8 +54,18 @@ DESCRIPTION: Row default style
 @mixin make-row() {
 	display: flex;
 	flex-wrap: wrap;
-	margin-right: ($grid-gutter-width / -2);
-	margin-left: ($grid-gutter-width / -2);
+	margin-right: ($grid-gutter-width / -3.75);
+	margin-left: ($grid-gutter-width / -3.75);
+
+	@media (min-width: breakpoint-min(md)) {
+		margin-right: ($grid-gutter-width / -3);
+		margin-left: ($grid-gutter-width / -3);
+	}
+
+	@media (min-width: breakpoint-min(lg)) {
+		margin-right: ($grid-gutter-width / -2);
+		margin-left: ($grid-gutter-width / -2);
+	}
 }
 
 /* =============================================================================
@@ -57,8 +80,13 @@ DESCRIPTION: Column default style
 	// later on to override this initial width.
 	width: 100%;
 	min-height: 1px; // Prevent collapsing
-	padding-right: ($grid-gutter-width / 2);
-	padding-left: ($grid-gutter-width / 2);
+	padding-right: ($grid-gutter-width / 3);
+	padding-left: ($grid-gutter-width / 3);
+
+	@media (min-width: breakpoint-min(lg)) {
+		padding-right: ($grid-gutter-width / 2);
+		padding-left: ($grid-gutter-width / 2);
+	}
 }
 
 /* =============================================================================
