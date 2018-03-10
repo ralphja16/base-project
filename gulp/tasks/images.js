@@ -1,9 +1,11 @@
 const gulp = require('gulp');
 const config = require('../config.js');
 const imagemin = require('gulp-imagemin');
+const fancyLog = require('fancy-log');
 
 // imagemin task
 gulp.task('imagemin', () => {
+	fancyLog('-> Compressing images');
 	return gulp
 		.src(config.paths.images.src)
 		.pipe(

@@ -23,6 +23,10 @@ module.exports = {
 			dest: './public/js'
 		},
 		vendors: {
+			base: {
+				src: './src/assets/js/vendors/*.js',
+				dest: './public/js/vendors'
+			},
 			src: ['./src/assets/js/jquery-3.1.1.min.js'],
 			dest: './public/js'
 		},

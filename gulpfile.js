@@ -40,11 +40,12 @@ gulp.task('default', ['browser-sync'], () => {
 gulp.task(
 	'dev',
 	gulpSequence(
-		['clear-image-cache'],
-		// ['clean', 'clear-image-cache'],
+		['clean', 'clear-image-cache'],
 		'html-render',
 		'css',
 		'webpack',
+		'imagemin',
+		'base-vendors',
 		'vendors',
 		'fonts',
 		'default'
@@ -55,12 +56,12 @@ gulp.task(
 gulp.task(
 	'build',
 	gulpSequence(
-		['clear-image-cache'],
-		// ['clean', 'clear-image-cache'],
+		['clean', 'clear-image-cache'],
 		'fonts',
 		'css',
 		'webpack',
 		'imagemin',
+		'base-vendors',
 		'vendors'
 	)
 );

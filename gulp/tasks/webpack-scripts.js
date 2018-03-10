@@ -2,10 +2,11 @@ const webpackConfig = require('../../webpack.config');
 const webpack = require('webpack');
 const gutil = require('gulp-util');
 const gulp = require('gulp');
-// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const config = require('../config.js');
+const fancyLog = require('fancy-log');
 
 gulp.task('webpack', function(callback) {
+	fancyLog('-> Building js');
 	var myConfig = Object.create(webpackConfig);
 	myConfig.plugins = [new webpack.optimize.UglifyJsPlugin()];
 

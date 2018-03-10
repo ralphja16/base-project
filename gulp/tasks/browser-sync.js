@@ -1,8 +1,10 @@
 const gulp = require('gulp');
 const config = require('../config.js');
 const browserSync = require('browser-sync');
+const fancyLog = require('fancy-log');
 
 gulp.task('browser-sync', function() {
+	fancyLog('-> Start browser-sync');
 	browserSync.init({
 		server: {
 			baseDir: config.browserSync.path

@@ -5,6 +5,7 @@ const pkg = require('../../package.json');
 const sourcemaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const concat = require('gulp-concat');
+const fancyLog = require('fancy-log');
 // const jshint = require('gulp-jshint');
 // const stylish = require('jshint-stylish');
 const uglify = require('gulp-uglify');
@@ -32,6 +33,7 @@ const banner = [
 ].join('\n');
 
 gulp.task('jquery-scripts', function() {
+	fancyLog('-> Compling jQuery files');
 	gulp
 		.src(config.paths.scripts.src)
 		.pipe(plumber({ errorHandler: onError }))
