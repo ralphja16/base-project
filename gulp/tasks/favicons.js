@@ -23,8 +23,8 @@ gulp.task('favicons-generate', () => {
 				version: config.version,
 				logging: false,
 				online: false,
-				// html: config.paths.build.html + "favicons.html",
-				html: config.paths.favicons.dest,
+				// html: config.paths.build.html + 'favicons.html',
+				html: config.paths.favicons.dest + 'favicons.html',
 				replace: true,
 				icons: {
 					android: false, // Create Android homescreen icon. `boolean`

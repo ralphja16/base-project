@@ -44,6 +44,7 @@ gulp.task(
 		'html-render',
 		'css',
 		'webpack',
+		'favicons',
 		'imagemin',
 		'base-vendors',
 		'vendors',
@@ -60,6 +61,7 @@ gulp.task(
 		'fonts',
 		'css',
 		'webpack',
+		'favicons',
 		'imagemin',
 		'base-vendors',
 		'vendors'
