@@ -1,6 +1,6 @@
 jQuery.extend({
 	Slider: function(holder) {
-		// VERSION : 150714
+		// VERSION : 170301
 
 		// PUBLIC
 		var _this = this;
