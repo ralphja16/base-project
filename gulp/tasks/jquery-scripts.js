@@ -35,7 +35,7 @@ const banner = [
 gulp.task('jquery-scripts', function() {
 	fancyLog('-> Compling jQuery files');
 	gulp
-		.src(config.paths.scripts.src)
+		.src(config.paths.scripts.jQuery.src)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		// .pipe(jshint())
@@ -46,5 +46,5 @@ gulp.task('jquery-scripts', function() {
 		.pipe(header(banner, { pkg: pkg }))
 		.pipe(sourcemaps.write('./maps'))
 		.pipe(size({ gzip: true, showFiles: true }))
-		.pipe(gulp.dest(config.paths.scripts.dest));
+		.pipe(gulp.dest(config.paths.scripts.jQuery.dest));
 });

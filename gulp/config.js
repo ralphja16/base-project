@@ -19,7 +19,14 @@ module.exports = {
 			dest: './public/css'
 		},
 		scripts: {
-			src: ['./src/components/**/**/js/*.js'],
+			jQuery: {
+				src: ['./src/components/**/**/js/*.jquery.js'],
+				dest: './public/js'
+			},
+			src: [
+				'!./src/components/**/**/js/*.jquery.js',
+				'./src/components/**/**/js/*.js'
+			],
 			dest: './public/js'
 		},
 		vendors: {
