@@ -14,7 +14,7 @@ $navigation-ul-align: none;
 
 $navigation-item-bg: transparent;
 $navigation-item-txt: map-get($colors, white);
-$navigation-item-active-bg: transparent;
+$navigation-item-active-bg: darken(map-get($colors, blue), 10%);
 $navigation-item-active-txt: map-get($colors, black);
 
 $navigation-active-has-border: 'false';
@@ -66,7 +66,7 @@ $navigation-mobile-background: rgba(0, 0, 0, 0.9);
 				border-bottom: $navigation-item-border;
 			}
 
-			.fa-caret-down {
+			.fa-chevron-down {
 				@include transition(transform, ease, 0.3s);
 			}
 
@@ -89,7 +89,7 @@ $navigation-mobile-background: rgba(0, 0, 0, 0.9);
 					border-bottom: $navigation-item-active-border;
 				}
 
-				.fa-caret-down {
+				.fa-chevron-down {
 					transform: rotate(180deg);
 					@include transition(all, ease, 0.3s);
 				}

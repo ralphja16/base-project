@@ -8,7 +8,7 @@ const fancyLog = require('fancy-log');
 gulp.task('webpack', function(callback) {
 	fancyLog('-> Building js');
 	var myConfig = Object.create(webpackConfig);
-	myConfig.plugins = [new webpack.optimize.UglifyJsPlugin()];
+	// myConfig.plugins = [new webpack.optimize.UglifyJsPlugin()];
 
 	// run webpack
 	webpack(myConfig, function(err, stats) {

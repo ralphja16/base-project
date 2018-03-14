@@ -29,10 +29,13 @@ const banner = [
 
 // Default task
 gulp.task('default', ['browser-sync'], () => {
-	gulp.watch([config.paths.scss.src], ['css']);
-	gulp.watch([config.paths.scss.dest], ['css']);
-	gulp.watch([config.paths.scripts.src], ['webpack']);
-	gulp.watch([config.paths.scripts.jQuery.src], ['jquery-scripts']);
+	gulp.watch([config.paths.scss.src + '**/*.scss'], ['css']);
+	gulp.watch([config.paths.scss.dest + '**/*.css'], ['css']);
+	gulp.watch([config.paths.scripts.src + '**/*.js'], ['webpack']);
+	gulp.watch(
+		[config.paths.scripts.jQuery.src + '**/*.jquery.js'],
+		['jquery-scripts']
+	);
 	gulp.watch([config.paths.html.src], ['html-render']);
 	gulp.watch([config.paths.images.src], ['imagemin']);
 	gulp.watch([config.paths.vendors.src], ['vendors']);
@@ -40,7 +43,7 @@ gulp.task('default', ['browser-sync'], () => {
 
 // Development build with jQuery
 gulp.task(
-	'dev',
+	'dev-jquery',
 	gulpSequence(
 		['clean', 'clear-image-cache'],
 		'html-render',

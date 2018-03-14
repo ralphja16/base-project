@@ -5,9 +5,7 @@ class Navigation {
 		this.toggleButton = this.holder.querySelector('.m-navigation__toggle');
 		this.activeClass = 'is--active';
 		this.initEventHandler();
-		this.mobileToggle(this.holder);
-
-		console.log(holder);
+		// this.mobileToggle(this.holder);
 	}
 
 	show(item) {
@@ -23,14 +21,6 @@ class Navigation {
 			const iconElement = this.firstElementChild;
 			const bars = 'fa-bars';
 			const cross = 'fa-times';
-			console.log(iconElement);
-			// if (iconElement.classList.contains(bars)) {
-			// 	iconElement.classList.add(cross);
-			// 	iconElement.classList.remove(bars);
-			// } else {
-			// 	iconElement.classList.add(bars);
-			// 	iconElement.classList.remove(cross);
-			// }
 			holder.classList.toggle('is--open');
 		});
 	}
