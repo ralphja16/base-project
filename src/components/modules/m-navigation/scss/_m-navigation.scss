@@ -194,7 +194,10 @@ $navigation-mobile-background: rgba(0, 0, 0, 0.9);
   ANIMATIONS
 ============================================================================= */
 // https://codepen.io/maheshambure21/pen/QwXaRw
-$animation-type-shift: 'true';
+$animation-type-shift: 'false';
+$animation-type-stroke: 'false';
+$animation-type-fill: 'false';
+$animation-type-circle: 'true';
 
 @if $animation-type-shift == 'true' {
 	.m-#{$module-name}.a-shift {
@@ -228,6 +231,146 @@ $animation-type-shift: 'true';
 				opacity: 1;
 				visibility: visible;
 				height: 100%;
+			}
+		}
+	}
+}
+
+@if $animation-type-stroke == 'true' {
+	.m-#{$module-name}.a-stroke {
+		ul li a {
+			position: relative;
+
+			&:after {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				width: 0%;
+				content: '.';
+				color: transparent;
+				background: white;
+				height: 1px;
+			}
+
+			&:hover:after {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@if $animation-type-fill == 'true' {
+	.m-#{$module-name}.a-fill {
+		ul li a {
+			position: relative;
+
+			&:after {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				width: 0%;
+				content: '.';
+				color: transparent;
+				background: $navigation-item-hover-bg;
+				height: 1px;
+			}
+			transition: all 2s;
+
+			&:after {
+				text-align: left;
+				content: '.';
+				margin: 0;
+				opacity: 0;
+			}
+
+			&:hover {
+				color: $navigation-item-txt;
+				z-index: 1;
+			}
+
+			&:hover:after {
+				z-index: -10;
+				animation: fill 1s forwards;
+				-webkit-animation: fill 1s forwards;
+				-moz-animation: fill 1s forwards;
+				opacity: 1;
+			}
+		}
+	}
+
+	@-webkit-keyframes fill {
+		0% {
+			width: 0%;
+			height: 1px;
+		}
+		50% {
+			width: 100%;
+			height: 1px;
+		}
+		100% {
+			width: 100%;
+			height: 100%;
+			background: $navigation-item-hover-bg;
+		}
+	}
+}
+
+@if $animation-type-circle == 'true' {
+	.m-#{$module-name}.a-circle {
+		ul li a {
+			position: relative;
+			overflow: hidden;
+			z-index: 1;
+
+			&:after {
+				display: block;
+				position: absolute;
+				margin: 0;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				content: '.';
+				color: transparent;
+				width: 1px;
+				height: 1px;
+				border-radius: 50%;
+				background: transparent;
+			}
+
+			&:hover:after {
+				-webkit-animation: circle 1.5s ease-in forwards;
+			}
+		}
+
+		@-webkit-keyframes circle {
+			0% {
+				width: 1px;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				margin: auto;
+				height: 1px;
+				z-index: -1;
+				background: lighten($navigation-item-hover-bg, 5%);
+				border-radius: 100%;
+			}
+			100% {
+				background: $navigation-item-hover-bg;
+				height: 5000%;
+				width: 5000%;
+				z-index: -1;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				border-radius: 0;
 			}
 		}
 	}
