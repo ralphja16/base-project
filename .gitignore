@@ -169,20 +169,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-public/library/js/main.min.js
+public/library/css/*
 
-public/library/css/main.css
-
-public/library/js/maps/main.min.js.map
 /.cache
 /build
-/public/library/js/preload.bundle.js
-/public/library/js/vendors.min.js
-public/img/favicons
-public/*.html
-
-public/css/
-
-public/js/preload\.bundle\.js
-
-public/img/
+/public/*
