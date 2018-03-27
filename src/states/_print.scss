@@ -4,7 +4,7 @@
   CONFIG
 ============================================================================= */
 
-$print-text-color: #999;
+$print-text-color: #999999;
 
 /* =============================================================================
   BASE
@@ -33,21 +33,22 @@ $print-text-color: #999;
 	a:visited {
 		text-decoration: underline;
 	}
-	// scss-lint:disable QualifyingElement
-	a[href]::after {
+
+	a[href]:after {
 		content: ' (" attr(href) ")';
 	}
 
-	abbr[title]::after {
+	abbr[title]:after {
 		content: ' (" attr(title) ")';
 	}
+
 	// scss-lint:enable QualifyingElement
 
 	// Don't show links for images, or javascript/internal links
 	// scss-lint:disable QualifyingElement
-	.ir a::after,
-	a[href^='javascript:']::after,
-	a[href^='#']::after {
+	.ir a:after,
+	a[href^='javascript:']:after,
+	a[href^='#']:after {
 		content: '';
 	}
 	// scss-lint:enable QualifyingElement

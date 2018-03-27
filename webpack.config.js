@@ -4,7 +4,6 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 const postcssReporter = require('postcss-reporter');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
@@ -131,13 +130,6 @@ const config = {
 		new FriendlyErrorsWebpackPlugin(),
 		new CleanWebpackPlugin(['public']),
 		new FaviconsWebpackPlugin('./assets/favicons/logo.png'),
-		new StyleLintPlugin({
-			configFile: '.stylelintrc',
-			context: 'src/',
-			files: '**/*.scss',
-			failOnError: false,
-			quiet: true
-		}),
 		new HtmlWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			template: './views/index.html'
