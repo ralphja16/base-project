@@ -2,12 +2,12 @@
 
 /* =============================================================================
 MIXIN: CAPTION
-USEAGE: @include caption();
+USEAGE: @include caption(colorName);
 ============================================================================= */
 
-@mixin caption {
+@mixin caption($txt-color) {
 	text-align: left;
-	color: map-get($colors, gray9);
+	color: map-get($colors, $txt-color);
 	padding-top: 8px;
 	padding-bottom: 8px;
 }
