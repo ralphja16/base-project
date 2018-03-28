@@ -17,18 +17,9 @@ $slider-dot-bg-active: map-get($colors, blue);
 	overflow: hidden;
 
 	&__wrapper {
-		height: 300px;
 		width: 100%;
 		position: relative;
 		overflow: hidden;
-
-		@media (min-width: breakpoint-min(sm)) {
-			height: 405px;
-		}
-
-		@media (min-width: breakpoint-min(lg)) {
-			height: 510px;
-		}
 	}
 
 	&__container {
@@ -41,8 +32,6 @@ $slider-dot-bg-active: map-get($colors, blue);
 		float: left;
 		margin: 0;
 		padding: 0;
-
-		height: 300px;
 		//	text-align: center;
 		//   line-height: 300px;
 
