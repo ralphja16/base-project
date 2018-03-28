@@ -1,4 +1,6 @@
-jQuery.extend({
+import $ from 'jquery';
+
+$.extend({
 	Slider: function(holder) {
 		// VERSION : 170301
 
@@ -57,6 +59,8 @@ jQuery.extend({
 				if (_private.hasDots === true) {
 					_private.addDots();
 				}
+
+				console.log('slider');
 			},
 			eventListeners: function() {
 				_private.nextButton.bind('click', function(e) {
