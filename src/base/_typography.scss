@@ -51,10 +51,12 @@ h3,
 h4,
 h5,
 h6 {
-	margin: $content-spacing 0 $content-spacing--small 0;
 	line-height: 1.4;
 	font-weight: 400;
 	word-wrap: break-word;
+	font-family: $font-family--primary-bold;
+	margin: $content-spacing 0 $content-spacing--small 0;
+	color: map-get($colors, blue);
 }
 
 @if $titles-bold == true {
@@ -77,25 +79,18 @@ h6 {
 .h1,
 h1 {
 	@include rem(30);
+	margin: $content-spacing 0 $content-spacing 0;
 
 	@media (min-width: breakpoint-min(xs)) {
 		@include rem(32);
 	}
 
-	@media (min-width: breakpoint-min(sm)) {
-		@include rem(36);
-	}
-
 	@media (min-width: breakpoint-min(md)) {
-		@include rem(40);
-	}
-
-	@media (min-width: breakpoint-min(lg)) {
-		@include rem(44);
+		@include rem(34);
 	}
 
 	@media (min-width: breakpoint-min(xl)) {
-		@include rem(48);
+		@include rem(36);
 	}
 }
 
@@ -107,20 +102,12 @@ h2 {
 		@include rem(28);
 	}
 
-	@media (min-width: breakpoint-min(sm)) {
+	@media (min-width: breakpoint-min(md)) {
 		@include rem(30);
 	}
 
-	@media (min-width: breakpoint-min(md)) {
-		@include rem(32);
-	}
-
-	@media (min-width: breakpoint-min(lg)) {
-		@include rem(36);
-	}
-
 	@media (min-width: breakpoint-min(xl)) {
-		@include rem(40);
+		@include rem(32);
 	}
 }
 
@@ -132,42 +119,34 @@ h3 {
 		@include rem(24);
 	}
 
-	@media (min-width: breakpoint-min(sm)) {
+	@media (min-width: breakpoint-min(md)) {
 		@include rem(26);
 	}
 
-	@media (min-width: breakpoint-min(md)) {
-		@include rem(28);
-	}
-
-	@media (min-width: breakpoint-min(lg)) {
-		@include rem(30);
-	}
-
 	@media (min-width: breakpoint-min(xl)) {
-		@include rem(32);
+		@include rem(28);
 	}
 }
 
 .h4,
 h4 {
-	@include rem(20);
+	@include rem(18);
 
 	@media (min-width: breakpoint-min(sm)) {
-		@include rem(22);
+		@include rem(20);
 	}
 
 	@media (min-width: breakpoint-min(lg)) {
-		@include rem(24);
+		@include rem(22);
 	}
 }
 
 .h5,
 h5 {
-	@include rem(18);
+	@include rem(16);
 
 	@media (min-width: breakpoint-min(md)) {
-		@include rem(20);
+		@include rem(18);
 	}
 }
 
@@ -251,7 +230,7 @@ small {
 
 .mark,
 mark {
-	padding: 0.2em;
+	padding: 0.2rem;
 	background-color: $marked-bg-color;
 }
 
@@ -260,14 +239,6 @@ pre {
 	margin-top: 0;
 	margin-bottom: $content-spacing--small;
 	font-size: 90%;
-}
-
-// TODO: Remove after finsishing project
-.section__title {
-	border-bottom: 1px solid map-get($colors, grayD);
-	padding-bottom: 2rem;
-	padding-top: 2rem;
-	margin-bottom: $content-spacing;
 }
 
 /* =============================================================================
