@@ -6,12 +6,8 @@
 $font-open-sans: true;
 $font-roboto: false;
 
-$titles-bold: false;
-
 @if $font-open-sans == true {
 	$font-family--primary: $open-sans !global;
-	$font-family--primary-bold: $open-sans--bold !global;
-	$font-family--primary-italic: $open-sans--italic !global;
 }
 
 @if $font-roboto == true {
@@ -54,26 +50,10 @@ h6 {
 	line-height: 1.4;
 	font-weight: 400;
 	word-wrap: break-word;
-	font-family: $font-family--primary-bold;
+	font-family: $font-family--primary;
+	font-weight: bold;
 	margin: $content-spacing 0 $content-spacing--small 0;
 	color: map-get($colors, blue);
-}
-
-@if $titles-bold == true {
-	.h1,
-	.h2,
-	.h3,
-	.h4,
-	.h5,
-	.h6,
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-family: $font-family--primary-bold;
-	}
 }
 
 .h1,
@@ -188,19 +168,13 @@ a {
 b,
 strong {
 	font-weight: $font-weight-extrabold;
-
-	@if $font-open-sans == true or $font-roboto == true {
-		font-family: $font-family--primary-bold;
-	}
+	font-family: $font-family--primary;
 }
 
 i,
 em {
 	font-style: italic;
-
-	@if $font-open-sans == true or $font-roboto == true {
-		font-family: $font-family--primary-italic;
-	}
+	font-family: $font-family--primary;
 }
 
 /* =============================================================================

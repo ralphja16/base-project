@@ -6,7 +6,7 @@
 
 $object-name: 'btn';
 $button-font-color: map-get($colors, white);
-$button-font-family: $font-family--primary-bold;
+$button-font-family: $font-family--primary;
 $button-font-weight: 400;
 $button-background--primary: map-get($colors, orange);
 $button-background--secondary: map-get($colors, blue-dark);

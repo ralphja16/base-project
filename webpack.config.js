@@ -113,7 +113,7 @@ const config = {
 				]
 			},
 			{
-				test: /\.(woff|woff2|eot|ttf|otf)$/,
+				test: /\.(eot|svg|ttf|woff|woff2)$/,
 				use: [
 					{
 						loader: 'file-loader',
