@@ -38,15 +38,10 @@
 		"build": "./node_modules/.bin/webpack",
 		"build:prod": "./node_modules/.bin/webpack -p",
 		"watch": "./node_modules/.bin/webpack --watch",
-		"dev": "./node_modules/.bin/webpack-dev-server",
+		"dev": "./node_modules/.bin/webpack-dev-server --open 'Google Chrome'",
 		"docs-serve": "docsify serve docs"
 	},
-	"browserslist": [
-		"last 3 versions",
-		"> 5%",
-		"ie > 9",
-		"iOS >= 8"
-	],
+	"browserslist": ["last 3 versions", "> 5%", "ie > 9", "iOS >= 8"],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/ralphja16/base-project.git"

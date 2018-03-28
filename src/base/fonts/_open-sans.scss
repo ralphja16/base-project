@@ -59,8 +59,7 @@ BASE
 
 @font-face {
 	font-family: $open-sans--italic;
-	src: url('./assets/fonts/openSans/Italic/OpenSans-Italic.eot'); /* IE9 Compat Modes */
-	src: local('Open Sans italic'), local('Open-Sans-italic'),
+	src: url('./assets/fonts/openSans/Italic/OpenSans-Italic.eot'),
 		url('./assets/fonts/openSans/Italic/OpenSans-Italic.woff')
 			format('woff'),
 		url('./assets/fonts/openSans/Italic/OpenSans-Italic.ttf')

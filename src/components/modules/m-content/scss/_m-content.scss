@@ -17,11 +17,11 @@ $content-max-width: 800px;
 	max-width: $content-max-width;
 
 	@media (min-width: breakpoint-min(md)) {
-		padding-right: 15px;
+		padding-right: $padding-medium;
 	}
 
 	@media (min-width: breakpoint-min(lg)) {
-		padding-right: 30px;
+		padding-right: $padding-large;
 	}
 
 	:first-child {

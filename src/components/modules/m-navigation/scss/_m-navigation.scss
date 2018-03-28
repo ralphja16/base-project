@@ -6,7 +6,6 @@
 
 $module-name: 'navigation';
 
-// $navigation-bar: 'true';
 $navigation-animation: 'true';
 $navigation-bg: transparent;
 $navigation-height: 60px;
@@ -196,8 +195,8 @@ $navigation-mobile-background: rgba(0, 0, 0, 0.9);
 // https://codepen.io/maheshambure21/pen/QwXaRw
 $animation-type-shift: 'false';
 $animation-type-stroke: 'false';
-$animation-type-fill: 'false';
-$animation-type-circle: 'true';
+$animation-type-fill: 'true';
+$animation-type-circle: 'false';
 
 @if $animation-type-shift == 'true' {
 	.m-#{$module-name}.a-shift {
