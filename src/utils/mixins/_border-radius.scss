@@ -6,10 +6,8 @@ USEAGE: @include border-radius(15px);
 ============================================================================= */
 
 @mixin border-radius($radius) {
-    border-radius: $radius;
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    background-clip: padding-box;
+	border-radius: $radius;
+	background-clip: padding-box;
 }
 
 /* =============================================================================
@@ -18,9 +16,7 @@ USEAGE: @include border-top-left-radius(15px);
 ============================================================================= */
 
 @mixin border-top-left-radius($radius) {
-	-webkit-border-top-left-radius: $radius;
 	border-top-left-radius: $radius;
-	-moz-border-top-left-radius: $radius;
 	background-clip: padding-box;
 }
 
@@ -30,9 +26,7 @@ USEAGE: @include border-top-right-radius(15px);
 ============================================================================= */
 
 @mixin border-top-right-radius($radius) {
-	-webkit-border-top-right-radius: $radius;
 	border-top-right-radius: $radius;
-	-moz-border-top-right-radius: $radius;
 	background-clip: padding-box;
 }
 
@@ -42,12 +36,9 @@ USEAGE: @include border-bottom-right-radius(15px);
 ============================================================================= */
 
 @mixin border-top-right-radius($radius) {
-	-webkit-border-bottom-right-radius: $radius;
 	border-bottom-right-radius: $radius;
-	-moz-border-bottom-right-radius: $radius;
 	background-clip: padding-box;
 }
-
 
 /* =============================================================================
 MIXIN: BORDER BOTTOM LEFT RADIUS
@@ -55,9 +46,7 @@ USEAGE: @include border-bottom-left-radius(15px);
 ============================================================================= */
 
 @mixin border-top-left-radius($radius) {
-	-webkit-border-bottom-left-radius: $radius;
 	border-bottom-left-radius: $radius;
-	-moz-border-bottom-left-radius: $radius;
 	background-clip: padding-box;
 }
 
@@ -67,12 +56,8 @@ USEAGE: @include border-top-radius(15px);
 ============================================================================= */
 
 @mixin border-top-radius($radius) {
-	-webkit-border-top-right-radius: $radius;
 	border-top-right-radius: $radius;
-	-moz-border-top-right-radius: $radius;
-	-webkit-border-top-left-radius: $radius;
 	border-top-left-radius: $radius;
-	-moz-border-top-left-radius: $radius;
 	background-clip: padding-box;
 }
 
@@ -82,12 +67,8 @@ USEAGE: @include border-right-radius(15px);
 ============================================================================= */
 
 @mixin border-right-radius($radius) {
-	-webkit-border-bottom-right-radius: $radius;
 	border-bottom-right-radius: $radius;
-	-moz-border-bottom-right-radius: $radius;
-	-webkit-border-top-right-radius: $radius;
 	border-top-right-radius: $radius;
-	-moz-border-top-right-radius: $radius;
 	background-clip: padding-box;
 }
 
@@ -97,12 +78,8 @@ USEAGE: @include border-bottom-radius(15px);
 ============================================================================= */
 
 @mixin border-bottom-radius($radius) {
-	-webkit-border-bottom-right-radius: $radius;
 	border-bottom-right-radius: $radius;
-	-moz-border-bottom-right-radius: $radius;
-	-webkit-border-bottom-left-radius: $radius;
 	border-bottom-left-radius: $radius;
-	-moz-border-bottom-left-radius: $radius;
 	background-clip: padding-box;
 }
 
@@ -112,12 +89,8 @@ USEAGE: @include border-left-radius(15px);
 ============================================================================= */
 
 @mixin border-left-radius($radius) {
-	-webkit-border-bottom-left-radius: $radius;
 	border-bottom-left-radius: $radius;
-	-moz-border-bottom-left-radius: $radius;
-	-webkit-border-top-left-radius: $radius;
 	border-top-left-radius: $radius;
-	-moz-border-top-left-radius: $radius;
 	background-clip: padding-box;
 }
 
@@ -126,18 +99,15 @@ MIXIN: BORDER ALL RADIUS
 USEAGE: @include border-left-radius(15px, 0, 15px, 0);
 ============================================================================= */
 
-@mixin border-all-radius($radius-top-left, $radius-top-right, $radius-bottom-right, $radius-bottom-left) {
-	-webkit-border-top-left-radius: $radius-top-left;
+@mixin border-all-radius(
+	$radius-top-left,
+	$radius-top-right,
+	$radius-bottom-right,
+	$radius-bottom-left
+) {
 	border-top-left-radius: $radius-top-left;
-	-moz-border-top-left-radius: $radius-top-left;
-	-webkit-border-top-right-radius: $radius-top-right;
 	border-top-right-radius: $radius-top-right;
-	-moz-border-top-right-radius: $radius-top-right;
-	-webkit-border-bottom-right-radius: $radius-bottom-right;
 	border-bottom-right-radius: $radius-bottom-right;
-	-moz-border-bottom-right-radius: $radius-bottom-right;
-	-webkit-border-bottom-left-radius: $radius-bottom-left;
 	border-bottom-left-radius: $radius-bottom-left;
-	-moz-border-bottom-left-radius: $radius-bottom-left;
 	background-clip: padding-box;
 }

@@ -16,8 +16,8 @@ $table-hover-background-color: map-get($colors, grayE);
 ============================================================================= */
 
 table {
-	background-color: transparent;
 	border-spacing: 0;
+	background-color: transparent;
 	border-collapse: collapse;
 	margin-bottom: $content-spacing;
 }
@@ -27,7 +27,7 @@ th {
 }
 
 caption {
-	@include caption();
+	@include caption(gray9);
 }
 
 .o-#{$object-name} {

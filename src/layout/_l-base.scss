@@ -27,7 +27,7 @@ body {
 
 #l-skip-to-main {
 	display: block;
-	padding: 1rem;
+	padding: $padding-small;
 	color: map-get($colors, white);
 	background-color: $header-bg;
 	outline: 0;

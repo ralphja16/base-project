@@ -9,11 +9,11 @@ $input-field-background: map-get($colors, gray-light);
 $input-field-border-color: map-get($colors, white);
 $input-field--focus-border-color: map-get($colors, blue);
 $input-field-color: map-get($colors, blue-dark);
-$input-placeholder-color: map-get($colors, blue-dark);
 $input-field-border-color: transparent;
 $input-field-bg-color-disabled: map-get($colors, gray-lighter);
+$input-placeholder-color: map-get($colors, blue-dark);
 
-$input-field-padding: 0.5em 0.75em;
+$input-field-padding: 0.5rem 0.75rem;
 $input-field-border-width: 1px; // This need the set because it's the same width for :focus
 $input-field-radius: 5px;
 $input-field-font-size: 18;
@@ -31,7 +31,7 @@ input[type='text'],
 input[type='email'],
 input[type='password'] {
 	outline: 0;
-	padding: 0.5em 0.75em;
+	padding: $input-field-padding;
 	background-color: $input-field-background;
 	border: $input-field-border-width transparent solid;
 
@@ -80,6 +80,6 @@ CUSTOM INPUT FIELD
 // Small input field
 .o-#{$object-name}--sm {
 	min-height: 26px;
-	padding: 0.25em 0.5em;
+	padding: 0.25rem 0.5rem;
 	@include rem(14);
 }

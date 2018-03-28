@@ -127,9 +127,9 @@ $navigation-mobile-background: rgba(0, 0, 0, 0.9);
 // Submenu
 .m-#{$module-name}__submenu {
 	display: none;
-	top: $navigation-height;
-	position: absolute;
 	z-index: 9999;
+	position: absolute;
+	top: $navigation-height;
 	background: $navigation-submenu-bg;
 
 	li {
@@ -155,10 +155,10 @@ $navigation-mobile-background: rgba(0, 0, 0, 0.9);
 
 // Mobile toggle button
 .m-#{$module-name}__toggle {
-	background: none;
 	border: none;
-	color: $navigation-item-txt;
+	background: none;
 	align-self: flex-start;
+	color: $navigation-item-txt;
 	line-height: $navigation-height;
 	@include rem(24);
 }
@@ -264,6 +264,7 @@ $animation-type-circle: 'false';
 	.m-#{$module-name}.a-fill {
 		ul li a {
 			position: relative;
+			transition: all 2s;
 
 			&:after {
 				position: absolute;
@@ -277,7 +278,6 @@ $animation-type-circle: 'false';
 				background: $navigation-item-hover-bg;
 				height: 1px;
 			}
-			transition: all 2s;
 
 			&:after {
 				text-align: left;

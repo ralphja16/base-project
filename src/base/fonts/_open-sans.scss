@@ -21,7 +21,7 @@ BASE
 
 @font-face {
 	font-family: $open-sans;
-	src: url('./assets/fonts/openSans/Regular/OpenSans-Regular.eot'); /* IE9 Compat Modes */
+	src: url('./assets/fonts/openSans/Regular/OpenSans-Regular.eot');
 	src: local('Open Sans'), local('Open-Sans-regular'),
 		url('./assets/fonts/openSans/Regular/OpenSans-Regular.woff')
 			format('woff'),
@@ -34,7 +34,7 @@ BASE
 
 @font-face {
 	font-family: $open-sans--light;
-	src: url('./assets/fonts/openSans/Light/OpenSans-Light.eot'); /* IE9 Compat Modes */
+	src: url('./assets/fonts/openSans/Light/OpenSans-Light.eot');
 	src: local('Open Sans light'), local('Open-Sans-light'),
 		url('./assets/fonts/openSans/Light/OpenSans-Light.woff') format('woff'),
 		url('./assets/fonts/openSans/Light/OpenSans-Light.ttf')
@@ -46,7 +46,7 @@ BASE
 
 @font-face {
 	font-family: $open-sans--light-italic;
-	src: url('./assets/fonts/openSans/LightItalic/OpenSans-LightItalic.eot'); /* IE9 Compat Modes */
+	src: url('./assets/fonts/openSans/LightItalic/OpenSans-LightItalic.eot');
 	src: local('Open Sans light italic'), local('Open-Sans-light-italic'),
 		url('./assets/fonts/openSans/LightItalic/OpenSans-LightItalic.woff')
 			format('woff'),
@@ -71,7 +71,7 @@ BASE
 
 @font-face {
 	font-family: $open-sans--semibold;
-	src: url('./assets/fonts/openSans/Semibold/OpenSans-Semibold.eot'); /* IE9 Compat Modes */
+	src: url('./assets/fonts/openSans/Semibold/OpenSans-Semibold.eot');
 	src: local('Open Sans semibold'), local('Open-Sans-semibold'),
 		url('./assets/fonts/openSans/Semibold/OpenSans-Semibold.woff')
 			format('woff'),
@@ -84,7 +84,7 @@ BASE
 
 @font-face {
 	font-family: $open-sans--semibold-italic;
-	src: url('./assets/fonts/openSans/SemiboldItalic/OpenSans-SemiboldItalic.eot'); /* IE9 Compat Modes */
+	src: url('./assets/fonts/openSans/SemiboldItalic/OpenSans-SemiboldItalic.eot');
 	src: url('./assets/fonts/openSans/SemiboldItalic/OpenSans-SemiboldItalic.woff')
 			format('woff'),
 		url('./assets/fonts/openSans/SemiboldItalic/OpenSans-SemiboldItalic.ttf')
@@ -96,8 +96,8 @@ BASE
 
 @font-face {
 	font-family: $open-sans--bold;
-	src: url('./assets/fonts/openSans/Bold/OpenSans-Bold.eot'); /* IE9 Compat Modes */
-	src: local('Open Sans bold'), local('Open-Sans-bold'),
+	src: url('./assets/fonts/openSans/Bold/OpenSans-Bold.eot');
+	src: local('Open Sans Bold'), local('Open-Sans-bold'),
 		url('./assets/fonts/openSans/Bold/OpenSans-Bold.woff') format('woff'),
 		url('./assets/fonts/openSans/Bold/OpenSans-Bold.ttf') format('truetype');
 
@@ -107,7 +107,7 @@ BASE
 
 @font-face {
 	font-family: $open-sans--bold-italic;
-	src: url('./assets/fonts/openSans/BoldItalic/OpenSans-BoldItalic.eot'); /* IE9 Compat Modes */
+	src: url('./assets/fonts/openSans/BoldItalic/OpenSans-BoldItalic.eot');
 	src: url('./assets/fonts/openSans/BoldItalic/OpenSans-BoldItalic.woff')
 			format('woff'),
 		local('Open Sans bold italic'), local('Open-Sans-bold-italic'),
@@ -120,7 +120,7 @@ BASE
 
 @font-face {
 	font-family: $open-sans--extrabold;
-	src: url('./assets/fonts/openSans/ExtraBold/OpenSans-ExtraBold.eot'); /* IE9 Compat Modes */
+	src: url('./assets/fonts/openSans/ExtraBold/OpenSans-ExtraBold.eot');
 	src: local('Open Sans extrabold'), local('Open-Sans-extrabold'),
 		url('./assets/fonts/openSans/ExtraBold/OpenSans-ExtraBold.woff')
 			format('woff'),
@@ -133,7 +133,7 @@ BASE
 
 @font-face {
 	font-family: $open-sans--extrabold-italic;
-	src: url('./assets/fonts/openSans/ExtraBoldItalic/OpenSans-ExtraBoldItalic.eot'); /* IE9 Compat Modes */
+	src: url('./assets/fonts/openSans/ExtraBoldItalic/OpenSans-ExtraBoldItalic.eot');
 	src: local('Open Sans extrabold italic'),
 		local('Open-Sans-extrabold-italic'),
 		url('./assets/fonts/openSans/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff')

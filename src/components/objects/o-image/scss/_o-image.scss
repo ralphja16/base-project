@@ -30,7 +30,7 @@ figure {
 	}
 
 	figcaption {
-		@include caption();
 		padding-bottom: 0;
+		@include caption(gray9);
 	}
 }
