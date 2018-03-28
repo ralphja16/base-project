@@ -9,11 +9,15 @@
 ============================================================================= */
 
 @each $name, $value in $colors {
-    .txt--#{$name} {
-        color: $value;
-    }
+	.txt--#{$name} {
+		color: $value;
+	}
 
-    .bg--#{$name} {
-        background-color: $value;
-    }
+	.bg--#{$name} {
+		background-color: $value;
+	}
+
+	.bdr--#{$name} {
+		border-color: $value !important;
+	}
 }
