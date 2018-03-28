@@ -4,17 +4,15 @@
 CONFIG
 ============================================================================= */
 
-$module-name: 								'modal';
-$m-modal-zindex:							1050;
-$m-modal-zindex-backdrop:					1040;
-$m-modal-dialog-width:						600px;
-$m-modal-content-bg:						$white;
-$m-modal-content-border:					1px solid $gray9;
-$m-modal-content-shadow:					rgba(0,0,0,.5);
-$m-modal-backdrop-bg:						rgba(0,0,0,0.3);
-$m-modal-backdrop-opacity: 					.5;
-
-
+$module-name: 'modal';
+$m-modal-zindex: 1050;
+$m-modal-zindex-backdrop: 1040;
+$m-modal-dialog-width: 600px;
+$m-modal-content-bg: $white;
+$m-modal-content-border: 1px solid $gray9;
+$m-modal-content-shadow: rgba(0, 0, 0, 0.5);
+$m-modal-backdrop-bg: rgba(0, 0, 0, 0.3);
+$m-modal-backdrop-opacity: 0.5;
 
 /* =============================================================================
 BASE
@@ -34,11 +32,11 @@ BASE
 	overflow: auto;
 	visibility: hidden;
 	transform: translate(0, -800px);
-	transition: .5s ease-in-out;
+	transition: 0.5s ease-in-out;
 
-	&.is__open{
+	&.is__open {
 		transform: translate(0, 0);
-		visibility: visible; 
+		visibility: visible;
 	}
 
 	// Class added on the body
@@ -63,7 +61,6 @@ BASE
 		}
 	}
 
-
 	// Actual modal
 	&__content {
 		position: relative;
@@ -85,19 +82,22 @@ BASE
 	// Modal background
 	&__backdrop {
 		position: fixed;
-		top:    0;
-		right:  0;
+		top: 0;
+		right: 0;
 		bottom: 0;
-		left:   0;
+		left: 0;
 		z-index: $m-modal-zindex-backdrop;
 		background-color: $m-modal-backdrop-bg;
 
 		// Fade for backdrop
-		&.fade { @include opacity(0); }
-		&.in { @include opacity($m-modal-backdrop-opacity); }
+		&.fade {
+			opacity: 0;
+		}
+		&.in {
+			opacity: $m-modal-backdrop-opacity;
+		}
 	}
 }
-
 
 /* =============================================================================
 STATES
@@ -105,7 +105,7 @@ STATES
 
 .fade {
 	opacity: 0;
-	@include transition(opacity, .15s, linear);
+	@include transition(opacity, 0.15s, linear);
 }
 
 .fade.in {
