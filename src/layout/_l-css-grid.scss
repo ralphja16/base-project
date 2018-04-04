@@ -15,6 +15,45 @@ $grid-column-padding: 15px;
 BASE
 ============================================================================= */
 
+// TESTING PURPOSE
+
+@mixin display-grid {
+	display: grid;
+	grid-template-rows: auto;
+	grid-gap: 1.5rem;
+}
+
+%grid-helpers-base {
+	@media (min-width: breakpoint-min(md)) {
+		@include display-grid;
+		grid-template-columns: 1fr;
+	}
+}
+.cols-2 {
+	@extend %grid-helpers-base;
+	@media (min-width: breakpoint-min(md)) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+.cols-3 {
+	@extend %grid-helpers-base;
+	@media (min-width: breakpoint-min(md)) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+.cols-4 {
+	@extend %grid-helpers-base;
+	@media (min-width: breakpoint-min(md)) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+.cols-auto-fit {
+	@extend %grid-helpers-base;
+	@media (min-width: breakpoint-min(md)) {
+		grid-template-columns: repeat(auto-fit, minmax(15.625em, 1fr));
+	}
+}
+
 .l-#{$layout-name} {
 	width: 100%;
 	display: grid;
@@ -27,6 +66,64 @@ BASE
 		.l-#{$layout-name}__col-#{$i} {
 			grid-column: span #{$i};
 			padding: $grid-column-padding;
+		}
+	}
+
+	&__container {
+		grid-template-columns: repeat(2, 1fr);
+		@include display-grid();
+
+		@media (min-width: breakpoint-min(md)) {
+			@include display-grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: breakpoint-min(lg)) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}
+
+// Modernizr fallback
+.no-cssgrid {
+	.cols-2 {
+		@media (min-width: breakpoint-min(md)) {
+			> * {
+				width: 50%;
+				padding-right: 10px * 3;
+				float: left;
+				margin-bottom: 10px * 3;
+			}
+		}
+	}
+	.cols-3 {
+		@media (min-width: breakpoint-min(md)) {
+			> * {
+				width: 33.3%;
+				padding-right: 10px * 3;
+				float: left;
+				margin-bottom: 10px * 3;
+			}
+		}
+	}
+	.cols-4 {
+		@media (min-width: breakpoint-min(md)) {
+			> * {
+				width: 25%;
+				padding-right: 10px * 3;
+				float: left;
+				margin-bottom: 10px * 3;
+			}
+		}
+	}
+	.cols-auto-fit {
+		@media (min-width: breakpoint-min(md)) {
+			text-align: center;
+			> * {
+				min-width: 15.625em;
+				padding-right: 10px * 3;
+				display: inline-block;
+				margin-bottom: 10px * 3;
+			}
 		}
 	}
 }
