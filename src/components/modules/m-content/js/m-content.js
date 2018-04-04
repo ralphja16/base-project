@@ -16,7 +16,7 @@ class Content {
 	}
 
 	wrapTable() {
-		this.$table.wrap('<div class=\'o-table__responsive-wrapper\'></div>'c);
+		this.$table.wrap('<div class=\'o-table__responsive-wrapper\'></div>');
 	}
 
 	initialize() {
