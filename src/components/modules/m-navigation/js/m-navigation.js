@@ -1,11 +1,20 @@
-class Navigation {
-	constructor(holder) {
-		this.holder = document.querySelector(holder);
-		this.navItems = this.holder.querySelectorAll('.m-navigation__item');
-		this.toggleButton = this.holder.querySelector('.m-navigation__toggle');
+import $ from 'jquery';
+
+export class Navigation {
+	constructor(options) {
+		if (options === null) {
+			options = {};
+		}
+
+		this.options = options;
+		this.initialize();
+	}
+
+	setup() {
+		this.$holder = $('.js--m-navigation');
+		this.$navItems = this.$holder.find('.m-navigation__item');
+		this.$toggleButton = this.$holder.find('.m-navigation__toggle');
 		this.activeClass = 'is--active';
-		this.initEventHandler();
-		// this.mobileToggle(this.holder);
 	}
 
 	show(item) {
@@ -18,9 +27,6 @@ class Navigation {
 
 	mobileToggle(holder) {
 		this.toggleButton.addEventListener('click', function() {
-			const iconElement = this.firstElementChild;
-			const bars = 'fa-bars';
-			const cross = 'fa-times';
 			holder.classList.toggle('is--open');
 		});
 	}
@@ -28,8 +34,8 @@ class Navigation {
 	initEventHandler() {
 		const _this = this;
 
-		for (let i = 0; i < this.navItems.length; i++) {
-			const item = this.navItems[i];
+		for (let i = 0; i < this.$navItems.length; i++) {
+			const item = this.$navItems[i];
 
 			if (item.querySelector('.m-navigation__submenu')) {
 				item.addEventListener('click', function(e) {
@@ -44,6 +50,11 @@ class Navigation {
 			}
 		}
 	}
+
+	initialize() {
+		this.setup();
+		this.initEventHandler();
+	}
 }
 
-const navigation = new Navigation('.m-navigation');
+new Navigation();

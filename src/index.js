@@ -1,9 +1,12 @@
 import './index.scss';
-import { Table } from './components/objects/index';
+
+import { Content, Navigation } from './components/modules/index';
 import Slider from './components/modules/m-slider/js/m-slider.jquery';
 
-function calc(a, b) {
-	return a + b;
-}
+// FUNCTION FOR DETECTING JQUERY
 
-// alert(calc(2, 4));
+// RESIZE
+
+// import wrapTable from './components/modules/m-content/js/m-content';
+
+// wrapTable();
