@@ -25,9 +25,13 @@ export class Navigation {
 		item.classList.remove(this.activeClass);
 	}
 
-	mobileToggle(holder) {
-		this.toggleButton.addEventListener('click', function() {
-			holder.classList.toggle('is--open');
+	mobileToggle() {
+		this.$toggleButton.bind('click', function(e) {
+			e.preventDefault();
+			$(this).toggleClass('is--active');
+			$(this)
+				.parent()
+				.toggleClass('is--open');
 		});
 	}
 
@@ -53,6 +57,7 @@ export class Navigation {
 
 	initialize() {
 		this.setup();
+		this.mobileToggle();
 		this.initEventHandler();
 	}
 }
