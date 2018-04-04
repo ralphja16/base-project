@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const postcssReporter = require('postcss-reporter');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const extractPlugin = new ExtractTextPlugin({
 	filename: './css/main.css'
@@ -134,6 +134,16 @@ const config = {
 		new HtmlWebpackPlugin({
 			template: './views/index.html'
 		}),
+		new CopyWebpackPlugin([
+			{
+				from: './assets/js/vendors/modernizr-custom.js',
+				to: './js/vendors/'
+			},
+			{
+				from: './assets/js/vendors/detectizr.min.js',
+				to: './js/vendors/'
+			}
+		]),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor'
 		}),
