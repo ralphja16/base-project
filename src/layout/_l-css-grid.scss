@@ -78,9 +78,13 @@ BASE
 			grid-template-columns: repeat(2, 1fr);
 		}
 		@media (min-width: breakpoint-min(lg)) {
-			grid-template-columns: repeat(4, 1fr);
+			grid-template-columns: repeat(12, 1fr);
 		}
 	}
+}
+
+.l-grid__col-4 {
+	grid-column: span 4;
 }
 
 // Modernizr fallback
